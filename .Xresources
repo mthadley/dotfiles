@@ -18,16 +18,11 @@ URxvt.matcher.button: 1
 
 Xcursor.theme: Openzone Black Slim
 
-! -------------------------------------------------
-! file:     .colours/dark                           
-! author:   jason ryan - http://jasonwryan.com/    
-! vim:enc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=txt:
-! -------------------------------------------------
-
 *.foreground: #CCCCCC
 *.background: #141414
 
-!! jwr dark
+! Color theme inspired by Jason Ryan's. Slightly modifed.
+
 !black
  *.color0:  #4D4D4D
  *.color8:  #575757

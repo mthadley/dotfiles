@@ -2,7 +2,7 @@
 # Mike's xinitrc
 HOME=/home/mike
 
-# PAaudio server
+# PA server
 pulseaudio --start
 
 # Background
@@ -21,7 +21,6 @@ curl -s ifconfig.me > $HOME/Dropbox/ip.txt
 xset +fp /usr/share/fonts/local
 xset fp rehash &
 
-WM='dwm'
 FG='#696969'
 BG='#141414'
 compton -cGb --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -fD 5
