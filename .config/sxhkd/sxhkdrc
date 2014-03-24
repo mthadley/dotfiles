@@ -17,6 +17,9 @@ super + b
 super + {f,m}
     bspc window -t {floating,fullscreen}
 
+super + shift + f
+	bspc desktop -t floating
+
 super + Tab
     bspc window -f last
 

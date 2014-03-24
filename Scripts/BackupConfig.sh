@@ -17,6 +17,7 @@ FILES=(
 	.config/homepage
 	.config/bspwm
 	.config/sxhkd/
+	.config/transmission-remote-cli/settings.cfg
 	.vimrc
 	.vim/colors
 )
