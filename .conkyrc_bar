@@ -37,4 +37,4 @@ D\f4▶\fr${if_running pianobar} Pandora${else} $mpd_smart${endif}   \
 \f4±\fr \f4${cpu cpu1}% \f5${cpu cpu2}% \f6${cpu cpu3}% \f1${cpu cpu4}%\fr (${loadavg 3})   \
 \f4⌂\fr $memperc% ($mem)   \
 \f4☺\fr ${fs_used /} of ${fs_size /}   \
-\sn\c\f4●\fr \f7${time %a %b %d %I:%M%P} \f4●
+\sp\c\f4●\fr \f7${time %a %b %d %I:%M%P} \f4●

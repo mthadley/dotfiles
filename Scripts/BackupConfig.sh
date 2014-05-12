@@ -21,7 +21,7 @@ FILES=(
 	.vimrc
 	.vim/colors
 )
-DEST=~/configs-git
+DEST=~/dotfiles
 
 cd ~ 
 

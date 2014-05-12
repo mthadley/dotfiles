@@ -72,8 +72,8 @@ super + shift + Return
 super + shift + w
     google-chrome-stable
 
-super + shift + {e,p}
-    {subl,slock}
+super + shift + s
+    thunar
 
 super + {z,x,c}
     /home/mike/Scripts/musicctl.sh {pause,next,prev}

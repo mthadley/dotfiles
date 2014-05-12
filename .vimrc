@@ -108,6 +108,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
+Bundle 'mattn/emmet-vim'
 
 filetype plugin indent on     " required!
 
@@ -125,5 +126,7 @@ set shiftwidth=4
 set nobackup
 set cursorline
 inoremap jk <ESC>
+
+let g:user_emmet_leader_key='<C-Z>'
 
 colorscheme miromiro
