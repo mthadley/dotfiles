@@ -99,11 +99,11 @@ endif
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
-"  " required! 
+"  " required!
 Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
@@ -116,11 +116,13 @@ filetype plugin indent on     " required!
 set encoding=UTF-8
 set t_Co=256
 set laststatus=2
-let g:airline_theme='light'
-let g:airline_powerline_fonts = 1
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
 
 " Mike stuff
-set number
+set relativenumber
 set tabstop=4
 set shiftwidth=4
 set nobackup
@@ -129,4 +131,4 @@ inoremap jk <ESC>
 
 let g:user_emmet_leader_key='<C-Z>'
 
-colorscheme miromiro
+colorscheme Tomorrow-Night-Eighties
