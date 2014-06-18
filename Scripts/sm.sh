@@ -2,7 +2,7 @@
 #
 # Setup second monitor
 #
-# Sleeping between commands seens to alleviate
+# Sleeping between commands seems to alleviate
 # unpredictable window placement
 
 CMDS=(
