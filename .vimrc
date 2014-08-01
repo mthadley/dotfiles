@@ -127,6 +127,7 @@ set tabstop=4
 set shiftwidth=4
 set nobackup
 set cursorline
+set fileformats+=dos
 inoremap jk <ESC>
 
 let g:user_emmet_leader_key='<C-Z>'
