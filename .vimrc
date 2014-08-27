@@ -109,6 +109,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'mattn/emmet-vim'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on     " required!
 
@@ -129,6 +130,8 @@ set nobackup
 set cursorline
 set fileformats+=dos
 inoremap jk <ESC>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 let g:user_emmet_leader_key='<C-Z>'
 
