@@ -1,9 +1,0 @@
-# Colors
-color background   white   default
-color listnormal   white   default
-color listfocus    red     default   bold
-color info         green   default   bold
-color article      white   default
-
-# Podcast download location
-download-path "~/Music/Podcasts/%n/"
