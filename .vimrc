@@ -17,6 +17,9 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-sensible'
 Bundle 'scrooloose/syntastic'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on     " required!
 
@@ -31,15 +34,28 @@ let g:airline_right_sep = ' '
 
 " Mike's stuff
 set relativenumber
+set ignorecase
 set tabstop=4
 set shiftwidth=4
 set nobackup
 set cursorline
 set fileformats+=dos
+set mouse=a
+set hlsearch
 inoremap jk <ESC>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+
+" Disable Arrowkeys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop> 
 
 let g:user_emmet_leader_key='<C-Z>'
 
+" Colors
 colorscheme Tomorrow-Night-Eighties
+hi TabLineFill ctermfg=Black ctermbg=Black
+hi TabLine ctermfg=Black ctermbg=Grey
+hi TabLineSel ctermfg=Green ctermbg=Black
