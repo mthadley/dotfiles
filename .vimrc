@@ -20,6 +20,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/nerdtree'
+Bundle 'lepture/vim-velocity'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'henrik/vim-indexed-search'
 
 filetype plugin indent on     " required!
 
@@ -46,11 +49,15 @@ inoremap jk <ESC>
 nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
 
+let mapleader = ","
+map <leader>t :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<CR>
+
 " Disable Arrowkeys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
-nnoremap <right> <nop> 
+nnoremap <right> <nop>
 
 let g:user_emmet_leader_key='<C-Z>'
 
