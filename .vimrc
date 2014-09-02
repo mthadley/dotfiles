@@ -9,20 +9,22 @@ call vundle#rc()
 "  " required!
 Bundle 'gmarik/vundle'
 
-Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
-Bundle 'mattn/emmet-vim'
-Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-sensible'
-Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
+Bundle 'bling/vim-bufferline'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'scrooloose/nerdtree'
-Bundle 'lepture/vim-velocity'
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'ervandew/supertab'
 Bundle 'henrik/vim-indexed-search'
+Bundle 'kien/ctrlp.vim'
+Bundle 'lepture/vim-velocity'
+Bundle 'mattn/emmet-vim'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on     " required!
 
@@ -45,6 +47,7 @@ set cursorline
 set fileformats+=dos
 set mouse=a
 set hlsearch
+let g:bufferline_echo = 0
 inoremap jk <ESC>
 nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
@@ -52,6 +55,8 @@ nnoremap <C-l> :tabnext<CR>
 let mapleader = ","
 map <leader>t :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<CR>
+map <leader>gh :Gbrowse<CR>
+map <leader>w :buffer 
 
 " Disable Arrowkeys
 nnoremap <up> <nop>
@@ -59,7 +64,7 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<C-E>'
 
 " Colors
 colorscheme Tomorrow-Night-Eighties
