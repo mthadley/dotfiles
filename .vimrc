@@ -13,8 +13,10 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'bling/vim-bufferline'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'edkolev/tmuxline.vim'
 Bundle 'ervandew/supertab'
 Bundle 'henrik/vim-indexed-search'
+Bundle 'jiangmiao/auto-pairs'
 Bundle 'kien/ctrlp.vim'
 Bundle 'lepture/vim-velocity'
 Bundle 'mattn/emmet-vim'
@@ -32,13 +34,14 @@ filetype plugin indent on     " required!
 set encoding=UTF-8
 set t_Co=256
 set laststatus=2
-let g:airline_theme='bubblegum'
+let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 
 " Mike's stuff
 set relativenumber
+set number
 set ignorecase
 set tabstop=4
 set shiftwidth=4
@@ -52,11 +55,15 @@ inoremap jk <ESC>
 nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
 
+let g:tmuxline_preset = 'full'
+let g:tmuxline_powerline_separators = 0
+
 let mapleader = ","
 map <leader>t :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<CR>
 map <leader>gh :Gbrowse<CR>
 map <leader>w :buffer 
+map <leader>c :SyntasticToggleMode<CR>
 
 " Disable Arrowkeys
 nnoremap <up> <nop>
