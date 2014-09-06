@@ -26,6 +26,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 
 filetype plugin indent on     " required!
@@ -55,6 +56,8 @@ inoremap jk <ESC>
 nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
 
+au BufRead,BufNewFile *.css set filetype=scss
+
 let g:tmuxline_preset = 'full'
 let g:tmuxline_powerline_separators = 0
 
@@ -62,8 +65,9 @@ let mapleader = ","
 map <leader>t :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<CR>
 map <leader>gh :Gbrowse<CR>
-map <leader>w :buffer 
+map <leader>s :buffer
 map <leader>c :SyntasticToggleMode<CR>
+map <leader>w :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 
 " Disable Arrowkeys
 nnoremap <up> <nop>
