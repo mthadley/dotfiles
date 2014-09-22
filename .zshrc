@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git jira sublime sudo web-search)
+plugins=(git jira sublime jump sudo web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -59,3 +59,4 @@ export ANT_OPTS=-Xmx1024m
 alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
 alias tm='tmux -2'
 alias o='xdg-open'
+alias jr='jira $(git rev-parse --abbrev-ref HEAD)' 
