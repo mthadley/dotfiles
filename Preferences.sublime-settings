@@ -1,0 +1,16 @@
+{
+	"centurion_color_blue": false,
+	"centurion_color_grey": false,
+	"centurion_color_orange": true,
+	"centurion_color_red": false,
+	"centurion_color_yellow": false,
+	"centurion_tab_close_buttons": true,
+	"centurion_tab_scrolling": false,
+	"color_scheme": "Packages/User/base16-eighties.dark (SL).tmTheme",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Centurion.sublime-theme"
+}

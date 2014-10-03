@@ -1,0 +1,19 @@
+{
+	"installed_packages":
+	[
+		"Base16 Color Schemes",
+		"ColorPicker",
+		"eco",
+		"EJS",
+		"Emmet",
+		"GitGutter",
+		"Github Tools",
+		"Java Velocity",
+		"Sass",
+		"SublimeLinter",
+		"SublimeLinter-javac",
+		"SublimeLinter-jshint",
+		"Theme - Centurion",
+		"Theme - Soda"
+	]
+}
