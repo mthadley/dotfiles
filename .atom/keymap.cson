@@ -1,0 +1,2 @@
+'.editor':
+    'ctrl-shift-e': 'emmet:expand-abbreviation'

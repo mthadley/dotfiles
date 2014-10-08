@@ -1,0 +1,29 @@
+'exception-reporting':
+  'userId': '146781b3-7960-3a28-1f51-c44e3a715955'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '547268854fbd1bfb76a500bbc1bdcdcc2da2ba4d'
+'editor':
+  'tabLength': 4
+  'fontFamily': 'Ubuntu Mono'
+  'showIndentGuide': true
+  'scrollSensitivity': 100
+  'lineHeight': 1.1
+  'softWrapped': true
+  'softWrap': true
+  'invisibles': {}
+'core':
+  'disabledPackages': [
+    'wrap-guide'
+  ]
+  'projectHome': '/home/mike/Liferay'
+  'themes': [
+    'atom-dark-ui'
+    'tomorrow-night-eighties'
+  ]
+'whitespace':
+  'ensureSingleTrailingNewline': false
+'minimap':
+  'minimapScrollIndicator': false
+  'displayPluginsControls': false
