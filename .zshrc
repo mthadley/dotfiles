@@ -60,3 +60,4 @@ alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias tm='tmux -2'
 alias o='xdg-open'
 alias jr='jira $(git rev-parse --abbrev-ref HEAD)' 
+alias aa='ant all'
