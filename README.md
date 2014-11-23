@@ -6,7 +6,7 @@ Just a backup of some of my configs.
 
 Make sure to install vundle first:
 
-```sh
+```console
 $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 Then simply run `:BundleInstall`
@@ -15,6 +15,6 @@ Then simply run `:BundleInstall`
 
 Download and execute the install script: 
 
-```sh
+```console
 $ curl -L http://install.ohmyz.sh | sh
 ```
