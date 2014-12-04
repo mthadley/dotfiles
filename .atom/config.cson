@@ -11,9 +11,15 @@
     'scrollSensitivity': 100
     'lineHeight': 1.1
     'softWrapped': true
-    'softWrap': true
-    'softTabs': false
     'showIndentGuide': true
+    'confirmCheckoutHeadRevision': false
+    'autoIndentOnPaste': false
+    'showInvisibles': true
+    'softTabs': false
+    'invisibles':
+      'tab': ' '
+      'eol': ' '
+    'softWrap': true
   'core':
     'disabledPackages': [
       'wrap-guide'
@@ -31,3 +37,4 @@
     'displayPluginsControls': false
   'merge-conflicts':
     'gitPath': '/usr/bin/git'
+  'linter': {}
