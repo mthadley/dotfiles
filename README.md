@@ -13,8 +13,16 @@ Then simply run `:BundleInstall`
 
 #### ZSH setup
 
-Download and execute the install script: 
+Download and execute the install script:
 
 ```console
 $ curl -L http://install.ohmyz.sh | sh
+```
+
+#### Tmux setup
+
+Install `tpm`
+
+```console
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
