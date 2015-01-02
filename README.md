@@ -26,3 +26,4 @@ Install `tpm`
 ```console
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+Then install the plugins with the following keybind: `ctrl+a I`
