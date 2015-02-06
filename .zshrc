@@ -51,6 +51,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
+[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
+
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/Scripts"
 export ANT_OPTS=-Xmx1024m
 
@@ -61,4 +64,6 @@ alias tm='tmux -2'
 alias o='xdg-open'
 alias jr='jira $(git rev-parse --abbrev-ref HEAD)'
 alias aa='ant all'
+alias aac='(cd ~/Liferay/liferay-plugins-ee/portlets/connect-portlet && aa && cd ~/Liferay/liferay-plugins-ee/themes/connect-theme && aa)'
 alias csf='git ls-files -m | xargs check_sf'
+alias oa='optirun atom'
