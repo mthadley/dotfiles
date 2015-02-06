@@ -1,4 +1,7 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"Base16 Color Schemes",
@@ -9,11 +12,12 @@
 		"GitGutter",
 		"Github Tools",
 		"Java Velocity",
+		"Package Control",
 		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-javac",
 		"SublimeLinter-jshint",
-		"Theme - Centurion",
-		"Theme - Soda"
+		"Theme - Soda",
+		"Theme - Spacegray"
 	]
 }
