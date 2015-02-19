@@ -1,4 +1,4 @@
-# Force syntax highlighting regardless of filetype
+# Force syntax highlighting of one type to another
 
 forceGrammar = (from, to) ->
 	atom.workspace.observeTextEditors (editor) ->
@@ -21,7 +21,7 @@ for pattern in scriptGrammar.rawPatterns
 		# Original: '(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?'
 		pattern.end = '(?<=</(script|SCRIPT))|(?<=</aui:script)(>)(?:\\s*\\n)?'
 
-		subPattern = pattern.patterns[1];
+		subPattern = pattern.patterns[1]
 
 		# Original: '(?<!</(?:script|SCRIPT))(>)'
 		subPattern.begin = '(?<!</(?:script|SCRIPT))|(?<!</aui:script)(>)'
