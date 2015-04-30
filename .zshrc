@@ -62,8 +62,10 @@ export ANT_OPTS=-Xmx1024m
 alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
 alias tm='tmux -2'
 alias o='xdg-open'
+
+# Liferay
+
 alias jr='jira $(git rev-parse --abbrev-ref HEAD)'
 alias aa='ant all'
 alias aac='(cd ~/Liferay/liferay-plugins-ee/portlets/connect-portlet && aa && cd ~/Liferay/liferay-plugins-ee/themes/connect-theme && aa)'
 alias csf='git ls-files -m | xargs check_sf'
-alias oa='optirun atom'
