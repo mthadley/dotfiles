@@ -1,6 +1,6 @@
 ### Mike's Dotfiles
 
-Just a backup of some of my configs.
+Just a backup of some of my configs, for use with [GNU Stow](http://www.gnu.org/software/stow/)
 
 #### Vim Setup
 
