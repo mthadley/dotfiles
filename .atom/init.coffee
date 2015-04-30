@@ -13,20 +13,23 @@ forceGrammar 'source.css', 'source.css.scss'
 
 scriptGrammar = atom.grammars.grammarForScopeName('text.html.basic')
 
-for pattern in scriptGrammar.rawPatterns
-	if pattern.name is 'source.js.embedded.html'
-		# Original: '(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)'
-		pattern.begin = '(?:^\\s+)?(<)((?i:(aui:)?script))\\b(?![^>]*/>)'
+if scriptGrammar
+	for pattern in scriptGrammar.rawPatterns
+		if pattern.name is 'source.js.embedded.html'
+			# Original: '(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)'
+			pattern.begin = '(?:^\\s+)?(<)((?i:(aui:)?script))\\b(?![^>]*/>)'
 
-		# Original: '(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?'
-		pattern.end = '(?<=</(script|SCRIPT))|(?<=</aui:script)(>)(?:\\s*\\n)?'
+			# Original: '(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?'
+			pattern.end = '(?<=</(script|SCRIPT))|(?<=</aui:script)(>)(?:\\s*\\n)?'
 
-		subPattern = pattern.patterns[1]
+			subPattern = pattern.patterns[1]
 
-		# Original: '(?<!</(?:script|SCRIPT))(>)'
-		subPattern.begin = '(?<!</(?:script|SCRIPT))|(?<!</aui:script)(>)'
+			# Original: '(?<!</(?:script|SCRIPT))(>)'
+			subPattern.begin = '(?<!</(?:script|SCRIPT))|(?<!</aui:script)(>)'
 
-		# Original: '(</)((?i:script))'
-		subPattern.end = '(</)((?i:(aui:)?script))'
+			# Original: '(</)((?i:script))'
+			subPattern.end = '(</)((?i:(aui:)?script))'
 
-		break
+			break
+else
+	atom.notifications.addWarning 'Warning: Did not update HTML Grammar'
