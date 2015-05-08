@@ -8,3 +8,4 @@
 	excludesfile = /Users/mike/.gitignore
 [alias]
 	oldest-ancestor = !zsh -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+	csf = "!f() { git diff --stat --name-only ee-6.2.x.. | grep -E '.(jsp.?|vm|ftl|js|(s)?css)$' | tr \"\\n\" \"\\0\" | xargs -0 -J{} check_sf {} $@; }; f"
