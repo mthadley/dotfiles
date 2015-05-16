@@ -37,7 +37,8 @@
     displayPluginsControls: false
   "merge-conflicts":
     gitPath: "/usr/bin/git"
-  linter: {}
+  linter:
+    {}
   "atom-color-highlight":
     markersAtEndOfLine: true
   "vim-mode":
