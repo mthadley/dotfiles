@@ -21,8 +21,8 @@ alias csf='git ls-files -m | xargs check_sf'
 
 # Subs
 
-gpp () {
-	[ -z $1 ] && 1=$(git rev-parse --abbrev-ref HEAD)
+gpp() {
+	[[ -z $1 ]] && 1=$(git rev-parse --abbrev-ref HEAD)
 
-	git pull upstream $1 && git push origin $1
+	git pull upstream "$1" && git push origin "$1"
 }
