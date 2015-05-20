@@ -43,3 +43,5 @@
     markersAtEndOfLine: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
+  "linter-liferay":
+    {}
