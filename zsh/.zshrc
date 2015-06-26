@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git jira sublime jump sudo web-search)
+plugins=(git sublime jump sudo web-search)
 
 source $ZSH/oh-my-zsh.sh
 
