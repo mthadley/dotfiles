@@ -18,8 +18,9 @@
       tab: " "
       eol: " "
     softWrap: true
-    fontFamily: "monaco"
+    fontFamily: "Monaco"
     fontSize: 12
+    lineHeight: 1.3
   core:
     disabledPackages: [
       "wrap-guide"
@@ -37,11 +38,9 @@
     displayPluginsControls: false
   "merge-conflicts":
     gitPath: "/usr/bin/git"
-  linter:
-    {}
+  linter: {}
   "atom-color-highlight":
     markersAtEndOfLine: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
-  "linter-liferay":
-    {}
+  "linter-liferay": {}

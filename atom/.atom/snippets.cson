@@ -1,0 +1,13 @@
+'.text.html.jsp':
+	'Scriptlet':
+		'prefix': '%'
+		'body': """
+			<%
+
+			$1
+
+			%>
+		"""
+	'Scriptlet Value':
+		'prefix': '='
+		'body': '<%= $1 %>'
