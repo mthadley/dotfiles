@@ -2,35 +2,36 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+set rtp+=~/.vim/Bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 "  " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle.vim'
 
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bling/vim-airline'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'edkolev/tmuxline.vim'
-Bundle 'ervandew/supertab'
-Bundle 'henrik/vim-indexed-search'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'lepture/vim-velocity'
-Bundle 'mattn/emmet-vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-surround'
-Bundle 'chriskempson/base16-vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'ervandew/supertab'
+Plugin 'henrik/vim-indexed-search'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'lepture/vim-velocity'
+Plugin 'mattn/emmet-vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
+Plugin 'chriskempson/base16-vim'
 
+call vundle#end()
 filetype plugin indent on     " required!
 
 " Vim Airline stuff
@@ -94,5 +95,3 @@ highlight GitGutterAddLine ctermbg=Black
 highlight GitGutterChangeLine ctermbg=Black
 highlight GitGutterDeleteLine ctermbg=Black
 highlight GitGutterChangeDeleteLine ctermbg=Black
-
-

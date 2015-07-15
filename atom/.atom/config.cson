@@ -27,6 +27,7 @@
       "vim-mode"
     ]
     projectHome: "/home/mike/Liferay"
+    excludeVcsIgnoredPaths: false
     themes: [
       "outlander-ui"
       "outlander-syntax"
@@ -38,9 +39,15 @@
     displayPluginsControls: false
   "merge-conflicts":
     gitPath: "/usr/bin/git"
-  linter: {}
+  linter:
+    showErrorPanel: false
   "atom-color-highlight":
     markersAtEndOfLine: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
-  "linter-liferay": {}
+  "linter-liferay":
+    lintJS: true
+  tabs:
+    usePreviewTabs: true
+    enableVcsColoring: true
+    alwaysShowTabBar: false
