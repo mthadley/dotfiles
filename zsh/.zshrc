@@ -19,3 +19,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
 
 export FZF_DEFAULT_OPTS="--color=16"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
