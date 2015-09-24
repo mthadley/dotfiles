@@ -1,6 +1,6 @@
 " Vundle Stuff
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/Bundle/Vundle.vim
 call vundle#begin()
@@ -23,11 +23,12 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lepture/vim-velocity'
 Plugin 'mattn/emmet-vim'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
@@ -47,6 +48,7 @@ let g:airline_right_sep = ' '
 " Mike's stuff
 set cursorline
 set fileformats+=dos
+set hlsearch
 set ignorecase
 set mouse=a
 set nobackup
@@ -54,23 +56,33 @@ set number
 set relativenumber
 set shiftwidth=4
 set tabstop=4
-set hlsearch
 let g:bufferline_echo = 0
-inoremap jk <ESC>
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l> :tabnext<CR>
 let g:ctrlp_cmd = 'CtrlPCurWD'
+let g:gitgutter_sign_removed = '-'
+
+" Use system clipboard as default
+set clipboard+=unnamedplus
 
 " Autoreload file on change
 set autoread
 au CursorHold * checktime
 
-let g:gitgutter_sign_removed = '-'
-
+" Force syntax highlighting for certain file extensions
 au BufRead,BufNewFile *.css set filetype=scss.css
+au BufRead,BufNewFile *.jspf set filetype=jsp
 
+" Ignore HTML files
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+" Tmux integration
 let g:tmuxline_preset = 'full'
 let g:tmuxline_powerline_separators = 0
+
+" Keybinds
+inoremap jk <ESC>
+nnoremap ; :CtrlPBuffer<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
 
 let mapleader = ","
 map <leader>t :NERDTreeToggle<CR>
@@ -88,7 +100,6 @@ colorscheme Tomorrow-Night-Eighties
 hi TabLineFill ctermfg=Black ctermbg=Black
 hi TabLine ctermfg=Black ctermbg=Grey
 hi TabLineSel ctermfg=Green ctermbg=Black
-
 hi Search ctermbg=gray
 
 highlight clear SignColumn
