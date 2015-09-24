@@ -10,9 +10,11 @@ call vundle#begin()
 Plugin 'gmarik/vundle.vim'
 
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'henrik/vim-indexed-search'
@@ -29,7 +31,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
-Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -79,7 +80,7 @@ map <leader>s :buffer
 map <leader>c :SyntasticToggleMode<CR>
 map <leader>w :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 
-let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_leader_key = '<C-E>'
 
 " Colors
 let g:base16colorspace=256
@@ -88,7 +89,7 @@ hi TabLineFill ctermfg=Black ctermbg=Black
 hi TabLine ctermfg=Black ctermbg=Grey
 hi TabLineSel ctermfg=Green ctermbg=Black
 
-hi Search cterm=NONE ctermfg=black ctermbg=grey
+hi Search ctermbg=gray
 
 highlight clear SignColumn
 highlight GitGutterAddLine ctermbg=Black
