@@ -9,6 +9,7 @@ call vundle#begin()
 "  " required!
 Plugin 'gmarik/vundle.vim'
 
+Plugin 'pangloss/vim-javascript'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
@@ -16,7 +17,6 @@ Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'ervandew/supertab'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
@@ -28,6 +28,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
@@ -40,7 +41,7 @@ filetype plugin indent on     " required!
 set encoding=UTF-8
 set t_Co=256
 set laststatus=2
-let g:airline_theme='tomorrow'
+let g:airline_theme='base16'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
@@ -85,18 +86,20 @@ nnoremap <C-h> :tabprevious<CR>
 nnoremap <C-l> :tabnext<CR>
 
 let mapleader = ","
-map <leader>t :NERDTreeToggle<CR>
-map <leader>r :NERDTreeFind<CR>
-map <leader>gh :Gbrowse<CR>
-map <leader>s :buffer
 map <leader>c :SyntasticToggleMode<CR>
+map <leader>f :CtrlPFunky<CR>
+map <leader>gh :Gbrowse<CR>
+map <leader>r :NERDTreeFind<CR>
+map <leader>s :buffer
+map <leader>t :NERDTreeToggle<CR>
 map <leader>w :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 
 let g:user_emmet_leader_key = '<C-E>'
 
 " Colors
-let g:base16colorspace=256
-colorscheme Tomorrow-Night-Eighties
+let base16colorspace=256
+colorscheme base16-eighties
+set background=dark
 hi TabLineFill ctermfg=Black ctermbg=Black
 hi TabLine ctermfg=Black ctermbg=Grey
 hi TabLineSel ctermfg=Green ctermbg=Black
