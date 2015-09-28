@@ -9,9 +9,6 @@ call vundle#begin()
 "  " required!
 Plugin 'gmarik/vundle.vim'
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -22,9 +19,11 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lepture/vim-velocity'
+Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -33,6 +32,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -55,6 +55,7 @@ set mouse=a
 set nobackup
 set number
 set relativenumber
+set scrolloff=10
 set shiftwidth=4
 set tabstop=4
 let g:bufferline_echo = 0
@@ -70,7 +71,7 @@ au CursorHold * checktime
 
 " Force syntax highlighting for certain file extensions
 au BufRead,BufNewFile *.css set filetype=scss.css
-au BufRead,BufNewFile *.jspf set filetype=jsp
+au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Ignore HTML files
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
