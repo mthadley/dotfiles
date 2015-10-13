@@ -13,6 +13,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'christoomey/vim-sort-motion'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'jiangmiao/auto-pairs'
@@ -21,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'lepture/vim-velocity'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
+Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
@@ -28,7 +30,8 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
@@ -58,9 +61,11 @@ set relativenumber
 set scrolloff=10
 set shiftwidth=4
 set tabstop=4
+
 let g:bufferline_echo = 0
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:gitgutter_sign_removed = '-'
+let g:sort_motion_flags = 'i'
 
 " Use system clipboard as default
 set clipboard+=unnamedplus
@@ -83,17 +88,16 @@ let g:tmuxline_powerline_separators = 0
 " Keybinds
 inoremap jk <ESC>
 nnoremap ; :CtrlPBuffer<CR>
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l> :tabnext<CR>
 
 let mapleader = ","
-map <leader>c :SyntasticToggleMode<CR>
-map <leader>f :CtrlPFunky<CR>
-map <leader>gh :Gbrowse<CR>
-map <leader>r :NERDTreeFind<CR>
-map <leader>s :buffer
-map <leader>t :NERDTreeToggle<CR>
-map <leader>w :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
+noremap <leader>c :SyntasticToggleMode<CR>
+noremap <leader>ccp :CtrlPClearAllCaches<CR>
+noremap <leader>ev :vsplit $MYVIMRC<CR>
+noremap <leader>f :CtrlPFunky<CR>
+noremap <leader>gh :Gbrowse<CR>
+noremap <leader>r :NERDTreeFind<CR>
+noremap <leader>t :NERDTreeToggle<CR>
+noremap <leader>w :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 
 let g:user_emmet_leader_key = '<C-E>'
 
