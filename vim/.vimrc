@@ -2,6 +2,8 @@
 set nocompatible
 filetype off
 
+let g:syntastic_javascript_checkers = ['csf']
+
 set rtp+=~/.vim/Bundle/Vundle.vim
 call vundle#begin()
 
@@ -23,6 +25,7 @@ Plugin 'lepture/vim-velocity'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
@@ -35,6 +38,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
+Plugin 'travitch/hasksyn'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -55,6 +59,7 @@ set fileformats+=dos
 set hlsearch
 set ignorecase
 set mouse=a
+set dir=/tmp
 set nobackup
 set number
 set relativenumber
@@ -70,12 +75,15 @@ let g:sort_motion_flags = 'i'
 " Use system clipboard as default
 set clipboard+=unnamedplus
 
+" Haskell tabs and indentation
+au FileType haskell setl sw=2 sts=2 et
+
 " Autoreload file on change
 set autoread
 au CursorHold * checktime
 
 " Force syntax highlighting for certain file extensions
-au BufRead,BufNewFile *.css set filetype=scss.css
+au BufRead,BufNewFile *.css set filetype=scss
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Ignore HTML files
