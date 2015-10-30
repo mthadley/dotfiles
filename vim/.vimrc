@@ -86,6 +86,9 @@ au CursorHold * checktime
 au BufRead,BufNewFile *.css set filetype=scss
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
+" Liferay doesn't like trailing newlines...
+au BufRead,BufNewFile */Liferay/* setlocal noeol binary
+
 " Ignore HTML files
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
@@ -98,19 +101,21 @@ inoremap jk <ESC>
 nnoremap ; :CtrlPBuffer<CR>
 
 let mapleader = ","
+noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>c :SyntasticToggleMode<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
 noremap <leader>f :CtrlPFunky<CR>
 noremap <leader>gh :Gbrowse<CR>
 noremap <leader>r :NERDTreeFind<CR>
+noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>t :NERDTreeToggle<CR>
-noremap <leader>w :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
+noremap <leader>w :w<CR>
 
 let g:user_emmet_leader_key = '<C-E>'
 
 " Colors
-let base16colorspace=256
+let g:base16colorspace=256
 colorscheme base16-eighties
 set background=dark
 hi TabLineFill ctermfg=Black ctermbg=Black
