@@ -21,12 +21,14 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'lambdatoast/elm.vim'
 Plugin 'lepture/vim-velocity'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
@@ -55,28 +57,31 @@ let g:airline_right_sep = ' '
 
 " Mike's stuff
 set cursorline
+set dir=/tmp
+set expandtab
 set fileformats+=dos
 set hlsearch
 set ignorecase
 set mouse=a
-set dir=/tmp
 set nobackup
 set number
 set relativenumber
 set scrolloff=10
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
+set sts=2
 
 let g:bufferline_echo = 0
-let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:gitgutter_sign_removed = '-'
 let g:sort_motion_flags = 'i'
 
+let g:ctrlp_cmd = 'CtrlPCurWD'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules)$',
+	\ }
+
 " Use system clipboard as default
 set clipboard+=unnamedplus
-
-" Haskell tabs and indentation
-au FileType haskell setl sw=2 sts=2 et
 
 " Autoreload file on change
 set autoread
@@ -87,7 +92,7 @@ au BufRead,BufNewFile *.css set filetype=scss
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Liferay doesn't like trailing newlines...
-au BufRead,BufNewFile */Liferay/* setlocal noeol binary
+au BufRead,BufNewFile */Liferay/* setlocal noeol binary sw=4 sts=4 ts=4 noet
 
 " Ignore HTML files
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
@@ -103,6 +108,7 @@ nnoremap ; :CtrlPBuffer<CR>
 let mapleader = ","
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>c :SyntasticToggleMode<CR>
+noremap <leader>ct :!column -t<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
 noremap <leader>f :CtrlPFunky<CR>
