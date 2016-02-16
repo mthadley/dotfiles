@@ -7,30 +7,22 @@ let g:syntastic_javascript_checkers = ['csf']
 set rtp+=~/.vim/Bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
-"  " required!
 Plugin 'gmarik/vundle.vim'
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-sort-motion'
-Plugin 'edkolev/tmuxline.vim'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'lepture/vim-velocity'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'mxw/vim-jsx'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -43,17 +35,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'travitch/hasksyn'
 Plugin 'Valloric/YouCompleteMe'
 
-call vundle#end()
-filetype plugin indent on     " required!
+" vim-jsx requires vim-javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
-" Vim Airline stuff
-set encoding=UTF-8
-set t_Co=256
-set laststatus=2
-let g:airline_theme='base16'
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
+call vundle#end()
+filetype plugin indent on
 
 " Mike's stuff
 set cursorline
@@ -74,6 +61,7 @@ set sts=2
 let g:bufferline_echo = 0
 let g:gitgutter_sign_removed = '-'
 let g:sort_motion_flags = 'i'
+let g:jsx_ext_required = 0
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
@@ -97,13 +85,8 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol binary sw=4 sts=4 ts=4 noet
 " Ignore HTML files
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
-" Tmux integration
-let g:tmuxline_preset = 'full'
-let g:tmuxline_powerline_separators = 0
-
 " Keybinds
 inoremap jk <ESC>
-nnoremap ; :CtrlPBuffer<CR>
 
 let mapleader = ","
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
@@ -111,8 +94,8 @@ noremap <leader>c :SyntasticToggleMode<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
+noremap <leader>n :noh<CR>
 noremap <leader>f :CtrlPFunky<CR>
-noremap <leader>gh :Gbrowse<CR>
 noremap <leader>r :NERDTreeFind<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>t :NERDTreeToggle<CR>
