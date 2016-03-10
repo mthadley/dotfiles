@@ -71,6 +71,9 @@ let g:ctrlp_custom_ignore = {
 " Use system clipboard as default
 set clipboard+=unnamedplus
 
+" Remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Autoreload file on change
 set autoread
 au CursorHold * checktime
@@ -111,9 +114,3 @@ hi TabLineFill ctermfg=Black ctermbg=Black
 hi TabLine ctermfg=Black ctermbg=Grey
 hi TabLineSel ctermfg=Green ctermbg=Black
 hi Search ctermbg=gray
-
-highlight clear SignColumn
-highlight GitGutterAddLine ctermbg=Black
-highlight GitGutterChangeLine ctermbg=Black
-highlight GitGutterDeleteLine ctermbg=Black
-highlight GitGutterChangeDeleteLine ctermbg=Black
