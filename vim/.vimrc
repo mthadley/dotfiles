@@ -9,9 +9,9 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle.vim'
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'jiangmiao/auto-pairs'
@@ -55,10 +55,11 @@ set number
 set relativenumber
 set scrolloff=10
 set shiftwidth=2
-set tabstop=2
+set splitbelow
+set splitright
 set sts=2
+set tabstop=2
 
-let g:bufferline_echo = 0
 let g:gitgutter_sign_removed = '-'
 let g:sort_motion_flags = 'i'
 let g:jsx_ext_required = 0
@@ -89,16 +90,18 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol binary sw=4 sts=4 ts=4 noet
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " Keybinds
+let mapleader = ","
+
 inoremap jk <ESC>
 
-let mapleader = ","
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>c :SyntasticToggleMode<CR>
-noremap <leader>ct :!column -t<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
+noremap <leader>ct :!column -t<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
-noremap <leader>n :noh<CR>
 noremap <leader>f :CtrlPFunky<CR>
+noremap <leader>n :noh<CR>
+noremap <leader>q :q<CR>
 noremap <leader>r :NERDTreeFind<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>t :NERDTreeToggle<CR>
@@ -107,10 +110,14 @@ noremap <leader>w :w<CR>
 let g:user_emmet_leader_key = '<C-E>'
 
 " Colors
-let g:base16colorspace=256
-colorscheme base16-eighties
 set background=dark
-hi TabLineFill ctermfg=Black ctermbg=Black
-hi TabLine ctermfg=Black ctermbg=Grey
-hi TabLineSel ctermfg=Green ctermbg=Black
-hi Search ctermbg=gray
+colorscheme solarized
+
+" neovim terminal emulator
+if has('nvim')
+	tnoremap jk <C-\><C-n>
+
+	noremap <leader>ss <C-W>s:terminal<CR>
+	noremap <leader>sv <C-W>v:terminal<CR>
+endif
+
