@@ -31,12 +31,6 @@ Download and execute the install script:
 $ curl -L http://install.ohmyz.sh | sh
 ```
 
-Install base-16:
-
-```console
-$ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-```
-
 ### Tmux setup
 
 Install `tpm`:
