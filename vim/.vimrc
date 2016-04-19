@@ -33,7 +33,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'travitch/hasksyn'
-Plugin 'Valloric/YouCompleteMe'
 
 " vim-jsx requires vim-javascript
 Plugin 'pangloss/vim-javascript'
@@ -90,6 +89,7 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol binary sw=4 sts=4 ts=4 noet
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " Keybinds
+let g:user_emmet_leader_key = '<C-E>'
 let mapleader = ","
 
 inoremap jk <ESC>
@@ -107,8 +107,6 @@ noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>t :NERDTreeToggle<CR>
 noremap <leader>w :w<CR>
 
-let g:user_emmet_leader_key = '<C-E>'
-
 " Colors
 set background=dark
 colorscheme solarized
@@ -120,4 +118,3 @@ if has('nvim')
 	noremap <leader>ss <C-W>s:terminal<CR>
 	noremap <leader>sv <C-W>v:terminal<CR>
 endif
-
