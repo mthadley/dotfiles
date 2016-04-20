@@ -4,7 +4,7 @@ filetype off
 
 let g:syntastic_javascript_checkers = ['csf']
 
-set rtp+=~/.vim/Bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle.vim'
