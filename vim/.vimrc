@@ -69,7 +69,7 @@ let g:ctrlp_custom_ignore = {
 	\ }
 
 " Use system clipboard as default
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -110,11 +110,3 @@ noremap <leader>w :w<CR>
 " Colors
 set background=dark
 colorscheme solarized
-
-" neovim terminal emulator
-if has('nvim')
-	tnoremap jk <C-\><C-n>
-
-	noremap <leader>ss <C-W>s:terminal<CR>
-	noremap <leader>sv <C-W>v:terminal<CR>
-endif

@@ -13,10 +13,6 @@ alias npr='npm run'
 alias o='xdg-open'
 alias tm='tmux -2'
 
-if command -v nvim >/dev/null 2>&1; then
-	alias vim='nvim'
-fi
-
 ## Liferay
 
 alias aa='ant all'

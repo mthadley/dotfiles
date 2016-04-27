@@ -2,7 +2,7 @@
 	email = michael.hadley@liferay.com
 	name = Michael Hadley
 [core]
-	editor = nvim
+	editor = vim
 	autocrlf = input
 	pager = less -x4
 	excludesfile = /Users/mike/.gitignore
