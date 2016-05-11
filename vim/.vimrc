@@ -2,7 +2,9 @@
 set nocompatible
 filetype off
 
+let g:syntastic_css_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
+let g:syntastic_scss_checkers = ['csf']
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
