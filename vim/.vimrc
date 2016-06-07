@@ -2,31 +2,26 @@
 set nocompatible
 filetype off
 
-let g:syntastic_css_checkers = ['csf']
-let g:syntastic_javascript_checkers = ['csf']
-let g:syntastic_scss_checkers = ['csf']
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle.vim'
 
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'ElmCast/elm-vim'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
-Plugin 'lambdatoast/elm.vim'
 Plugin 'lepture/vim-velocity'
 Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-commentary'
@@ -62,8 +57,14 @@ set sts=2
 set tabstop=2
 
 let g:gitgutter_sign_removed = '-'
+
 let g:sort_motion_flags = 'i'
+
 let g:jsx_ext_required = 0
+
+let g:syntastic_css_checkers = ['csf']
+let g:syntastic_javascript_checkers = ['csf']
+let g:syntastic_scss_checkers = ['csf']
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
@@ -73,12 +74,12 @@ let g:ctrlp_custom_ignore = {
 " Use system clipboard as default
 set clipboard+=unnamed
 
-" Remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
 " Autoreload file on change
 set autoread
 au CursorHold * checktime
+
+" Remove trailing whitespace
+au BufWritePre * :%s/\s\+$//e
 
 " Force syntax highlighting for certain file extensions
 au BufRead,BufNewFile *.css set filetype=scss
@@ -96,6 +97,25 @@ let mapleader = ","
 
 inoremap jk <ESC>
 
+" Open file epxloer
+noremap <C-E>e :Explore<CR>
+noremap <C-E>s :Hexplore<CR>
+noremap <C-E>v :Vexplore<CR>
+
+" Add trailing semicolon
+noremap <leader>; m'A;<ESC>g`'
+
+" Join collection of items to a single line
+noremap <leader>ja ?[\\|{\\|(<CR>v%Jx%lx:noh<CR>
+
+" Split collection of items to multiple lines
+noremap <leader>sa ?[\\|{\\|(<CR>v%:s/,/\0\r/g<CR>wi<CR><ESC>%li<CR><ESC>?[\\|{\\|(<CR>v%=:noh<CR>
+
+" Session management
+noremap <leader>ss :mks! ~/.vimsession<CR>
+noremap <leader>os :so ~/.vimsession<CR>
+
+" Misc
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>c :SyntasticToggleMode<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
@@ -104,9 +124,7 @@ noremap <leader>ev :vsplit $MYVIMRC<CR>
 noremap <leader>f :CtrlPFunky<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :q<CR>
-noremap <leader>r :NERDTreeFind<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
-noremap <leader>t :NERDTreeToggle<CR>
 noremap <leader>w :w<CR>
 
 " Colors
