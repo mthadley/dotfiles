@@ -22,6 +22,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rking/ag.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-commentary'
@@ -55,6 +56,9 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
+
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 1
 
 let g:gitgutter_sign_removed = '-'
 
