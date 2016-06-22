@@ -1,8 +1,9 @@
 # zprofile - Mike Hadley
 
 # Env
-export PATH="$PATH:$HOME/Scripts:$HOME/.rakudobrew/bin"
 export ANT_OPTS=-Xmx1024m
+export EDITOR=vim
+export PATH="$PATH:$HOME/Scripts:$HOME/.rakudobrew/bin"
 
 # Aliases
 
