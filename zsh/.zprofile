@@ -20,7 +20,7 @@ alias aa='ant all'
 alias aac='(cd ~/Liferay/liferay-plugins-ee/portlets/loop-portlet && aa && cd ~/Liferay/liferay-plugins-ee/themes/loop-theme && aa)'
 alias csf='git ls-files -m | xargs check_sf'
 
-# Subs
+# Functions
 
 gpp() {
 	[[ -z $1 ]] && 1='upstream'
@@ -30,12 +30,16 @@ gpp() {
 }
 
 lsl() {
-	NAME='bundle.nocsf.js'
-	SRC="/Users/mike/Liferay/liferay-plugins-ee/portlets/loop-portlet/docroot/js/dist/$NAME"
-	DST="/Users/mike/Liferay/bundles-ee/tomcat-7.0.54/webapps/loop-portlet/js/dist/$NAME"
+	local src_dir="/Users/mike/Liferay/liferay-plugins-ee/portlets/loop-portlet/docroot/js/dist"
+	local dst_dir="/Users/mike/Liferay/bundles-ee/tomcat-7.0.54/webapps/loop-portlet/js/dist"
 
-	[[ -e "$DST" ]] && rm "$DST"
+	for file in "$src_dir"/*; do
+		local filename=${file##*/}
+		local dst="$dst_dir/$filename"
 
-	echo "Linking $NAME"
-	ln -F "$SRC" "$DST"
+		[ -e "$dst" ] && rm "$dst"
+
+		echo "Linking $filename"
+		ln -F "$file" "$dst"
+	done
 }
