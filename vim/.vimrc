@@ -26,10 +26,12 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'travitch/hasksyn'
 
 " vim-jsx requires vim-javascript
@@ -59,8 +61,6 @@ set tabstop=2
 
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
-
-let g:gitgutter_sign_removed = '-'
 
 let g:sort_motion_flags = 'i'
 
@@ -118,6 +118,11 @@ noremap <leader>sa ?[\\|{\\|(<CR>v%:s/,/\0\r/g<CR>wi<CR><ESC>%li<CR><ESC>?[\\|{\
 " Session management
 noremap <leader>ss :mks! ~/.vimsession<CR>
 noremap <leader>os :so ~/.vimsession<CR>
+
+" Projections
+noremap <leader>a :A<CR>
+noremap <leader>as :AS<CR>
+noremap <leader>av :AV<CR>
 
 " Misc
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
