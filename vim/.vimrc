@@ -1,4 +1,5 @@
-" Vundle Stuff
+"" Vundle Stuff
+
 set nocompatible
 filetype off
 
@@ -6,6 +7,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle.vim'
+
+"" Plugins
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
@@ -41,7 +44,9 @@ Plugin 'mxw/vim-jsx'
 call vundle#end()
 filetype plugin indent on
 
-" Mike's stuff
+"" Settings
+
+set clipboard+=unnamed
 set cursorline
 set dir=/tmp
 set expandtab
@@ -59,6 +64,8 @@ set splitright
 set sts=2
 set tabstop=2
 
+"" Plugin Settings
+
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
 
@@ -68,6 +75,7 @@ let g:jsx_ext_required = 0
 
 let g:syntastic_css_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
+let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 let g:syntastic_scss_checkers = ['csf']
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
@@ -75,8 +83,25 @@ let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules)$',
 	\ }
 
-" Use system clipboard as default
-set clipboard+=unnamed
+let g:projectionist_heuristics = {
+	\ "package.json&build.xml&ivy.xml": {
+	\		"**/__tests__/*.js": {
+	\			"alternate": [
+	\				"{}.js",
+	\				"{dirname}/{basename|snakecase}/index.js"
+	\			],
+	\			"type": "test"
+	\		},
+	\		"*.js": {
+	\			"alternate": [
+	\				"{dirname}/__tests__/{basename}.js",
+	\				"{dirname}/../__tests__/{dirname|basename|camelcase}.js"
+	\			],
+	\			"type": "source"
+	\		}
+	\ }}
+
+"" au commands
 
 " Autoreload file on change
 set autoread
@@ -92,10 +117,8 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 " Liferay doesn't like trailing newlines...
 au BufRead,BufNewFile */Liferay/* setlocal noeol binary sw=4 sts=4 ts=4 noet
 
-" Ignore HTML files
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+"" Keybinds
 
-" Keybinds
 let g:user_emmet_leader_key = '<C-E>'
 let mapleader = ","
 
@@ -120,9 +143,9 @@ noremap <leader>ss :mks! ~/.vimsession<CR>
 noremap <leader>os :so ~/.vimsession<CR>
 
 " Projections
-noremap <leader>a :A<CR>
-noremap <leader>as :AS<CR>
-noremap <leader>av :AV<CR>
+noremap <C-A>a :A<CR>
+noremap <C-A>s :AS<CR>
+noremap <C-A>v :AV<CR>
 
 " Misc
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
@@ -136,6 +159,7 @@ noremap <leader>q :q<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>w :w<CR>
 
-" Colors
+"" Colors
+
 set background=dark
 colorscheme solarized
