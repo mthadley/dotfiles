@@ -14,8 +14,12 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'dag/vim-fish'
+Plugin 'duganchen/vim-soy'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ElmCast/elm-vim'
 Plugin 'henrik/vim-indexed-search'
+Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
@@ -72,6 +76,9 @@ let g:elm_format_autosave = 1
 let g:sort_motion_flags = 'i'
 
 let g:jsx_ext_required = 0
+let g:javascript_plugin_jsdoc = 1
+
+let g:lightline = { 'colorscheme': 'solarized' }
 
 let g:syntastic_css_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
@@ -115,7 +122,7 @@ au BufRead,BufNewFile *.css set filetype=scss
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Liferay doesn't like trailing newlines...
-au BufRead,BufNewFile */Liferay/* setlocal noeol binary sw=4 sts=4 ts=4 noet
+au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
 
 "" Keybinds
 
