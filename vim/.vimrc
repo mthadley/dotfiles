@@ -16,7 +16,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'dag/vim-fish'
 Plugin 'duganchen/vim-soy'
-Plugin 'editorconfig/editorconfig-vim'
+" Plugin 'editorconfig/editorconfig-vim'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'ElmCast/elm-vim'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'itchyny/lightline.vim'
@@ -31,6 +32,8 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rking/ag.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'slashmili/alchemist.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-projectionist'
@@ -87,26 +90,8 @@ let g:syntastic_scss_checkers = ['csf']
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules)$',
+	\ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules|deps|classes|build)$',
 	\ }
-
-let g:projectionist_heuristics = {
-	\ "package.json&build.xml&ivy.xml": {
-	\		"**/__tests__/*.js": {
-	\			"alternate": [
-	\				"{}.js",
-	\				"{dirname}/{basename|snakecase}/index.js"
-	\			],
-	\			"type": "test"
-	\		},
-	\		"*.js": {
-	\			"alternate": [
-	\				"{dirname}/__tests__/{basename}.js",
-	\				"{dirname}/../__tests__/{dirname|basename|camelcase}.js"
-	\			],
-	\			"type": "source"
-	\		}
-	\ }}
 
 "" au commands
 
@@ -166,7 +151,32 @@ noremap <leader>q :q<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>w :w<CR>
 
+" Fix Arrows when in tmux
+noremap <Esc>[A <Up>
+noremap <Esc>[B <Down>
+noremap <Esc>[C <Right>
+noremap <Esc>[D <Left>
 "" Colors
 
 set background=dark
 colorscheme solarized
+
+"" Projections
+
+let g:projectionist_heuristics = {
+	\ "package.json&build.xml&ivy.xml": {
+	\		"**/__tests__/*.js": {
+	\			"alternate": [
+	\				"{}.js",
+	\				"{dirname}/{basename|snakecase}/index.js"
+	\			],
+	\			"type": "test"
+	\		},
+	\		"*.js": {
+	\			"alternate": [
+	\				"{dirname}/__tests__/{basename}.js",
+	\				"{dirname}/../__tests__/{dirname|basename|camelcase}.js"
+	\			],
+	\			"type": "source"
+	\		}
+	\ }}
