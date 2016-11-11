@@ -10,20 +10,20 @@ Plugin 'gmarik/vundle.vim'
 
 "" Plugins
 
+" Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'duganchen/vim-soy'
-" Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ElmCast/elm-vim'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
 Plugin 'lepture/vim-velocity'
 Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
@@ -40,6 +40,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'travitch/hasksyn'
@@ -156,6 +157,7 @@ noremap <Esc>[A <Up>
 noremap <Esc>[B <Down>
 noremap <Esc>[C <Right>
 noremap <Esc>[D <Left>
+
 "" Colors
 
 set background=dark
