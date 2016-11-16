@@ -11,6 +11,7 @@ Plugin 'gmarik/vundle.vim'
 "" Plugins
 
 " Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -29,7 +30,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'rking/ag.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
@@ -74,6 +74,8 @@ set tabstop=2
 
 "" Plugin Settings
 
+let g:ackprg = 'ag --vimgrep'
+
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
 
@@ -109,6 +111,9 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Liferay doesn't like trailing newlines...
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
+
+" Wrap Lines when writing Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 "" Keybinds
 
