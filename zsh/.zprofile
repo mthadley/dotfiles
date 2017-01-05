@@ -3,7 +3,7 @@
 # Env
 export ANT_OPTS="-Xms4096M -Xmx4096M -XX:MaxPermSize=1024M -XX:-UseGCOverheadLimit"
 export EDITOR=vim
-export PATH="$PATH:$HOME/Scripts:$HOME/.rakudobrew/bin:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/Scripts:$HOME/.rakudobrew/bin:$HOME/.cargo/bin:$HOME/.local/bin"
 
 # Aliases
 
@@ -23,14 +23,14 @@ alias csf='git ls-files -m | xargs check_sf'
 
 # Functions
 
-gpp() {
+function gpp {
 	[[ -z $1 ]] && 1='upstream'
 	[[ -z $2 ]] && 2=$(git rev-parse --abbrev-ref HEAD)
 
 	git pull "$1" "$2" && git push origin "$2"
 }
 
-lsl() {
+function lsl {
 	local src_dir="/Users/mike/Liferay/liferay-plugins-ee/portlets/loop-portlet/docroot/js/dist"
 	local dst_dir="/Users/mike/Liferay/bundles-ee/tomcat-7.0.54/webapps/loop-portlet/js/dist"
 
@@ -52,7 +52,7 @@ function gw {
 		root_level="$root_level/gradlew"
 	else
 		root_level=$(which gradle)
- fi
+	fi
 
 	"$root_level" $@
 }
