@@ -30,6 +30,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mileszs/ack.vim'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
@@ -45,7 +46,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'travitch/hasksyn'
-Plugin 'vimwiki/vimwiki'
 
 "" vim-jsx requires vim-javascript
 Plugin 'pangloss/vim-javascript'
@@ -89,6 +89,10 @@ let g:sort_motion_flags = 'i'
 "" pangloss/vim-javascript
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
+
+"" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
 
 "" itchyny/lightline.vim
 let g:lightline = { 'colorscheme': 'solarized' }
