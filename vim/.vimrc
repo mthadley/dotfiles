@@ -24,6 +24,7 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'lepture/vim-velocity'
 Plugin 'mattn/emmet-vim'
 Plugin 'michaeljsmith/vim-indent-object'
@@ -50,6 +51,10 @@ Plugin 'travitch/hasksyn'
 "" vim-jsx requires vim-javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+
+"" tsuquyomi requires vimproc
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Quramy/tsuquyomi'
 
 call vundle#end()
 filetype plugin indent on
@@ -82,6 +87,8 @@ let g:ackprg = 'ag --vimgrep'
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
+let g:elm_make_show_warnings = 1
+let g:elm_detailed_complete = 1
 
 "" christoomey/vim-sort-motion
 let g:sort_motion_flags = 'i'
@@ -109,6 +116,9 @@ let g:ctrlp_custom_ignore = {
       \ 'dir': '\v[\/]\.?(git|hg|svn|elm-stuff|node_modules|deps|classes|build)$',
       \ }
 
+" Quramy/tsuquyomi - typescript
+let g:tsuquyomi_completion_detail = 1
+
 " au commands
 
 "" Autoreload file on change
@@ -127,6 +137,12 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
 
 "" Wrap Lines when writing Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
+
+"" Formatting js
+au FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --no-bracket-spacing\ --trailing-comma=all
+
+"" Typescript hints
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 " Keybinds
 
