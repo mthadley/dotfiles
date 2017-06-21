@@ -16,12 +16,13 @@ These require a few extra steps before their configuration is complete:
 
 ### Vim Setup
 
-Make sure to install vundle first:
+Make sure to install `plug` first:
 
 ```console
-$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-Then simply run `:PluginInstall`
+Then run `:PlugInstall`.
 
 ### ZSH setup
 

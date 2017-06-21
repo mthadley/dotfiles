@@ -1,63 +1,54 @@
-" Vundle Stuff
-
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle.vim'
-
 "" Plugins
+call plug#begin('~/.vim/bundle')
 
-" Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'christoomey/vim-sort-motion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dag/vim-fish'
-Plugin 'duganchen/vim-soy'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'ElmCast/elm-vim'
-Plugin 'henrik/vim-indexed-search'
-Plugin 'itchyny/lightline.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'lepture/vim-velocity'
-Plugin 'mattn/emmet-vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'mileszs/ack.vim'
-Plugin 'mthadley/syntastic-csf'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
-Plugin 'slashmili/alchemist.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
-Plugin 'travitch/hasksyn'
+" Plug 'editorconfig/editorconfig-vim'
+Plug 'cespare/vim-toml'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'christoomey/vim-sort-motion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dag/vim-fish'
+Plug 'duganchen/vim-soy'
+Plug 'elixir-lang/vim-elixir'
+Plug 'ElmCast/elm-vim'
+Plug 'henrik/vim-indexed-search'
+Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+Plug 'lepture/vim-velocity'
+Plug 'mattn/emmet-vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'mileszs/ack.vim'
+Plug 'mthadley/syntastic-csf'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'plasticboy/vim-markdown'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'slashmili/alchemist.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'travitch/hasksyn'
 
 "" vim-jsx requires vim-javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 "" tsuquyomi requires vimproc
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc.vim'
+Plug 'Quramy/tsuquyomi'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " Settings
 
@@ -86,7 +77,7 @@ let g:ackprg = 'ag --vimgrep'
 
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
-let g:elm_format_autosave = 1
+let g:elm_format_autosave = 0
 let g:elm_make_show_warnings = 1
 let g:elm_detailed_complete = 1
 
@@ -139,10 +130,10 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 "" Formatting js
-au FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --no-bracket-spacing\ --trailing-comma=all
+au FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --no-bracket-spacing\ --trailing-comma=all
 
 "" Typescript hints
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 " Keybinds
 
