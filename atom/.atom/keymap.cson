@@ -1,4 +1,0 @@
-'atom-text-editor':
-    'ctrl-shift-e': 'emmet:expand-abbreviation'
-'atom-text-editor.vim-mode.insert-mode':
-  'j k': 'vim-mode:activate-normal-mode'
