@@ -18,3 +18,8 @@ export FZF_DEFAULT_OPTS="--color=16"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
+
+# Liferay/Java
+eval "$(jenv init -)"
+
+export PATH="$HOME/.yarn/bin:$PATH"

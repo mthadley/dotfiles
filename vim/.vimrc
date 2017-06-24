@@ -142,7 +142,7 @@ let mapleader = ","
 
 inoremap jk <ESC>
 
-"" Open file epxloer
+"" Open file explorer
 noremap <C-E>e :Explore<CR>
 noremap <C-E>s :Hexplore<CR>
 noremap <C-E>v :Vexplore<CR>
@@ -192,8 +192,8 @@ noremap <Esc>[D <Left>
 
 " Colors
 
-set background=dark
 colorscheme solarized
+set background=dark
 
 " Projections
 
