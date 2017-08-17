@@ -1,11 +1,10 @@
 "" Plugins
 call plug#begin('~/.vim/bundle')
 
-" Plug 'editorconfig/editorconfig-vim'
-Plug 'cespare/vim-toml'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
@@ -29,6 +28,7 @@ Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'slashmili/alchemist.vim'
 Plug 'tacahiroy/ctrlp-funky'
+Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
