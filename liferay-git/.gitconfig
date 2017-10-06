@@ -4,7 +4,7 @@
 [core]
 	editor = vim
 	autocrlf = input
-	pager = less -x4
+	pager = less -+F
 	excludesfile = /Users/mike/.gitignore
 [alias]
 	oldest-ancestor = !zsh -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
@@ -15,3 +15,5 @@
 	required = true
 [push]
 	default = current
+[includeIf "gitdir:~/projects/personal/"]
+	path = .gitconfig-personal
