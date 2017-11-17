@@ -191,7 +191,7 @@ colorscheme solarized
 set background=dark
 
 " Setup persistent undo
-"
+
 if has('persistent_undo')
     let undo_dir = expand('$HOME/.vim/undo_dir')
     if !isdirectory(undo_dir)
