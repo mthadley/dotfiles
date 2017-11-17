@@ -3,6 +3,8 @@
 
 fish_vi_key_bindings
 
+bind -M insert -m default jk backward-char force-repaint
+
 set -x EDITOR vim
 set -x fish_greeting ''
 set -x PATH $PATH "$HOME/.cargo/bin"

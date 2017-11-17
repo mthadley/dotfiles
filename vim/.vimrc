@@ -20,11 +20,9 @@ Plug 'lepture/vim-velocity'
 Plug 'mattn/emmet-vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
-Plug 'mthadley/syntastic-csf'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'slashmili/alchemist.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -39,6 +37,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'travitch/hasksyn'
+Plug 'w0rp/ale'
 
 "" vim-jsx requires vim-javascript
 Plug 'pangloss/vim-javascript'
@@ -72,12 +71,15 @@ set tabstop=2
 
 " Plugin Settings
 
+"" Plug 'w0rp/ale'
+let g:ale_linters = {'rust': ['rls']}
+
 "" mileszs/ack.vim
 let g:ackprg = 'ag --vimgrep'
 
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
-let g:elm_format_autosave = 0
+let g:elm_format_autosave = 1
 let g:elm_make_show_warnings = 1
 let g:elm_detailed_complete = 1
 
@@ -94,12 +96,6 @@ let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
 
 "" itchyny/lightline.vim
 let g:lightline = { 'colorscheme': 'solarized' }
-
-"" scrooloose/syntastic
-let g:syntastic_css_checkers = ['csf']
-let g:syntastic_javascript_checkers = ['csf']
-let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
-let g:syntastic_scss_checkers = ['csf']
 
 "" ctrlpvim/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlPCurWD'
@@ -130,7 +126,7 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 "" Formatting js
-au FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --no-bracket-spacing\ --trailing-comma=all
+au FileType javascript setlocal formatprg=prettier
 
 "" Typescript hints
 au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
@@ -174,7 +170,6 @@ noremap <C-G>e :Gedit<CR>
 
 "" Misc
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
-noremap <leader>c :SyntasticToggleMode<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
@@ -194,6 +189,17 @@ noremap <Esc>[D <Left>
 
 colorscheme solarized
 set background=dark
+
+" Setup persistent undo
+"
+if has('persistent_undo')
+    let undo_dir = expand('$HOME/.vim/undo_dir')
+    if !isdirectory(undo_dir)
+        call mkdir(undo_dir, "", 0700)
+    endif
+    set undodir=$HOME/.vim/undo_dir
+    set undofile
+endif
 
 " Projections
 
