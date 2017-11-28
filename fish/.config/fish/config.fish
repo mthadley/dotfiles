@@ -25,3 +25,8 @@ alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 
 ## java version manager
 [ -s "/Users/mike/.jabba/jabba.fish" ]; and source "/Users/mike/.jabba/jabba.fish"
+
+# Base16 Shell
+if status --is-interactive
+    eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
+end
