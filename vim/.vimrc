@@ -2,17 +2,17 @@
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
+Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
 Plug 'duganchen/vim-soy'
+Plug 'edkolev/tmuxline.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'ElmCast/elm-vim'
 Plug 'henrik/vim-indexed-search'
-Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
@@ -51,7 +51,7 @@ call plug#end()
 
 " Settings
 
-set clipboard+=unnamed
+set clipboard=unnamed
 set cursorline
 set dir=/tmp
 set expandtab
@@ -71,7 +71,22 @@ set tabstop=2
 
 " Plugin Settings
 
-"" Plug 'w0rp/ale'
+"" chriskempson/base16-vim
+let g:base16colorspace=256
+
+"" edkolev/tmuxline.vim
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '',
+      \'c'    : '',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '',
+      \'y'    : '',
+      \'z'    : ''}
+
+"" 'w0rp/ale'
 let g:ale_linters = {'rust': ['rls']}
 
 "" mileszs/ack.vim
@@ -93,9 +108,6 @@ let g:javascript_plugin_jsdoc = 1
 "" plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
-
-"" itchyny/lightline.vim
-let g:lightline = { 'colorscheme': 'solarized' }
 
 "" ctrlpvim/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlPCurWD'
@@ -187,7 +199,7 @@ noremap <Esc>[D <Left>
 
 " Colors
 
-colorscheme solarized
+colorscheme base16-ocean
 set background=dark
 
 " Setup persistent undo
