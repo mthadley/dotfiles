@@ -21,9 +21,9 @@ Plug 'mattn/emmet-vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
-Plug 'SirVer/ultisnips'
 Plug 'slashmili/alchemist.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'tpope/tpope-vim-abolish'
@@ -36,7 +36,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'travitch/hasksyn'
 Plug 'w0rp/ale'
 
 "" vim-jsx requires vim-javascript
@@ -56,6 +55,7 @@ set cursorline
 set dir=/tmp
 set expandtab
 set fileformats+=dos
+set formatoptions+=j
 set hlsearch
 set ignorecase
 set mouse=a
@@ -84,10 +84,10 @@ let g:tmuxline_preset = {
       \'cwin' : '#I #W',
       \'x'    : '',
       \'y'    : '',
-      \'z'    : ''}
+      \'z'    : '#(uptime | cut -d " " -f 5 | sed "s/,//")'}
 
 "" 'w0rp/ale'
-let g:ale_linters = {'rust': ['rls']}
+" let g:ale_linters = {'rust': ['rls']}
 
 "" mileszs/ack.vim
 let g:ackprg = 'ag --vimgrep'
@@ -196,6 +196,10 @@ noremap <Esc>[A <Up>
 noremap <Esc>[B <Down>
 noremap <Esc>[C <Right>
 noremap <Esc>[D <Left>
+cmap <Esc>[A <Up>
+cmap <Esc>[B <Down>
+cmap <Esc>[C <Right>
+cmap <Esc>[D <Left>
 
 " Colors
 

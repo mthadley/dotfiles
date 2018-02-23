@@ -1,4 +1,4 @@
-function gw --description 'Gradle runner'
+function gw --description 'Gradle runner' --wraps 'gradle'
   set gradle_path (git rev-parse --show-toplevel ^/dev/null)
 
   if test \( -d $gradle_path \) -a \( -f "$gradle_path/gradlew" \)
