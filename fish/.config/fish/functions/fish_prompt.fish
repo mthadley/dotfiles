@@ -21,11 +21,11 @@ function fish_prompt
   set -l blue (set_color -o blue)
   set -l normal (set_color normal)
 
-  set -l cwd $cyan(basename (prompt_pwd))
+  set -l cwd $cyan (basename (prompt_pwd))
 
   if _is_git_repo
     set -l repo_branch $red(_git_branch_name)
-    set repo_info "$blue ⤷ $repo_branch$blue"
+    set repo_info "$blue -> $repo_branch$blue"
 
     if test (_is_git_dirty)
       set -l dirty "$yellow *"

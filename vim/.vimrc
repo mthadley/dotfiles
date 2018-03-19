@@ -69,6 +69,14 @@ set splitright
 set sts=2
 set tabstop=2
 
+" Setup Find
+
+if executable('rg')
+  set grepprg=rg\ --vimgrep
+endif
+
+command! -nargs=+ -complete=file Find execute 'silent! grep <args> | redraw! | copen'
+
 " Plugin Settings
 
 "" chriskempson/base16-vim
@@ -78,13 +86,13 @@ let g:base16colorspace=256
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'b'    : '',
+      \'b'    : '#(uptime | cut -d "," -f 1 | cut -d " " -f 5-) up',
       \'c'    : '',
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
       \'x'    : '',
-      \'y'    : '',
-      \'z'    : '#(uptime | cut -d " " -f 5 | sed "s/,//")'}
+      \'y'    : '#H',
+      \'z'    : '#(date +"%a %b %e %R %p")'}
 
 "" 'w0rp/ale'
 " let g:ale_linters = {'rust': ['rls']}
@@ -127,7 +135,7 @@ au CursorHold * checktime
 "" Remove trailing whitespace
 au BufWritePre * :%s/\s\+$//e
 
-"" Force syntax highlighting for certain file extensions
+
 au BufRead,BufNewFile *.css set filetype=scss
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
@@ -181,8 +189,10 @@ noremap <C-G>h :Gbrowse<CR>
 noremap <C-G>e :Gedit<CR>
 
 "" Misc
+
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>ccp :CtrlPClearAllCaches<CR>
+noremap <leader>cw :call ToggleCW()<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
 noremap <leader>f :CtrlPFunky<CR>
@@ -209,12 +219,12 @@ set background=dark
 " Setup persistent undo
 
 if has('persistent_undo')
-    let undo_dir = expand('$HOME/.vim/undo_dir')
-    if !isdirectory(undo_dir)
-        call mkdir(undo_dir, "", 0700)
-    endif
-    set undodir=$HOME/.vim/undo_dir
-    set undofile
+  let undo_dir = expand('$HOME/.vim/undo_dir')
+  if !isdirectory(undo_dir)
+    call mkdir(undo_dir, "", 0700)
+  endif
+  set undodir=$HOME/.vim/undo_dir
+  set undofile
 endif
 
 " Projections
@@ -236,3 +246,16 @@ let g:projectionist_heuristics = {
       \			"type": "source"
       \		}
       \ }}
+
+" Functions
+"
+function! ToggleCW()
+  for i in range(1, winnr('$'))
+    let bnum = winbufnr(i)
+    if getbufvar(bnum, '&buftype') == 'quickfix'
+      cclose
+      return
+    endif
+  endfor
+  copen
+endfunction
