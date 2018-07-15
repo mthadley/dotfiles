@@ -19,7 +19,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'lepture/vim-velocity'
 Plug 'mattn/emmet-vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'plasticboy/vim-markdown'
@@ -41,10 +40,6 @@ Plug 'w0rp/ale'
 "" vim-jsx requires vim-javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
-"" tsuquyomi requires vimproc
-Plug 'Shougo/vimproc.vim'
-Plug 'Quramy/tsuquyomi'
 
 call plug#end()
 
@@ -86,7 +81,7 @@ let g:base16colorspace=256
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'b'    : '#(uptime | cut -d "," -f 1 | cut -d " " -f 5-) up',
+      \'b'    : '#(uptime | cut -d "," -f 1 | cut -d " " -f 3-)',
       \'c'    : '',
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
@@ -96,9 +91,6 @@ let g:tmuxline_preset = {
 
 "" 'w0rp/ale'
 " let g:ale_linters = {'rust': ['rls']}
-
-"" mileszs/ack.vim
-let g:ackprg = 'ag --vimgrep'
 
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
@@ -122,9 +114,6 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
       \ 'dir': '\v[\/]\.?(git|hg|svn|elm-stuff|node_modules|deps|classes|build)$',
       \ }
-
-" Quramy/tsuquyomi - typescript
-let g:tsuquyomi_completion_detail = 1
 
 " au commands
 
