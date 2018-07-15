@@ -74,6 +74,12 @@ command! -nargs=+ -complete=file Find execute 'silent! grep <args> | redraw! | c
 
 " Plugin Settings
 
+"" 'w0rp/ale'
+let g:ale_completion_enabled = 0
+let g:ale_linters = {
+\   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
+\}
+
 "" chriskempson/base16-vim
 let g:base16colorspace=256
 
@@ -88,9 +94,6 @@ let g:tmuxline_preset = {
       \'x'    : '',
       \'y'    : '#H',
       \'z'    : '#(date +"%a %b %e %R %p")'}
-
-"" 'w0rp/ale'
-" let g:ale_linters = {'rust': ['rls']}
 
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
@@ -166,9 +169,9 @@ noremap <leader>ss :mks! ~/.vimsession<CR>
 noremap <leader>os :so ~/.vimsession<CR>
 
 "" Projections
-noremap <C-A>a :A<CR>
-noremap <C-A>s :AS<CR>
-noremap <C-A>v :AV<CR>
+noremap <leader>to :A<CR>
+noremap <leader>ts :AS<CR>
+noremap <leader>tv :AV<CR>
 
 "" Git
 noremap <C-G>s :Gstatus<CR>
@@ -184,7 +187,6 @@ noremap <leader>ccp :CtrlPClearAllCaches<CR>
 noremap <leader>cw :call ToggleCW()<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
-noremap <leader>f :CtrlPFunky<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :q<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
@@ -219,25 +221,25 @@ endif
 " Projections
 
 let g:projectionist_heuristics = {
-      \ "package.json&build.xml&ivy.xml": {
-      \		"**/__tests__/*.js": {
-      \			"alternate": [
-      \				"{}.js",
-      \				"{dirname}/{basename|snakecase}/index.js"
-      \			],
-      \			"type": "test"
-      \		},
-      \		"*.js": {
-      \			"alternate": [
-      \				"{dirname}/__tests__/{basename}.js",
-      \				"{dirname}/../__tests__/{dirname|basename|camelcase}.js"
-      \			],
-      \			"type": "source"
-      \		}
-      \ }}
+\ "package.json": {
+\		"**/__tests__/*.js": {
+\			"alternate": [
+\				"{}.js",
+\				"{dirname}/{basename|snakecase}/index.js"
+\			],
+\			"type": "test"
+\		},
+\		"*.js": {
+\			"alternate": [
+\				"{dirname}/__tests__/{basename}.js",
+\				"{dirname}/../__tests__/{dirname|basename|camelcase}.js"
+\			],
+\			"type": "source"
+\		}
+\}}
 
 " Functions
-"
+
 function! ToggleCW()
   for i in range(1, winnr('$'))
     let bnum = winbufnr(i)
