@@ -23,9 +23,6 @@ alias gst 'git status'
 alias gwch 'git whatchanged -p --abbrev-commit --pretty=medium'
 alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
 
-## java version manager
-[ -s "/Users/mike/.jabba/jabba.fish" ]; and source "/Users/mike/.jabba/jabba.fish"
-
 ## autojump
 begin
     set -l autojump_path /usr/local/share/autojump/autojump.fish
