@@ -1,4 +1,4 @@
-"" Plugins
+" Plugins
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'
@@ -22,6 +22,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'prettier/vim-prettier'
 Plug 'rust-lang/rust.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -111,6 +112,9 @@ let g:javascript_plugin_jsdoc = 1
 "" plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
+
+"" prettier/vim-prettier
+let g:prettier#config#use_tabs = 'true'
 
 "" ctrlpvim/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlPCurWD'
@@ -232,7 +236,8 @@ let g:projectionist_heuristics = {
 \		"*.js": {
 \			"alternate": [
 \				"{dirname}/__tests__/{basename}.js",
-\				"{dirname}/../__tests__/{dirname|basename|camelcase}.js"
+\				"{dirname}/../__tests__/{dirname|basename|camelcase|capitalize}.js",
+\				"{dirname}/__tests__/{dirname|basename|camelcase|capitalize}.js"
 \			],
 \			"type": "source"
 \		}
