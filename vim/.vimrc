@@ -1,12 +1,12 @@
 " Plugins
 call plug#begin('~/.vim/bundle')
 
+Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
 Plug 'duganchen/vim-soy'
 Plug 'edkolev/tmuxline.vim'
@@ -14,6 +14,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'ElmCast/elm-vim'
 Plug 'henrik/vim-indexed-search'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'lepture/vim-velocity'
@@ -25,7 +26,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier'
 Plug 'rust-lang/rust.vim'
 Plug 'slashmili/alchemist.vim'
-Plug 'tacahiroy/ctrlp-funky'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -77,6 +77,7 @@ command! -nargs=+ -complete=file Find execute 'silent! grep <args> | redraw! | c
 
 "" 'w0rp/ale'
 let g:ale_completion_enabled = 0
+let g:ale_set_highlights = 1
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
 \}
@@ -95,6 +96,12 @@ let g:tmuxline_preset = {
       \'x'    : '',
       \'y'    : '#H',
       \'z'    : '#(date +"%a %b %e %R %p")'}
+
+"" junegunn/fzf.vim
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
@@ -115,12 +122,6 @@ let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
 
 "" prettier/vim-prettier
 let g:prettier#config#use_tabs = 'true'
-
-"" ctrlpvim/ctrlp.vim
-let g:ctrlp_cmd = 'CtrlPCurWD'
-let g:ctrlp_custom_ignore = {
-      \ 'dir': '\v[\/]\.?(git|hg|svn|elm-stuff|node_modules|deps|classes|build)$',
-      \ }
 
 " au commands
 
@@ -153,6 +154,9 @@ let g:user_emmet_leader_key = '<C-E>'
 let mapleader = ","
 
 inoremap jk <ESC>
+
+"" fzf
+noremap <C-P> :Files<CR>
 
 "" Open file explorer
 noremap <C-E>e :Explore<CR>
@@ -187,7 +191,6 @@ noremap <C-G>e :Gedit<CR>
 "" Misc
 
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
-noremap <leader>ccp :CtrlPClearAllCaches<CR>
 noremap <leader>cw :call ToggleCW()<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>

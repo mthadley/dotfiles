@@ -1,30 +1,39 @@
-# zprofile - Mike Hadley
+#
+# File: .zprofile
+# Author: Michael T. Hadley (@mthadley)
+#
+
+# vi keybinds
+bindkey -v
 
 # Env
-export ANT_OPTS="-Xms4096M -Xmx4096M -XX:MaxPermSize=1024M -XX:-UseGCOverheadLimit"
 export EDITOR=vim
-export PATH="$PATH:$HOME/Scripts:$HOME/.rakudobrew/bin:$HOME/.cargo/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/Scripts:$HOME/.cargo/bin:$HOME/.local/bin"
 
 # Aliases
 
 ## General
 
+### git
 alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
-alias gsh='telnet localhost 11311'
+alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+
+### misc
 alias npr='npm run'
 alias o='xdg-open'
 alias tm='tmux -2'
 
-# Functions
+# ruby
+if [ -d /usr/local/opt/chruby/share/chruby ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
 
-function gw {
-	local root_level=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [ -e .ruby-version ]; then
+    chruby $(cat .ruby-version)
+  fi
+fi
 
-	if [[ -n "$root_level" && -f "$root_level/gradlew" ]]; then
-		root_level="$root_level/gradlew"
-	else
-		root_level=$(which gradle)
-	fi
-
-	"$root_level" $@
-}
+# node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

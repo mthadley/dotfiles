@@ -1,5 +1,6 @@
-
+#
 # Author: Michael T. Hadley (mikethadley@gmail.com)
+#
 
 fish_vi_key_bindings
 
@@ -12,8 +13,6 @@ set -x ANT_OPTS '-Xmx2048m'
 
 # aliases
 
-alias aa 'ant all'
-alias gsh 'telnet localhost 11311'
 alias npr 'npm run'
 alias tm 'tmux -2'
 
@@ -35,4 +34,6 @@ if status --is-interactive
 end
 
 # OPAM configuration
-eval (opam config env)
+if test -e ~/.opam/config
+    eval (opam config env)
+end
