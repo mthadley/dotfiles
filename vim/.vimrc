@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'lepture/vim-velocity'
+Plug 'LnL7/vim-nix'
 Plug 'mattn/emmet-vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mustache/vim-mustache-handlebars'
@@ -30,6 +31,7 @@ Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
@@ -50,7 +52,6 @@ set clipboard=unnamed
 set cursorline
 set dir=/tmp
 set expandtab
-set fileformats+=dos
 set formatoptions+=j
 set hlsearch
 set ignorecase
@@ -65,6 +66,9 @@ set splitright
 set sts=2
 set tabstop=2
 
+"" Synax is slow in Ruby
+set regexpengine=1
+
 " Setup Find
 
 if executable('rg')
@@ -78,6 +82,8 @@ command! -nargs=+ -complete=file Find execute 'silent! grep <args> | redraw! | c
 "" 'w0rp/ale'
 let g:ale_completion_enabled = 0
 let g:ale_set_highlights = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
 \}
@@ -106,7 +112,6 @@ let g:fzf_action = {
 "" ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
-let g:elm_make_show_warnings = 1
 let g:elm_detailed_complete = 1
 
 "" christoomey/vim-sort-motion
@@ -120,9 +125,6 @@ let g:javascript_plugin_jsdoc = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
 
-"" prettier/vim-prettier
-let g:prettier#config#use_tabs = 'true'
-
 " au commands
 
 "" Autoreload file on change
@@ -132,12 +134,8 @@ au CursorHold * checktime
 "" Remove trailing whitespace
 au BufWritePre * :%s/\s\+$//e
 
-
 au BufRead,BufNewFile *.css set filetype=scss
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
-
-"" Liferay doesn't like trailing newlines...
-au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
 
 "" Wrap Lines when writing Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
@@ -147,6 +145,15 @@ au FileType javascript setlocal formatprg=prettier
 
 "" Typescript hints
 au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+
+"" Elm
+augroup filetype_elm_test
+    au!
+    au FileType elm highlight ALEError ctermfg=1
+    au BufNewFile,BufRead ui/tests/**/*.elm
+          \ let b:ale_elm_make_executable= '/Users/mthadley/projects/NoRedInk/ui/node_modules/.bin/elm-test'
+          \ | let b:ale_elm_make_use_global=1
+augroup END
 
 " Keybinds
 
@@ -163,14 +170,9 @@ noremap <C-E>e :Explore<CR>
 noremap <C-E>s :Hexplore<CR>
 noremap <C-E>v :Vexplore<CR>
 
-"" Add trailing semicolon
-noremap <leader>; m'A;<ESC>g`'
-
-"" Join collection of items to a single line
-noremap <leader>ja ?[\\|{\\|(<CR>v%Jx%lx:noh<CR>
-
-"" Split collection of items to multiple lines
-noremap <leader>sa ?[\\|{\\|(<CR>v%:s/,/\0\r/g<CR>wi<CR><ESC>%li<CR><ESC>?[\\|{\\|(<CR>v%=:noh<CR>
+"" Ale
+nnoremap ]e :ALENextWrap<CR>
+nnoremap [e :ALEPreviousWrap<CR>
 
 "" Session management
 noremap <leader>ss :mks! ~/.vimsession<CR>
@@ -188,11 +190,15 @@ noremap <C-G>b :Gblame<CR>
 noremap <C-G>h :Gbrowse<CR>
 noremap <C-G>e :Gedit<CR>
 
+"" Rails
+noremap <leader>ra :A<CR>
+noremap <leader>re :R<CR>
+
 "" Misc
 
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
-noremap <leader>cw :call ToggleCW()<CR>
 noremap <leader>ct :!column -t<CR>
+noremap <leader>cw :call ToggleCW()<CR>
 noremap <leader>ev :vsplit $MYVIMRC<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :q<CR>

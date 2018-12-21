@@ -8,12 +8,13 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(colored-man-pages git sublime jump sudo web-search vi-mode)
+plugins=(colored-man-pages git jump sudo vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+#
+export FZF_DEFAULT_COMMAND="rg --files"
 export FZF_DEFAULT_OPTS="--color=16"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
