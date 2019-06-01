@@ -67,6 +67,13 @@ set splitright
 set sts=2
 set tabstop=2
 
+"" Fix mouse resizing when in tmux
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+
 "" Synax is slow in Ruby
 set regexpengine=1
 
