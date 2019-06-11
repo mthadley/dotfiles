@@ -204,7 +204,7 @@ noremap <leader>re :R<CR>
 noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>cw :call ToggleCW()<CR>
-noremap <leader>ev :vsplit $MYVIMRC<CR>
+noremap <leader>ev :e $MYVIMRC<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :q<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
