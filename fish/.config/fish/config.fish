@@ -3,6 +3,8 @@
 # Author: Michael T. Hadley (mikethadley@gmail.com)
 #
 
+# disable vi cursor shapes for different modes
+function fish_vi_cursor; end
 fish_vi_key_bindings
 
 bind -M insert -m default jk backward-char force-repaint
