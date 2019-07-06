@@ -9,8 +9,7 @@ bind -M insert -m default jk backward-char force-repaint
 
 set -x EDITOR vim
 set -x fish_greeting ''
-set -x PATH $PATH "$HOME/.cargo/bin" "$HOME/.local/bin"
-set -x ANT_OPTS '-Xmx2048m'
+set -x PATH $PATH "$HOME/.cargo/bin"
 
 # aliases
 
