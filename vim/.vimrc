@@ -177,8 +177,9 @@ noremap <C-E>s :Hexplore<CR>
 noremap <C-E>v :Vexplore<CR>
 
 "" Ale
-nnoremap ]e :ALENextWrap<CR>
-nnoremap [e :ALEPreviousWrap<CR>
+nnoremap <leader>e] :ALENextWrap<CR>
+nnoremap <leader>e[ :ALEPreviousWrap<CR>
+nnoremap <leader>ed :ALEDetail<CR>
 
 "" Session management
 noremap <leader>ss :mks! ~/.vimsession<CR>
