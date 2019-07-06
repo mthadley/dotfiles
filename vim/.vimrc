@@ -85,6 +85,7 @@ command! -nargs=+ -complete=file Find execute 'silent! grep <args> | redraw! | c
 " Plugin Settings
 
 "" 'w0rp/ale'
+let g:ale_elm_make_use_global = 1
 let g:ale_completion_enabled = 0
 let g:ale_set_highlights = 1
 let g:ale_lint_on_text_changed = 'never'
