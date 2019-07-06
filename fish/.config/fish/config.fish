@@ -1,4 +1,5 @@
 #
+# File: My fish config
 # Author: Michael T. Hadley (mikethadley@gmail.com)
 #
 
@@ -31,9 +32,4 @@ end
 # Base16 Shell
 if status --is-interactive
     eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
-end
-
-# OPAM configuration
-if test -e ~/.opam/config
-    eval (opam config env)
 end
