@@ -22,7 +22,7 @@ alias gst 'git status'
 alias gwch 'git whatchanged -p --abbrev-commit --pretty=medium'
 alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
 
-## autojump
+# autojump
 begin
     set -l autojump_path /usr/local/share/autojump/autojump.fish
     [ -f $autojump_path ]; and source $autojump_path
@@ -31,4 +31,9 @@ end
 # Base16 Shell
 if status --is-interactive
     eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
+end
+
+# direnv
+if command -s direnv > /dev/null
+    direnv hook fish | source
 end
