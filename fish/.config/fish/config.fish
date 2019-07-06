@@ -11,6 +11,10 @@ set -x EDITOR vim
 set -x fish_greeting ''
 set -x PATH $PATH "$HOME/.cargo/bin"
 
+# fzf stuff
+set -x FZF_DEFAULT_COMMAND "rg --files"
+set -x FZF_DEFAULT_OPTS "--color=16"
+
 # aliases
 
 alias npr 'npm run'
