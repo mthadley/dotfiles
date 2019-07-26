@@ -11,7 +11,7 @@ bind -M insert -m default jk backward-char force-repaint
 
 set -x EDITOR vim
 set -x fish_greeting ''
-set -x PATH $PATH "$HOME/.cargo/bin"
+set -x PATH $PATH "$HOME/.cargo/bin" "$HOME/.nix-profile/bin"
 
 # fzf stuff
 set -x FZF_DEFAULT_COMMAND "rg --files"
@@ -28,6 +28,14 @@ alias gco 'git checkout'
 alias gst 'git status'
 alias gwch 'git whatchanged -p --abbrev-commit --pretty=medium'
 alias gplog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
+
+# nix
+begin
+    set -l source ~/.nix-profile/etc/profile.d/nix.sh
+    if [ -f $source ]
+        export (echo "source $source; env" | bash | grep NIX)
+    end
+end
 
 # autojump
 begin
