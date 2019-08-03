@@ -3,6 +3,7 @@ call plug#begin('~/.vim/bundle')
 
 Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
+Plug 'alx741/vim-hindent'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'chriskempson/base16-vim'
