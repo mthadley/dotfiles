@@ -11,7 +11,7 @@ bind -M insert -m default jk backward-char force-repaint
 
 set -x EDITOR vim
 set -x fish_greeting ''
-set -x PATH $PATH "$HOME/.cargo/bin" "$HOME/.nix-profile/bin"
+set -x PATH $PATH "$HOME/.cargo/bin" "$HOME/.nix-profile/bin" "$HOME/.local/bin"
 
 # fzf stuff
 set -x FZF_DEFAULT_COMMAND "rg --files"
