@@ -75,13 +75,11 @@ end
 "" Synax is slow in Ruby
 set regexpengine=1
 
-" Setup Find
+"" Use rg as grepprg
 
 if executable('rg')
   set grepprg=rg\ --vimgrep
 endif
-
-command! -nargs=+ -complete=file Find execute 'silent! grep <args> | redraw! | copen'
 
 " Plugin Settings
 
