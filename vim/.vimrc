@@ -228,6 +228,8 @@ cmap <Esc>[D <Left>
 colorscheme base16-ocean
 set background=dark
 
+hi CursorLineNr cterm=bold
+
 " Setup persistent undo
 
 if has('persistent_undo')
