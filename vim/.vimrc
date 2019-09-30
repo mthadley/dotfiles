@@ -241,27 +241,6 @@ if has('persistent_undo')
   set undofile
 endif
 
-" Projections
-
-let g:projectionist_heuristics = {
-\ "package.json": {
-\		"**/__tests__/*.js": {
-\			"alternate": [
-\				"{}.js",
-\				"{dirname}/{basename|snakecase}/index.js"
-\			],
-\			"type": "test"
-\		},
-\		"*.js": {
-\			"alternate": [
-\				"{dirname}/__tests__/{basename}.js",
-\				"{dirname}/../__tests__/{dirname|basename|camelcase|capitalize}.js",
-\				"{dirname}/__tests__/{dirname|basename|camelcase|capitalize}.js"
-\			],
-\			"type": "source"
-\		}
-\}}
-
 " Functions
 
 function! ToggleCW()
