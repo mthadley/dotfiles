@@ -177,7 +177,6 @@ noremap <leader>re :R<CR>
 
 "" Misc
 
-noremap <leader>bw :set binary<CR>:w<CR>:set nobinary<CR>:ec "File Written(b)..."<CR>
 noremap <leader>ct :!column -t<CR>
 noremap <leader>cw :call ToggleCW()<CR>
 noremap <leader>ev :e $MYVIMRC<CR>
