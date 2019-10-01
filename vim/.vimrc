@@ -68,7 +68,6 @@ endif
 " Plugin Settings
 
 "" 'w0rp/ale'
-let g:ale_elm_make_use_global = 1
 let g:ale_completion_enabled = 0
 let g:ale_set_highlights = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -134,15 +133,6 @@ au FileType javascript setlocal formatprg=prettier
 
 "" Typescript hints
 au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
-
-"" Elm
-augroup filetype_elm_test
-    au!
-    au FileType elm highlight ALEError ctermfg=1
-    au BufNewFile,BufRead ui/tests/**/*.elm
-          \ let b:ale_elm_make_executable= '/Users/mthadley/projects/NoRedInk/ui/node_modules/.bin/elm-test'
-          \ | let b:ale_elm_make_use_global=1
-augroup END
 
 " Keybinds
 
