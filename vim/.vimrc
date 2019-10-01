@@ -75,6 +75,7 @@ let g:ale_lint_on_enter = 0
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
 \}
+hi ALEError cterm=underline
 
 "" chriskempson/base16-vim
 let g:base16colorspace=256
