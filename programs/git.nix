@@ -15,6 +15,10 @@
     lfs.enable = true;
 
     extraConfig = {
+      core = {
+        pager = "less -+F";
+      };
+
       push = {
         default = "current";
       };
