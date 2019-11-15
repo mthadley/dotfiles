@@ -58,7 +58,6 @@ end
 set regexpengine=1
 
 "" Use rg as grepprg
-
 if executable('rg')
   set grepprg=rg\ --vimgrep
 endif
@@ -121,7 +120,6 @@ au CursorHold * checktime
 au BufWritePre * :%s/\s\+$//e
 
 au BufRead,BufNewFile *.css set filetype=scss
-au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 "" Wrap Lines when writing Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
