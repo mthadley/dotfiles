@@ -19,6 +19,7 @@
     ./programs/fish/default.nix
     ./programs/direnv.nix
     ./programs/fzf.nix
+    ./programs/tmux.nix
   ];
 
   # Let Home Manager install and manage itself.
