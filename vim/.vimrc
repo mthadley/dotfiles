@@ -17,7 +17,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
@@ -167,11 +166,6 @@ endfunction
 "" Session management
 noremap <leader>ss :mks! ~/.vimsession<CR>
 noremap <leader>os :so ~/.vimsession<CR>
-
-"" Projections
-noremap <leader>to :A<CR>
-noremap <leader>ts :AS<CR>
-noremap <leader>tv :AV<CR>
 
 "" Git
 noremap <C-G>s :Gstatus<CR>
