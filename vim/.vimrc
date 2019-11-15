@@ -1,7 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/bundle')
 
-Plug '/usr/local/opt/fzf'
+Plug '~/.nix-profile/share/vim-plugins/fzf-0.18.0'
 Plug 'airblade/vim-gitgutter'
 Plug 'alx741/vim-hindent'
 Plug 'chriskempson/base16-vim'
