@@ -22,6 +22,10 @@
     ./programs/tmux.nix
   ];
 
+  nixpkgs.overlays = builtins.map
+    (n: import (./overlays + "/${n}"))
+    (builtins.attrNames (builtins.readDir ./overlays));
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

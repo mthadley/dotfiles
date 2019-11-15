@@ -54,7 +54,7 @@ in
       source ${pkgs.fzf}/share/fish/vendor_conf.d/load-fzf-key-bindings.fish
 
       # Color scheme
-      eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
+      eval sh ${pkgs.base16}/share/base16/scripts/base16-ocean.sh
     '';
   };
 }
