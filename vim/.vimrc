@@ -67,10 +67,9 @@ endif
 " Plugin Settings
 
 "" 'w0rp/ale'
-let g:ale_completion_enabled = 0
-let g:ale_set_highlights = 1
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_delay = 1000
 let g:ale_lint_on_enter = 0
+let g:ale_elm_ls_elm_analyse_trigger = 'never'
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
 \}
@@ -153,6 +152,17 @@ noremap <C-E>v :Vexplore<CR>
 nnoremap <leader>e] :ALENextWrap<CR>
 nnoremap <leader>e[ :ALEPreviousWrap<CR>
 nnoremap <leader>ed :ALEDetail<CR>
+nnoremap <leader>h :ALEHover<CR>
+nnoremap <C-]> :call GoTo()<CR>
+
+""" Keep default behavior when browsing help files
+function! GoTo()
+  if &ft == 'help'
+    execute "tag " . expand("<cword>")
+  else
+    execute "ALEGoToDefinition"
+  endif
+endfunction
 
 "" Session management
 noremap <leader>ss :mks! ~/.vimsession<CR>
