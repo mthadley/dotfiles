@@ -5,6 +5,7 @@
     packages = with pkgs; [
       autojump
       ripgrep
+      elmPackages.elm-language-server
     ];
 
     sessionVariables = {
@@ -15,11 +16,12 @@
   };
 
   imports = [
-    ./programs/git.nix
-    ./programs/fish/default.nix
     ./programs/direnv.nix
+    ./programs/fish/default.nix
     ./programs/fzf.nix
+    ./programs/git.nix
     ./programs/tmux.nix
+    ./programs/vim/neovim.nix
   ];
 
   nixpkgs.overlays = builtins.map
