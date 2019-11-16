@@ -1,5 +1,0 @@
-keycode 66 = Mode_switch
-keysym k = k K Up
-keysym h = h H Left
-keysym j = j J Down
-keysym l = l L Right
