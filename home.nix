@@ -6,6 +6,8 @@
       autojump
       ripgrep
       elmPackages.elm-language-server
+      jq
+      htop
     ];
 
     sessionVariables = {
