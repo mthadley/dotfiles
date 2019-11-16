@@ -143,6 +143,7 @@ noremap <leader>w :w<CR>
 
 colorscheme base16-ocean
 set background=dark
+set termguicolors
 
 hi CursorLineNr cterm=bold
 

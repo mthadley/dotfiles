@@ -12,7 +12,8 @@
     historyLimit = 10000;
     keyMode = "vi";
     shortcut = "a";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
+    escapeTime = 10;
 
     # This tries to set $TMUX_TMPDIR to /run/... which doesn't
     # seem to work on MacOS.
@@ -24,6 +25,8 @@
 
       set -g status-fg "colour20"
       set -g status-bg "colour18"
+
+      set-option -sa terminal-overrides ',tmux-256color:RGB'
 
       bind-key v split-window -h
       bind-key s split-window -v
