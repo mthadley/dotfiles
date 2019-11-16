@@ -26,6 +26,7 @@
 
       bind-key v split-window -h
       bind-key s split-window -v
+      bind-key a last-window
     '';
   };
 }
