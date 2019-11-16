@@ -20,6 +20,7 @@
 
     extraConfig = ''
       set -g status-right ""
+      set -g status-justify centre
 
       set -g status-fg "colour20"
       set -g status-bg "colour18"
