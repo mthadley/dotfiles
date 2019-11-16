@@ -139,16 +139,6 @@ noremap <leader>q :q<CR>
 noremap <leader>rs :syntax sync fromstart<CR>
 noremap <leader>w :w<CR>
 
-"" Fix Arrows when in tmux
-noremap <Esc>[A <Up>
-noremap <Esc>[B <Down>
-noremap <Esc>[C <Right>
-noremap <Esc>[D <Left>
-cmap <Esc>[A <Up>
-cmap <Esc>[B <Down>
-cmap <Esc>[C <Right>
-cmap <Esc>[D <Left>
-
 " Colors
 
 colorscheme base16-ocean
