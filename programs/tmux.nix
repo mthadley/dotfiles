@@ -17,7 +17,7 @@
 
     # This tries to set $TMUX_TMPDIR to /run/... which doesn't
     # seem to work on MacOS.
-    secureSocket = false;
+    secureSocket = !pkgs.stdenv.isDarwin;
 
     extraConfig = ''
       set -g status-right ""
