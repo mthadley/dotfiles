@@ -18,10 +18,6 @@
       core = {
         pager = "less -+F";
       };
-
-      push = {
-        default = "current";
-      };
     };
   };
 }
