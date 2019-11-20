@@ -2,7 +2,7 @@
 set -eou pipefail
 
 function is_installed {
-  command -v $1 > /dev/null
+  command -v "$1" > /dev/null
 }
 
 # Install nix
@@ -28,7 +28,7 @@ else
 fi
 
 # Link home manager configuration
-ln -sFf $(realpath home.nix) ~/.config/nixpkgs/home.nix
+ln -sFf "$(realpath home.nix)" ~/.config/nixpkgs/home.nix
 
 # Enable configuration
 echo "Switching to new configuration..."
