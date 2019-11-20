@@ -8,6 +8,7 @@
       elmPackages.elm-language-server
       jq
       htop
+      shellcheck
     ];
 
     sessionVariables = {
