@@ -42,7 +42,15 @@ if ! echo "$SHELL" | grep fish > /dev/null; then
   fi
 
   echo "Changing user shell..."
-  chsh -s "$FISH_SHELL_PATH" "$USER"
+  if ! chsh -s "$FISH_SHELL_PATH" "$USER"; then
+    echo
+    echo "You may need to edit /etc/pam.d/chsh and change the following line from"
+    echo
+    echo "- auth required pam_shells.so"
+    echo "+ auth sufficient pam_shells.so"
+    echo
+    echo "Then try re-running this script again!"
+  fi
 fi
 
 # Link home manager configuration
