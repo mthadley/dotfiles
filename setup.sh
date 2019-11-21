@@ -11,6 +11,10 @@ if is_installed nix; then
 else
   echo "Installing nix..."
   curl https://nixos.org/nix/install | sh
+
+  echo "Sourcing nix profile vars..."
+  # shellcheck disable=SC1090
+  source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
 # Install Home Manager
