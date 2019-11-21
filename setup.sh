@@ -49,7 +49,7 @@ if ! echo "$SHELL" | grep fish > /dev/null; then
   fi
 
   echo "Changing user shell..."
-  if ! chsh -s "$FISH_SHELL_PATH" "$USER"; then
+  if ! sudo chsh -s "$FISH_SHELL_PATH" "$USER"; then
     echo
     echo "You may need to edit /etc/pam.d/chsh and change the following line:"
     echo
