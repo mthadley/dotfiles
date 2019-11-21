@@ -31,6 +31,13 @@ else
   nix-shell '<home-manager>' -A install
 fi
 
+# Link home manager configuration
+ln -sFf "$(realpath home.nix)" ~/.config/nixpkgs/home.nix
+
+# Enable configuration
+echo "Switching to new configuration..."
+home-manager switch
+
 if ! echo "$SHELL" | grep fish > /dev/null; then
   echo "Setting fish as default shell..."
 
@@ -44,18 +51,12 @@ if ! echo "$SHELL" | grep fish > /dev/null; then
   echo "Changing user shell..."
   if ! chsh -s "$FISH_SHELL_PATH" "$USER"; then
     echo
-    echo "You may need to edit /etc/pam.d/chsh and change the following line from"
+    echo "You may need to edit /etc/pam.d/chsh and change the following line:"
     echo
     echo "- auth required pam_shells.so"
     echo "+ auth sufficient pam_shells.so"
     echo
     echo "Then try re-running this script again!"
+    echo
   fi
 fi
-
-# Link home manager configuration
-ln -sFf "$(realpath home.nix)" ~/.config/nixpkgs/home.nix
-
-# Enable configuration
-echo "Switching to new configuration..."
-home-manager switch
