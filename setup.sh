@@ -31,6 +31,20 @@ else
   nix-shell '<home-manager>' -A install
 fi
 
+if ! echo "$SHELL" | grep fish > /dev/null; then
+  echo "Setting fish as default shell..."
+
+  FISH_SHELL_PATH=$(command -v fish)
+
+  if ! grep "$FISH_SHELL_PATH" /etc/shells; then
+    echo "Adding fish to /etc/shells..."
+    echo "$FISH_SHELL_PATH"| sudo tee /etc/shells
+  fi
+
+  echo "Changing user shell..."
+  chsh -s "$FISH_SHELL_PATH" "$USER"
+fi
+
 # Link home manager configuration
 ln -sFf "$(realpath home.nix)" ~/.config/nixpkgs/home.nix
 
