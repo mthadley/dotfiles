@@ -17,7 +17,6 @@
       fzf-vim
       emmet-vim
       vim-polyglot
-      vim-polyglot
       vim-abolish
       vim-commentary
       vim-fugitive
