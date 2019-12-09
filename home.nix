@@ -5,7 +5,6 @@
     packages = with pkgs; [
       autojump
       ripgrep
-      elmPackages.elm-language-server
       jq
       htop
       shellcheck
