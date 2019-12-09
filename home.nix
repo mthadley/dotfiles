@@ -13,7 +13,6 @@
     sessionVariables = {
       EDITOR = "vim";
       fish_greeting = "";
-      hadley = "michael";
     };
   };
 
