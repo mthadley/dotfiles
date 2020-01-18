@@ -1,5 +1,16 @@
 { pkgs, ... }:
 
+let
+  vim-mix-format = pkgs.vimUtils.buildVimPlugin {
+    name = "mix-format";
+    src = pkgs.fetchFromGitHub {
+      owner = "mhinz";
+      repo = "vim-mix-format";
+      rev = "cbb63e65a423ea63444a5d1b41e51d1fcec5f962";
+      sha256 = "037fbmcj9dfj89jd2xa1xv55baqvws85xpjmypgr3kx7y183l0b7";
+    };
+  };
+in
 {
   programs.neovim = {
     enable = true;
@@ -26,6 +37,7 @@
       vim-surround
       vim-unimpaired
       vim-vinegar
+      vim-mix-format
     ];
 
     extraConfig = ''
@@ -85,6 +97,9 @@
       let g:elm_setup_keybindings = 0
       let g:elm_format_autosave = 1
       let g:elm_detailed_complete = 1
+
+      "" mhinz/vim-mix-format
+      let g:mix_format_on_save = 1
 
       "" christoomey/vim-sort-motion
       let g:sort_motion_flags = 'i'
