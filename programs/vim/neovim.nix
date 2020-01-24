@@ -10,6 +10,16 @@ let
       sha256 = "037fbmcj9dfj89jd2xa1xv55baqvws85xpjmypgr3kx7y183l0b7";
     };
   };
+
+  vim-ormolu = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-ormolu";
+    src = pkgs.fetchFromGitHub {
+      owner = "sdiehl";
+      repo = "vim-ormolu";
+      rev = "4ae4fe11c558af33030abdeda6f2ee1f5b54da55";
+      sha256 = "13yn0arxcn8ngc91lvhcqs3nl17zcdmgsw522qvqgn732cpf0ddy";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -21,7 +31,6 @@ in
       ale
       vim-sort-motion
       base16-vim
-      vim-hindent
       vim-gitgutter
       vim-indexed-search
       auto-pairs
@@ -38,6 +47,7 @@ in
       vim-unimpaired
       vim-vinegar
       vim-mix-format
+      vim-ormolu
     ];
 
     extraConfig = ''

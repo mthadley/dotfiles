@@ -8,6 +8,7 @@
       jq
       htop
       shellcheck
+      ormolu
     ];
 
     sessionVariables = {
