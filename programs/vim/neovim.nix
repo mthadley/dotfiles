@@ -83,7 +83,7 @@ in
       let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
       let g:ale_linters = {
       \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
-      \   'haskell': ['stack-build', 'ghc']
+      \   'haskell': ['hlint', 'hdevtools', 'hfmt'],
       \}
       hi ALEError cterm=underline
 
