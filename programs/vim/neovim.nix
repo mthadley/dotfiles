@@ -68,6 +68,7 @@ in
       set splitright
       set sts=2
       set tabstop=2
+      set nowritebackup
 
       "" Use rg as grepprg
       if executable('rg')
