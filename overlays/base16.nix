@@ -4,7 +4,7 @@ self: super:
   base16 = self.stdenv.mkDerivation {
     name = "base16";
 
-    src = super.fetchFromGitHub {
+    src = self.fetchFromGitHub {
       owner = "chriskempson";
       repo = "base16-shell";
       rev = "ce8e1e540367ea83cc3e01eec7b2a11783b3f9e1";
