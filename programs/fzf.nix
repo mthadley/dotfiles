@@ -1,10 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.fzf = {
     enable = true;
 
-    defaultCommand = "rg --files";
+    defaultCommand = "${pkgs.ripgrep}/bin/rg --files";
     defaultOptions = ["--color=16"];
   };
 }

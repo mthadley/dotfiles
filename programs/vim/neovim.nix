@@ -71,9 +71,7 @@ in
       set nowritebackup
 
       "" Use rg as grepprg
-      if executable('rg')
-        set grepprg=rg\ --vimgrep
-      endif
+      set grepprg=${pkgs.ripgrep}/bin/rg\ --vimgrep
 
       " Plugin Settings
 
