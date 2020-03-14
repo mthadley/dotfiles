@@ -22,7 +22,7 @@
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/tmux.nix
-    ./programs/vim/neovim.nix
+    ./programs/vim/default.nix
   ];
 
   nixpkgs.overlays = builtins.map
