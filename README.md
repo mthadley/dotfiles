@@ -11,7 +11,7 @@
 </pre>
 
 ![Continuous Integration](https://github.com/mthadley/dotfiles/workflows/Continuous%20Integration/badge.svg)
-j
+
 My development environment, configured through [Home Manager](https://github.com/rycee/home-manager).
 
 You'll need [nix](https://nixos.org/nix/) and home manager installed, but
