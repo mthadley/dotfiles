@@ -14,7 +14,7 @@ fi
 if is_installed nix; then
   echo "Nix is installed!"
 else
-  if [ "$(uname)" = "Darwin" ]; then
+  if [ ! -d /nix ] && [ "$(uname)" = "Darwin" ]; then
     echo "Creating /nix ..."
     sudo mkdir -m 0755 /nix
     sudo chown "$(whoami)" /nix
