@@ -15,8 +15,8 @@ if is_installed nix; then
   echo "Nix is installed!"
 else
   if [ ! -d /nix ] && [ "$(uname)" = "Darwin" ]; then
-    echo "Creating /nix ..."
-    curl https://gist.githubusercontent.com/michaelglass/31f272ab42233e81c85b296791d36ddd/raw/e67fd8c5309032ff11ea8a9120476a0d7a6e4a05/nixify.sh | bash
+    echo "Creating /nix volume..."
+    source lib/create-darwin-volume.sh
   fi
 
   echo "Installing nix..."
