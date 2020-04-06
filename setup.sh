@@ -17,6 +17,9 @@ else
   if [ ! -d /nix ] && [ "$(uname)" = "Darwin" ]; then
     echo "Creating /nix volume..."
     source lib/create-darwin-volume.sh
+
+    echo "Disabling spotlight for /nix..."
+    sudo mdutil -i off /nix
   fi
 
   echo "Installing nix..."
