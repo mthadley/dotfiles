@@ -27,7 +27,9 @@ else
   nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
 
-  nix-channel --list
+  # Make sure nix picks up the new channel
+  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+
   echo "Setting up first home-manager generation..."
   nix-shell '<home-manager>' -A install
 fi
