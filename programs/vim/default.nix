@@ -20,6 +20,16 @@ let
       sha256 = "13yn0arxcn8ngc91lvhcqs3nl17zcdmgsw522qvqgn732cpf0ddy";
     };
   };
+
+  vim-rails = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-rails";
+    src = pkgs.fetchFromGitHub {
+      owner = "tpope";
+      repo = "vim-rails";
+      rev = "184d12e85a17c85c548aeecc5b5c8c3182bd22e9";
+      sha256 = "01z88hrqcqqp2cd5dwffiijhzfp0pr32dvmb5ai62y8zhfyn57m9";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -48,6 +58,7 @@ in
       vim-vinegar
       vim-mix-format
       vim-ormolu
+      vim-rails
     ];
 
     extraConfig = ''
