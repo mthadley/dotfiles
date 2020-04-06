@@ -19,4 +19,6 @@ jobs:
     # GNU hello is installed by nix, validating that at least
     # _something_ got installed correctly.
     - name: check installation
-      run: hello
+      run: |
+        source ~/.nix-profile/etc/profile.d/nix.sh
+        hello
