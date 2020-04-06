@@ -16,6 +16,7 @@ in
       gst = "git status";
       gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
       gplog = "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset\" --abbrev-commit --date=relative";
+      rspec = "rspec --format documentation";
     };
 
     shellInit = ''
