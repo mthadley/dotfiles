@@ -1,0 +1,18 @@
+on: push
+name: Continuous Integration
+jobs:
+  test-setup:
+    name: Test setup
+    strategy:
+      matrix:
+        os:
+        - macos-latest
+        - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: cachix/install-nix-action@v6
+
+    - name: run setup.sh
+      run: ./setup.sh
