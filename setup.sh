@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
-set -xeou pipefail
+set -eou pipefail
 
 function is_installed {
   command -v "$1" > /dev/null
 }
+
+# Enable debug mode on CI
+if [ -n "${GITHUB_WORKFLOW:-}" ]; then
+  set -x
+fi
 
 # Install nix
 if is_installed nix; then
