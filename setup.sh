@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eou pipefail
+set -xeou pipefail
 
 function is_installed {
   command -v "$1" > /dev/null
@@ -27,6 +27,7 @@ else
   nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
 
+  nix-channel --list
   echo "Setting up first home-manager generation..."
   nix-shell '<home-manager>' -A install
 fi
