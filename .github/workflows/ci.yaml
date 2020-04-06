@@ -11,7 +11,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v6
     - name: run setup.sh
       run: ./setup.sh
     # GNU hello is installed by nix, validating that at least
