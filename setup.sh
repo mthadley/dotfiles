@@ -16,8 +16,7 @@ if is_installed nix; then
 else
   if [ ! -d /nix ] && [ "$(uname)" = "Darwin" ]; then
     echo "Creating /nix ..."
-    sudo mkdir -m 0755 /nix
-    sudo chown "$(whoami)" /nix
+    curl https://gist.githubusercontent.com/michaelglass/31f272ab42233e81c85b296791d36ddd/raw/e67fd8c5309032ff11ea8a9120476a0d7a6e4a05/nixify.sh | bash
   fi
 
   echo "Installing nix..."
