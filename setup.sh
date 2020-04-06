@@ -35,7 +35,7 @@ else
 fi
 
 # Link home manager configuration
-ln -sFf "$(realpath home.nix)" ~/.config/nixpkgs/home.nix
+ln -sFf home.nix ~/.config/nixpkgs/home.nix
 
 # Enable configuration
 echo "Switching to new configuration..."

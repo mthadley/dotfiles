@@ -16,3 +16,6 @@ jobs:
 
     - name: run setup.sh
       run: ./setup.sh
+
+    - name: check installation
+      run: hello
