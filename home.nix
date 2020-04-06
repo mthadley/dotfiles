@@ -8,6 +8,9 @@
       jq
       htop
       shellcheck
+
+      # Just used to verify home-manager setup
+      hello
     ];
 
     sessionVariables = {

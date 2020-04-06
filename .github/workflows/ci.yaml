@@ -1,0 +1,24 @@
+on: push
+name: Continuous Integration
+jobs:
+  test-setup:
+    name: Test setup
+    strategy:
+      matrix:
+        os:
+        - macos-latest
+        - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: run setup.sh
+      run: ./setup.sh
+    # Running the script twice should succeed
+    - name: check setup.sh indempotence
+      run: ./setup.sh
+    # GNU hello is installed by nix, validating that at least
+    # _something_ got installed correctly.
+    - name: check installation
+      run: |
+        source ~/.nix-profile/etc/profile.d/nix.sh
+        hello

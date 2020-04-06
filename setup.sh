@@ -5,10 +5,23 @@ function is_installed {
   command -v "$1" > /dev/null
 }
 
+# Enable debug mode on CI
+if [ -n "${GITHUB_WORKFLOW:-}" ]; then
+  set -x
+fi
+
 # Install nix
 if is_installed nix; then
   echo "Nix is installed!"
 else
+  if [ ! -d /nix ] && [ "$(uname)" = "Darwin" ]; then
+    echo "Creating /nix volume..."
+    source lib/create-darwin-volume.sh
+
+    echo "Disabling spotlight for /nix..."
+    sudo mdutil -i off /nix
+  fi
+
   echo "Installing nix..."
   curl https://nixos.org/nix/install | sh
 
@@ -27,12 +40,15 @@ else
   nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
 
+  # Make sure nix picks up the new channel
+  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+
   echo "Setting up first home-manager generation..."
   nix-shell '<home-manager>' -A install
 fi
 
 # Link home manager configuration
-ln -sFf "$(realpath home.nix)" ~/.config/nixpkgs/home.nix
+ln -sf "$(pwd)/home.nix" ~/.config/nixpkgs/home.nix
 
 # Enable configuration
 echo "Switching to new configuration..."
