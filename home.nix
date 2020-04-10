@@ -3,7 +3,6 @@
 {
   home = {
     packages = with pkgs; [
-      bat
       autojump
       ripgrep
       jq
@@ -21,6 +20,7 @@
   };
 
   imports = [
+    ./programs/bat.nix
     ./programs/direnv.nix
     ./programs/fish/default.nix
     ./programs/fzf.nix
