@@ -9,6 +9,7 @@ in
     enable = true;
 
     shellAliases = {
+      ls = "exa";
       npr = "npm run";
       tm = "tmux -2";
       gd = "git diff";

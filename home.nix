@@ -4,9 +4,10 @@
   home = {
     packages = with pkgs; [
       autojump
-      ripgrep
-      jq
+      exa
       htop
+      jq
+      ripgrep
       shellcheck
 
       # Just used to verify home-manager setup
