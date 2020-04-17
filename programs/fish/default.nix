@@ -10,6 +10,7 @@ in
 
     shellAliases = {
       ls = "exa";
+      tree = "exa --tree";
       npr = "npm run";
       tm = "tmux -2";
       gd = "git diff";
