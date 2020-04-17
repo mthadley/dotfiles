@@ -39,26 +39,26 @@ in
 
     plugins = with pkgs.vimPlugins; [
       ale
-      vim-sort-motion
-      base16-vim
-      vim-gitgutter
-      vim-indexed-search
       auto-pairs
-      fzf-vim
+      base16-vim
       emmet-vim
-      vim-polyglot
+      fzf-vim
       vim-abolish
       vim-commentary
       vim-fugitive
+      vim-gitgutter
+      vim-indexed-search
+      vim-mix-format
+      vim-ormolu
+      vim-polyglot
+      vim-rails
       vim-repeat
       vim-sensible
       vim-sleuth
+      vim-sort-motion
       vim-surround
       vim-unimpaired
       vim-vinegar
-      vim-mix-format
-      vim-ormolu
-      vim-rails
     ];
 
     extraConfig = ''
