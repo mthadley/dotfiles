@@ -9,16 +9,17 @@ in
     enable = true;
 
     shellAliases = {
-      ls = "exa";
-      tree = "exa --tree";
-      npr = "npm run";
-      tm = "tmux -2";
-      gd = "git diff";
+      f = "ranger";
       gco = "git checkout";
+      gd = "git diff";
+      gplog = "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset\" --abbrev-commit --date=relative";
       gst = "git status";
       gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
-      gplog = "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset\" --abbrev-commit --date=relative";
+      ls = "exa";
+      npr = "npm run";
       rspec = "rspec --format documentation";
+      tm = "tmux -2";
+      tree = "exa --tree";
     };
 
     shellInit = ''

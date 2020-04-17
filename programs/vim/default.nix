@@ -43,6 +43,7 @@ in
       base16-vim
       emmet-vim
       fzf-vim
+      ranger-vim
       vim-abolish
       vim-commentary
       vim-fugitive
@@ -58,7 +59,6 @@ in
       vim-sort-motion
       vim-surround
       vim-unimpaired
-      vim-vinegar
     ];
 
     extraConfig = ''
@@ -164,9 +164,9 @@ in
       noremap <C-P> :Files<CR>
 
       "" Open file explorer
-      noremap <C-E>e :Explore<CR>
-      noremap <C-E>s :Hexplore<CR>
-      noremap <C-E>v :Vexplore<CR>
+      noremap <C-E>e :RangerEdit<CR>
+      noremap <C-E>s :RangerSplit<CR>
+      noremap <C-E>v :RangerVSplit<CR>
 
       "" Ale
       nnoremap <leader>e] :ALENextWrap<CR>

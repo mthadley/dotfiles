@@ -7,6 +7,7 @@
       exa
       htop
       jq
+      ranger
       ripgrep
       shellcheck
 
