@@ -48,6 +48,7 @@ in
       vim-commentary
       vim-fugitive
       vim-gitgutter
+      vim-indent-object
       vim-indexed-search
       vim-mix-format
       vim-ormolu
