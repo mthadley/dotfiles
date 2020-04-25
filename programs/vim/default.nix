@@ -107,10 +107,7 @@ in
       let g:ale_lint_on_enter = 0
       let g:ale_elm_ls_elm_analyse_trigger = 'never'
       let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
-      let g:ale_linters = {
-      \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
-      \   'haskell': ['hlint', 'hdevtools', 'hfmt'],
-      \}
+      let g:ale_linters = {'haskell': ['hlint', 'hdevtools', 'hfmt']}
       let g:ale_linters_ignore = {'ruby': ['brakeman']}
       hi ALEError cterm=underline
 
