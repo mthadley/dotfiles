@@ -111,6 +111,7 @@ in
       \   'javascript': ['eslint', 'flow', 'flow-language-server', 'standard', 'xo'],
       \   'haskell': ['hlint', 'hdevtools', 'hfmt'],
       \}
+      let g:ale_linters_ignore = {'ruby': ['brakeman']}
       hi ALEError cterm=underline
 
       "" chriskempson/base16-vim
