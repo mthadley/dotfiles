@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 let
+  similar-sort = pkgs.callPackage ../../pkgs/similar-sort {};
+
   vim-mix-format = pkgs.vimUtils.buildVimPlugin {
     name = "mix-format";
     src = pkgs.fetchFromGitHub {
@@ -175,7 +177,11 @@ in
       inoremap jk <ESC>
 
       "" fzf
-      noremap <C-P> :Files<CR>
+      noremap <silent> <C-P> :call fzf#run(fzf#wrap({
+      \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${similar-sort}/bin/similar-sort \"" . @% . "\"",
+      \ "sink": "edit",
+      \ "options": "--tiebreak index"
+      \ }))<CR>
 
       "" Open file explorer
       noremap <C-E>e :RangerEdit<CR>
