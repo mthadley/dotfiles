@@ -7,7 +7,6 @@
       exa
       htop
       jq
-      ranger
       ripgrep
       shellcheck
 
@@ -27,6 +26,7 @@
     ./programs/fish/default.nix
     ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/ranger.nix
     ./programs/tmux.nix
     ./programs/vim/default.nix
   ];
