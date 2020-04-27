@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.git = {
@@ -16,7 +16,13 @@
 
     extraConfig = {
       core = {
-        pager = "less -+F";
+        pager = ''
+          BAT_PAGER='less -c -+F' \
+          ${pkgs.gitAndTools.delta}/bin/delta \
+          --paging always \
+          --file-style plain \
+          --hunk-style plain
+        '';
       };
 
       push = {

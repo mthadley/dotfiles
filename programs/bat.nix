@@ -3,9 +3,7 @@
 {
   programs.bat = {
     enable = true;
-
-    config = {
-      theme = "base16";
-    };
   };
+
+  home.sessionVariables.BAT_THEME = "base16";
 }
