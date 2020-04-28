@@ -4,7 +4,7 @@ stdenv.mkDerivation {
   name = "similar-sort";
 
   buildInputs = [
-    (haskellPackages.ghcWithPackages (haskellPkgs: with haskellPkgs; [ edit-distance ]))
+    (haskellPackages.ghcWithPackages (haskellPkgs: with haskellPkgs; [ edit-distance-linear ]))
   ];
 
   buildPhase = ''
