@@ -218,12 +218,7 @@ in
 
       " Colors
 
-      "" Enable 24 bit color
-      "" Black magic from help page for xterm-true-color
-      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
       set termguicolors
-
       colorscheme base16-ocean
       set background=dark
 
