@@ -9,16 +9,20 @@ in
     enable = true;
 
     shellAliases = {
+      # git
       gco = "git checkout";
       gd = "git diff";
       gplog = "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset\" --abbrev-commit --date=relative";
       gst = "git status";
       gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
+
+      # misc
       ls = "exa";
       npr = "npm run";
       rspec = "rspec --format documentation";
       tm = "tmux -2";
       tree = "exa --tree";
+      vi = "vim";
     };
 
     shellInit = ''

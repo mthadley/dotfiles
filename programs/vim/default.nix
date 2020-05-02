@@ -48,10 +48,8 @@ let
   };
 in
 {
-  programs.neovim = {
+  programs.vim = {
     enable = true;
-
-    vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
       ale
@@ -121,14 +119,6 @@ in
         \ 'ctrl-t': 'tab split',
         \ 'ctrl-s': 'split',
         \ 'ctrl-v': 'vsplit' }
-
-      """ Hide bar while fzf is open
-      """ Taken from https://github.com/junegunn/fzf.vim#hide-statusline
-      if has('nvim') || has('gui_running')
-        autocmd! FileType fzf
-        autocmd  FileType fzf set laststatus=0 noshowmode noruler norelativenumber
-          \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber
-      endif
 
       "" ElmCast/elm-vim
       let g:elm_setup_keybindings = 0
@@ -233,7 +223,6 @@ in
 
       colorscheme base16-ocean
       set background=dark
-      set termguicolors
 
       hi CursorLineNr cterm=bold
 
