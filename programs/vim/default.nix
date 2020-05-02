@@ -47,6 +47,11 @@ let
     };
   };
 
+  vim-fzf-builtin = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-fzf-builtin";
+    src = "${pkgs.fzf}/share/vim-plugins/fzf";
+  };
+
   fzfVimPreview = "${pkgs.vimPlugins.fzf-vim}/share/vim-plugins/fzf-vim/bin/preview.sh";
 in
 {
@@ -58,10 +63,10 @@ in
       auto-pairs
       base16-vim
       emmet-vim
-      fzf-vim
       vim-abolish
       vim-commentary
       vim-fugitive
+      vim-fzf-builtin
       vim-gitgutter
       vim-indent-object
       vim-indexed-search
