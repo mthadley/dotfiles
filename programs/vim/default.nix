@@ -166,7 +166,8 @@ in
       noremap <silent> <C-P> :call fzf#run(fzf#wrap({
       \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${similar-sort}/bin/similar-sort \"" . @% . "\"",
       \ "sink": 'edit',
-      \ "options": '--preview "${fzfVimPreview} {}" --tiebreak index'
+      \ "options": ['--tiebreak', 'index', '--preview', '${fzfVimPreview} {}'],
+      \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
       \ }))<CR>
 
       "" Open file explorer
@@ -216,6 +217,12 @@ in
       noremap <leader>w :w<CR>
 
       " Colors
+
+      "" Enable 24 bit color
+      "" Black magic from help page for xterm-true-color
+      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      set termguicolors
 
       colorscheme base16-ocean
       set background=dark
