@@ -59,7 +59,6 @@ in
       base16-vim
       emmet-vim
       fzf-vim
-      ranger-vim
       vim-abolish
       vim-commentary
       vim-fugitive
@@ -77,6 +76,7 @@ in
       vim-sort-motion
       vim-surround
       vim-unimpaired
+      vim-vinegar
     ];
 
     extraConfig = ''
@@ -184,24 +184,9 @@ in
       \ }))<CR>
 
       "" Open file explorer
-      noremap <C-E>e :RangerEdit<CR>
-      noremap <C-E>s :RangerSplit<CR>
-      noremap <C-E>v :RangerVSplit<CR>
-
-      "" Allow window movement in and exiting of terminal mode
-      if has('nvim')
-        tnoremap <C-W>j <C-\><C-n><C-w><C-j>
-        tnoremap <C-W>k <C-\><C-n><C-w><C-k>
-        tnoremap <C-W>h <C-\><C-n><C-w><C-h>
-        tnoremap <C-W>l <C-\><C-n><C-w><C-l>
-
-        augroup ranger_keys
-          "" Otherwise, entering insert mode in Ranger seems to open stuff randomly
-          "" in netrw... even though it should be disabled.
-          au!
-          au FileType netrw noremap <buffer> i :startinsert<CR>
-        augroup END
-      endif
+      noremap <C-E>e :Explore<CR>
+      noremap <C-E>s :Hexplore<CR>
+      noremap <C-E>v :Vexplore<CR>
 
       "" Ale
       nnoremap <leader>e] :ALENextWrap<CR>
