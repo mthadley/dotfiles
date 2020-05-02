@@ -46,6 +46,8 @@ let
       sha256 = "01z88hrqcqqp2cd5dwffiijhzfp0pr32dvmb5ai62y8zhfyn57m9";
     };
   };
+
+  fzfVimPreview = "${pkgs.vimPlugins.fzf-vim}/share/vim-plugins/fzf-vim/bin/preview.sh";
 in
 {
   programs.vim = {
@@ -163,8 +165,8 @@ in
       "" fzf
       noremap <silent> <C-P> :call fzf#run(fzf#wrap({
       \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${similar-sort}/bin/similar-sort \"" . @% . "\"",
-      \ "sink": "edit",
-      \ "options": "--tiebreak index"
+      \ "sink": 'edit',
+      \ "options": '--preview "${fzfVimPreview} {}" --tiebreak index'
       \ }))<CR>
 
       "" Open file explorer
