@@ -114,12 +114,6 @@ in
       "" chriskempson/base16-vim
       let g:base16colorspace=256
 
-      "" junegunn/fzf.vim
-      let g:fzf_action = {
-        \ 'ctrl-t': 'tab split',
-        \ 'ctrl-s': 'split',
-        \ 'ctrl-v': 'vsplit' }
-
       "" ElmCast/elm-vim
       let g:elm_setup_keybindings = 0
       let g:elm_format_autosave = 1
