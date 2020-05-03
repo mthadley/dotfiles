@@ -158,6 +158,11 @@ in
       "" Typescript hints
       au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
+      "" Fix netrw mm and mc commands by updating lcd as you navigate
+      "" Keep everything else working by updating lcd back to the global
+      let g:netrw_keepdir = 0
+      au BufLeave * exe "lcd" getcwd(-1)
+
       " Keybinds
 
       let g:user_emmet_leader_key = '<C-E>'
