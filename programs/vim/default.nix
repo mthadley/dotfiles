@@ -217,7 +217,7 @@ in
       "" Misc
 
       noremap <leader>ct :!column -t<CR>
-      noremap <leader>cw :call ToggleCW()<CR>
+      noremap <silent> <leader>cw :call ToggleCW()<CR>
       noremap <leader>ev :e $MYVIMRC<CR>
       noremap <leader>n :noh<CR>
       noremap <leader>q :q<CR>
@@ -247,7 +247,7 @@ in
 
       function! ToggleCW()
         for i in range(1, winnr('$'))
-          let bnum = winbufnr(i)
+          let l:bnum = winbufnr(i)
           if getbufvar(bnum, '&buftype') == 'quickfix'
             cclose
             return
