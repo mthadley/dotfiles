@@ -218,7 +218,6 @@ in
 
       noremap <leader>ct :!column -t<CR>
       noremap <silent> <leader>cw :call ToggleCW()<CR>
-      noremap <leader>ev :e $MYVIMRC<CR>
       noremap <leader>n :noh<CR>
       noremap <leader>q :q<CR>
       noremap <leader>rs :syntax sync fromstart<CR>
