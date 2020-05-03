@@ -100,8 +100,6 @@ in
       set shiftwidth=2
       set splitbelow
       set splitright
-      set sts=2
-      set tabstop=2
       set nowritebackup
 
       "" Use rg as grepprg
