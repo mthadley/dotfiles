@@ -22,7 +22,6 @@ in
       rspec = "rspec --format documentation";
       tm = "tmux -2";
       tree = "exa --tree";
-      vi = "vim";
     };
 
     shellInit = ''
