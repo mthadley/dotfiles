@@ -89,7 +89,6 @@ in
     extraConfig = ''
       set clipboard=unnamed
       set cursorline
-      set dir=/tmp
       set expandtab
       set ignorecase
       set mouse=a
