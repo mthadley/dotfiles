@@ -101,6 +101,7 @@ in
       set splitbelow
       set splitright
       set nowritebackup
+      set undofile
 
       "" Use rg as grepprg
       set grepprg=${pkgs.ripgrep}/bin/rg\ --vimgrep
@@ -229,17 +230,6 @@ in
       colorscheme base16-ocean
 
       hi CursorLineNr cterm=bold
-
-      " Setup persistent undo
-
-      if has('persistent_undo')
-        let undo_dir = expand('$HOME/.vim/undo_dir')
-        if !isdirectory(undo_dir)
-          call mkdir(undo_dir, "p", 0700)
-        endif
-        set undodir=$HOME/.vim/undo_dir
-        set undofile
-      endif
 
       " Functions
 
