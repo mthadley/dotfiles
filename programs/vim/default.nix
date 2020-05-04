@@ -91,8 +91,6 @@ in
       set cursorline
       set dir=/tmp
       set expandtab
-      set formatoptions+=j
-      set hlsearch
       set ignorecase
       set mouse=a
       set nobackup
@@ -229,7 +227,6 @@ in
 
       set termguicolors
       colorscheme base16-ocean
-      set background=dark
 
       hi CursorLineNr cterm=bold
 
