@@ -55,8 +55,10 @@ let
   fzfVimPreview = "${pkgs.vimPlugins.fzf-vim}/share/vim-plugins/fzf-vim/bin/preview.sh";
 in
 {
-  programs.vim = {
+  programs.neovim = {
     enable = true;
+
+    vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
       ale
