@@ -164,6 +164,9 @@ in
       let g:netrw_keepdir = 0
       au BufLeave * exe "lcd" getcwd(-1)
 
+      "" Turn on spell check for certain filetypes
+      au FileType gitcommit setl spell
+
       " Keybinds
 
       let g:user_emmet_leader_key = '<C-E>'
