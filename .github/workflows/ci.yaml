@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * SUN'
 name: Continuous Integration
 jobs:
   test-setup:
