@@ -1,0 +1,20 @@
+#cloud-config
+
+users:
+  - default
+  - name: mthadley
+    gecos: Michael Hadley
+    groups: users, admin
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDVUYHUIjo0c34tGPnkrUwfHijKeuPQbs/dtZCEbGbdMzN+Wr1nzZQrnvtJtS452ZCQFpLVNtdkx4JjLfSRnn61PCpwvP3hnbj1p4/RhNWUTmjLA8Ohv7BQA/PBzcIm9ZFXE9QyUre1gYY4CcJX1rDV3djus/cp2OWTjuIQwPExJICXGp3KsNoLovyV1+RZ9L+af8QCwr4hoyrufTkyGzic4Q4J7cJp0ZJDpz/lx62PhnqnQeYw41d3U3mS3Zskwn25QmvK1aHDP+W2HUDAYrQ/zTEXxWzmm1gri7U9OsZUIsVfo6BD8YUgi4/1lyuKx7ontiKBG7lRy0l3gJTpclBLsL8A+D8bXiUhYZpbSHRepM1zh3azcCKmGqYjhU4yR6OPVIoMmZmXMxz8+SMdgnhfzFftkZtD8jfArFecQpehmNu5ttg3ZZ/X5aFOMQA2W9Ur4wDDvQWu6cunjynBCtFWf5BY2IWIu68JXE6nQWfJYllO9IeWHQaVAWgRT7n6SB5zJCSD548PqSucxAxKev/mBE77POtw22hlQVFcKmL9nAwj7bISlVE/IcbKOSplgmnH3fr5SDDeGjsgF/btmyeJMzgxtinbcxoBHCZ7DCXcCk92Y8UiL7XTMyh1hbEIDwCm5m0zBDbP20eJOA/9O4TQI+fc2XngX4v549XX/EmPTw== mikethadley@gmail.com
+
+package_upgrade: true
+packages:
+  - git
+  - mosh
+
+runcmd:
+  # Allow other shells like fish from nix
+  - sed -iE 's/required/sufficient/' /etc/ppam.d/chsh
