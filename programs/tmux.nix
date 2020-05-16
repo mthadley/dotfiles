@@ -28,8 +28,6 @@
       set -g status-fg "colour20"
       set -g status-bg "colour18"
 
-      set-option -sa terminal-overrides ',xterm-256color:RGB'
-
       bind-key v split-window -h
       bind-key s split-window -v
       bind-key a last-window
