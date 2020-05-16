@@ -98,6 +98,7 @@ in
       set number
       set relativenumber
       set scrolloff=10
+      set shiftround
       set shiftwidth=2
       set splitbelow
       set splitright
