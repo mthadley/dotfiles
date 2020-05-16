@@ -149,8 +149,6 @@ in
       "" Remove trailing whitespace
       au BufWritePre * :%s/\s\+$//e
 
-      au BufRead,BufNewFile *.css set filetype=scss
-
       "" Wrap Lines when writing Markdown
       au BufRead,BufNewFile *.md setlocal textwidth=80
 
