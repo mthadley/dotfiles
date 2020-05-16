@@ -94,13 +94,13 @@ in
       set ignorecase
       set mouse=a
       set nobackup
+      set nowritebackup
       set number
       set relativenumber
       set scrolloff=10
       set shiftwidth=2
       set splitbelow
       set splitright
-      set nowritebackup
       set undofile
 
       "" Use rg as grepprg
