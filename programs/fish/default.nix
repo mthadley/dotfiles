@@ -1,10 +1,11 @@
 { pkgs, ... }:
 
-let
-  fish_functions = builtins.attrNames (builtins.readDir ./functions);
-  fish_function_files = builtins.map (file_name: ./functions + "/${file_name}") fish_functions;
-in
 {
+  home.file.fishFunctions = {
+    source = ./functions;
+    target = ".config/fish/functions";
+  };
+
   programs.fish = {
     enable = true;
 
@@ -25,10 +26,6 @@ in
     };
 
     shellInit = ''
-      ${builtins.foldl' (xs: x: ''
-        ${xs}
-        ${builtins.readFile x}'') "" fish_function_files}
-
       # Add nix and others to path
       set -x PATH "$HOME/.cargo/bin" "$HOME/.nix-profile/bin" "$HOME/.local/bin" $PATH
 
