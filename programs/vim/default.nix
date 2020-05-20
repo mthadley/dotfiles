@@ -65,7 +65,6 @@ in
       ale
       auto-pairs
       base16-vim
-      emmet-vim
       vim-abolish
       vim-commentary
       vim-fugitive
@@ -168,7 +167,6 @@ in
 
       " Keybinds
 
-      let g:user_emmet_leader_key = '<C-E>'
       let mapleader = ","
 
       inoremap jk <ESC>
