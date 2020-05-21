@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 let
-  similar-sort = pkgs.callPackage ../../pkgs/similar-sort {};
-
   vim-mix-format = pkgs.vimUtils.buildVimPlugin {
     name = "mix-format";
     src = pkgs.fetchFromGitHub {
@@ -173,7 +171,7 @@ in
 
       "" fzf
       noremap <silent> <C-P> :call fzf#run(fzf#wrap({
-      \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${similar-sort}/bin/similar-sort \"" . @% . "\"",
+      \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${pkgs.similar-sort}/bin/similar-sort \"" . @% . "\"",
       \ "sink": 'edit',
       \ "options": ['--tiebreak', 'index', '--preview', '${fzfVimPreview} {}'],
       \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
