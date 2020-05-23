@@ -60,6 +60,7 @@
       eval sh ${pkgs.base16}/share/base16/scripts/base16-ocean.sh
 
       # Copied from the pre 3.0.0 default fish theme
+      # See https://github.com/fish-shell/fish-shell/commit/a6031c42bfdcdfdea33c35303d8c932a08b2e7a7
       set fish_color_autosuggestion 555 brblack
       set fish_color_cancel -r
       set fish_color_command --bold
