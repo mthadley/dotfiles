@@ -23,6 +23,9 @@
       set -g status-right ""
       set -g status-justify centre
 
+      # Fixes colors in vim
+      set-option -sa terminal-overrides ',xterm-256color:RGB'
+
       set -g mouse on
 
       set -g status-fg "colour20"
