@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 let
-  similar-sort = pkgs.callPackage ../../pkgs/similar-sort {};
-
   vim-mix-format = pkgs.vimUtils.buildVimPlugin {
     name = "mix-format";
     src = pkgs.fetchFromGitHub {
