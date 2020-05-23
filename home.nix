@@ -8,7 +8,6 @@
       htop
       jq
       ripgrep
-      shellcheck
 
       # Just used to verify home-manager setup
       hello
