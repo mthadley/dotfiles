@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home = {
@@ -28,6 +28,7 @@
     ./programs/git.nix
     ./programs/tmux.nix
     ./programs/vim/default.nix
+    ./programs/konsole.nix
   ];
 
   nixpkgs.overlays = builtins.map

@@ -57,7 +57,10 @@
       source ${pkgs.fzf}/share/fish/vendor_conf.d/load-fzf-key-bindings.fish
 
       # Color scheme
-      eval sh ${pkgs.base16}/share/base16/scripts/base16-ocean.sh
+      # NOTE: These don't work on KDE's Konsole
+      if not set -q KONSOLE_PROFILE_NAME
+        eval sh ${pkgs.base16}/share/base16/scripts/base16-ocean.sh
+      end
 
       # Copied from the pre 3.0.0 default fish theme
       # See https://github.com/fish-shell/fish-shell/commit/a6031c42bfdcdfdea33c35303d8c932a08b2e7a7
