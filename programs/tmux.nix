@@ -28,8 +28,8 @@
 
       set -g mouse on
 
-      set -g status-fg "colour20"
-      set -g status-bg "colour18"
+      set -g status-fg "colour7"
+      set -g status-bg "colour8"
 
       bind-key v split-window -h
       bind-key s split-window -v
