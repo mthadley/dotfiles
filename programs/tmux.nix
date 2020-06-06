@@ -28,8 +28,10 @@
 
       set -g mouse on
 
-      set -g status-fg "colour7"
-      set -g status-bg "colour8"
+      # colors
+      set-option -g status-style fg="#7f8894",bg="#343d46"
+      set-option -g pane-border-style fg="#343d46"
+      set-window-option -g window-status-current-style fg=green
 
       bind-key v split-window -h
       bind-key s split-window -v
