@@ -17,6 +17,13 @@
     sessionVariables = {
       EDITOR = "vim";
       fish_greeting = "";
+
+      # Fixes issues with locale in non-NixOS usage of nix
+      #
+      # See:
+      # https://github.com/NixOS/nixpkgs/issues/6878
+      # https://github.com/rycee/home-manager/issues/354
+      LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
     };
   };
 
