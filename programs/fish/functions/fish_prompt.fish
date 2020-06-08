@@ -26,7 +26,7 @@ function fish_prompt
 
   if _is_git_repo
     set -l repo_branch $blue(_git_branch_name)
-    set repo_info "$blue @ $repo_branch"
+    set repo_info "$blue » $repo_branch"
 
     if test (_is_git_dirty)
       set -l dirty "$yellow *"
