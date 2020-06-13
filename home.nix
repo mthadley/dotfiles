@@ -9,6 +9,7 @@
       jq
       ripgrep
       shellcheck
+      entr
 
       # Just used to verify home-manager setup
       hello
