@@ -1,7 +1,10 @@
 CFLAGS = -Wall -Werror -pedantic
 
-all: bin/similar-sort
+all: similar-sort
 
-bin/similar-sort: similar-sort.c levenshtein.c/levenshtein.c
-	mkdir -p bin
+install:
+	mkdir -p $(out)/bin
+	cp similar-sort $(out)/bin
+
+similar-sort: similar-sort.c levenshtein.c/levenshtein.c
 	$(CC) $(CFLAGS) -o $@ $^
