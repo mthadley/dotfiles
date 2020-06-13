@@ -20,8 +20,8 @@ static int cmplines(const void *a, const void *b, void *z) {
   size_t first_d = levenshtein_n(base->data, base->len, first->data, first->len);
   size_t second_d = levenshtein_n(base->data, base->len, second->data, second->len);
 
-  if (first_d > second_d) return -1;
-  if (first_d < second_d) return 1;
+  if (first_d > second_d) return 1;
+  if (first_d < second_d) return -1;
   return 0;
 }
 
