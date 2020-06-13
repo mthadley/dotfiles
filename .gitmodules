@@ -1,0 +1,6 @@
+[submodule "pkgs/similar-sort-redux/levenshtein.c"]
+	path = pkgs/similar-sort-redux/levenshtein.c
+	url = https://github.com/wooorm/levenshtein.c.git
+[submodule "pkgs/similar-sort/levenshtein.c"]
+	path = pkgs/similar-sort/levenshtein.c
+	url = https://github.com/wooorm/levenshtein.c.git
