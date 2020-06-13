@@ -25,9 +25,18 @@ static int cmplines(const void *a, const void *b, void *z) {
   return 0;
 }
 
+void print_usage() {
+  printf("Usage: similar-sort filename\n");
+}
+
 int main(int argc, char **argv) {
+  if (strcmp("-h", argv[1]) == 0) {
+    print_usage();
+    exit(EXIT_SUCCESS);
+  }
+
   if (argc < 2) {
-    printf("Usage: similar-sort filename\n");
+    print_usage();
     exit(EXIT_FAILURE);
   }
 
