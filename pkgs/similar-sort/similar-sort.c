@@ -20,7 +20,7 @@ static int cmplines(const void *a, const void *b) {
   return 0;
 }
 
-void print_usage() {
+static void print_usage() {
   printf("Usage: similar-sort filename\n");
 }
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
   while (getline(&lineptr, &line_buffer_s, stdin) != -1) {
     if (numlines == maxlines) {
       maxlines *= 2;
-      lines = reallocarray(lines, maxlines, sizeof(char *));
+      lines = realloc(lines, maxlines * sizeof(char *));
     }
 
     lines[numlines] = lineptr;
