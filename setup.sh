@@ -47,6 +47,13 @@ fi
 # Link home manager configuration
 ln -sf "$(pwd)/home.nix" ~/.config/nixpkgs/home.nix
 
+# Check for submodule status
+if git submodule status | grep "^-" > /dev/null; then
+  echo "Initializing git submodules..."
+  git submodule init
+  git submodule update
+fi
+
 # Enable configuration
 echo "Switching to new configuration..."
 home-manager switch
