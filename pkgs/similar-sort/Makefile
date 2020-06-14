@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Werror -pedantic
+CFLAGS = -std=c99 -Wall -Werror -pedantic
 
 all: similar-sort
 

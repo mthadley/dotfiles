@@ -6,10 +6,11 @@
 
 #include "levenshtein.c/levenshtein.h"
 
-static int cmplines(const void *a, const void *b, void *z) {
+static char *base;
+
+static int cmplines(const void *a, const void *b) {
   const char *first = *(const char **)a;
   const char *second = *(const char **)b;
-  const char *base = z;
 
   size_t first_d = levenshtein(base, first);
   size_t second_d = levenshtein(base, second);
@@ -34,6 +35,8 @@ int main(int argc, char **argv) {
     exit(EXIT_FAILURE);
   }
 
+  base = argv[1];
+
   size_t maxlines = 2000;
   size_t numlines = 0;
   char **lines = calloc(maxlines, sizeof(char *));
@@ -53,7 +56,7 @@ int main(int argc, char **argv) {
     line_buffer_s = 0;
   }
 
-  qsort_r(lines, numlines, sizeof(char *), cmplines, argv[1]);
+  qsort(lines, numlines, sizeof(char *), cmplines);
 
   for (int i = 0; i < numlines; i++)
     printf("%s", lines[i]);
