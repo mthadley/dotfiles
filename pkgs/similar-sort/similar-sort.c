@@ -1,5 +1,6 @@
 #define _POSIX_C_SOURCE 200809L
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,18 +20,8 @@ static void print_usage() {
   printf("Usage: similar-sort filename\n");
 }
 
-int main(int argc, char **argv) {
-  if (strcmp("-h", argv[1]) == 0) {
-    print_usage();
-    exit(EXIT_SUCCESS);
-  }
-
-  if (argc < 2) {
-    print_usage();
-    exit(EXIT_FAILURE);
-  }
-
-  base = argv[1];
+static size_t readlines(char ***out) {
+  assert(*out == NULL);
 
   size_t maxlines = 2000;
   size_t numlines = 0;
@@ -50,6 +41,26 @@ int main(int argc, char **argv) {
     lineptr = NULL;
     line_buffer_s = 0;
   }
+
+  *out = lines;
+  return numlines;
+}
+
+int main(int argc, char **argv) {
+  if (strcmp("-h", argv[1]) == 0) {
+    print_usage();
+    exit(EXIT_SUCCESS);
+  }
+
+  if (argc < 2) {
+    print_usage();
+    exit(EXIT_FAILURE);
+  }
+
+  base = argv[1];
+
+  char **lines = NULL;
+  size_t numlines = readlines(&lines);
 
   qsort(lines, numlines, sizeof(char *), cmplines);
 
