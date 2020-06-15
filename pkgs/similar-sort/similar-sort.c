@@ -12,12 +12,7 @@ static int cmplines(const void *a, const void *b) {
   const char *first = *(const char **)a;
   const char *second = *(const char **)b;
 
-  size_t first_d = levenshtein(base, first);
-  size_t second_d = levenshtein(base, second);
-
-  if (first_d > second_d) return 1;
-  if (first_d < second_d) return -1;
-  return 0;
+  return levenshtein(base, first) - levenshtein(base, second);
 }
 
 static void print_usage() {
