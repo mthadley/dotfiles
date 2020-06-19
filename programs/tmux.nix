@@ -29,12 +29,12 @@
       set -g status-justify centre
 
       # colors
-      set-option -g status-style fg="#7f8894",bg="#343d46"
-      set-option -g pane-border-style fg="#343d46"
-      set-window-option -g window-status-current-style fg=green
+      set -g status-style fg="#7f8894",bg="#343d46"
+      set -g pane-border-style fg="#343d46"
+      set -g window-status-current-style fg=green
 
       # Fixes colors in vim
-      set-option -sa terminal-overrides ',xterm-256color:RGB'
+      set -sa terminal-overrides ',xterm-256color:RGB'
 
       bind-key v split-window -h
       bind-key s split-window -v
