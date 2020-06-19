@@ -15,7 +15,7 @@ if is_installed nix; then
   echo "Nix is installed!"
 else
   echo "Installing nix..."
-  sh <(curl https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+  sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 
   if [ "$(uname)" = "Darwin" ]; then
     echo "Disabling spotlight for /nix..."
