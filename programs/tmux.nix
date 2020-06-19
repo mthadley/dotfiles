@@ -22,6 +22,7 @@
     extraConfig = ''
       # general options
       set -g mouse on
+      set -g renumber-windows on
 
       # status line
       set -g status-right ""
