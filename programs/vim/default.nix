@@ -63,6 +63,7 @@ in
       ale
       auto-pairs
       base16-vim
+      neoformat
       vim-abolish
       vim-commentary
       vim-fugitive
@@ -149,9 +150,6 @@ in
       "" Wrap Lines when writing Markdown
       au BufRead,BufNewFile *.md setlocal textwidth=80
 
-      "" Formatting js
-      au FileType javascript setlocal formatprg=prettier
-
       "" Typescript hints
       au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
@@ -162,6 +160,12 @@ in
 
       "" Turn on spell check for certain filetypes
       au FileType gitcommit setl spell
+
+      "" Format code on save
+      augroup fmt
+        autocmd!
+        autocmd BufWritePre * undojoin | Neoformat
+      augroup END
 
       " Keybinds
 
