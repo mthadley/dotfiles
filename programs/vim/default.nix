@@ -138,6 +138,12 @@ in
       let g:vim_markdown_folding_disabled = 1
       let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
 
+      "" Neoformat
+      let g:neoformat_enabled_ruby = []
+      let g:neoformat_enabled_sql = []
+      let g:neoformat_enabled_yaml = []
+      let g:neoformat_enabled_json = []
+
       " au commands
 
       "" Autoreload file on change
@@ -164,7 +170,7 @@ in
       "" Format code on save
       augroup fmt
         autocmd!
-        autocmd BufWritePre * undojoin | Neoformat
+        autocmd BufWritePre * Neoformat
       augroup END
 
       " Keybinds
