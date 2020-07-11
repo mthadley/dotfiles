@@ -19,6 +19,7 @@
 
       # misc
       ls = "exa";
+      be = "bundle exec";
       npr = "npm run";
       rspec = "rspec --format documentation";
       tm = "tmux -2";
