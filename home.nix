@@ -17,6 +17,7 @@
 
     sessionVariables = {
       EDITOR = "vim";
+      LESS = "-c -+F";
       fish_greeting = "";
     } // pkgs.stdenv.lib.optionalAttrs pkgs.stdenv.isLinux {
       # Fixes issues with locale in non-NixOS usage of nix
