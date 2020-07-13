@@ -25,6 +25,10 @@
         '';
       };
 
+      pull = {
+        ff = "only";
+      };
+
       push = {
         default = "current";
       };
