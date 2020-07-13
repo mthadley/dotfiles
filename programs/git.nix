@@ -14,17 +14,17 @@
 
     lfs.enable = true;
 
-    extraConfig = {
-      core = {
-        pager = ''
-          BAT_PAGER='less -c -+F' \
-          ${pkgs.gitAndTools.delta}/bin/delta \
-          --paging always \
-          --file-style plain \
-          --hunk-style plain
-        '';
-      };
+    delta = {
+      enable = true;
 
+      options = [
+        "--paging always"
+        "--file-style plain"
+        "--hunk-style plain"
+      ];
+    };
+
+    extraConfig = {
       pull = {
         ff = "only";
       };
