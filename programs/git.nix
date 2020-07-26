@@ -17,11 +17,10 @@
     delta = {
       enable = true;
 
-      options = [
-        "--paging always"
-        "--file-style plain"
-        "--hunk-style plain"
-      ];
+      options = {
+        line-numbers = true;
+        paging = "always";
+      };
     };
 
     extraConfig = {
