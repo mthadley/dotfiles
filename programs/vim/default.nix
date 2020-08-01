@@ -81,8 +81,10 @@ in
       vim-sleuth
       vim-sort-motion
       vim-surround
+      vim-test
       vim-unimpaired
       vim-vinegar
+      tslime
     ];
 
     extraConfig = ''
@@ -143,6 +145,13 @@ in
       let g:neoformat_enabled_sql = []
       let g:neoformat_enabled_yaml = []
       let g:neoformat_enabled_json = []
+
+      "" vim-test
+      let g:test#strategy = 'tslime'
+
+      "" tslime
+      let g:tslime_always_current_session = 1
+      let g:tslime_always_current_window = 1
 
       " au commands
 
@@ -222,6 +231,11 @@ in
       "" Rails
       noremap <leader>ra :A<CR>
       noremap <leader>re :R<CR>
+
+      "" vim-test
+      noremap tt :TestFile<CR>
+      noremap tn :TestNearest<CR>
+      noremap ta :TestSuite<CR>
 
       "" Misc
 
