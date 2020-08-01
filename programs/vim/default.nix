@@ -64,6 +64,7 @@ in
       auto-pairs
       base16-vim
       neoformat
+      tslime
       vim-abolish
       vim-commentary
       vim-fugitive
@@ -84,7 +85,6 @@ in
       vim-test
       vim-unimpaired
       vim-vinegar
-      tslime
     ];
 
     extraConfig = ''
