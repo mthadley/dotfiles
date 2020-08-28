@@ -179,7 +179,7 @@ in
       "" Format code on save
       augroup fmt
         autocmd!
-        autocmd BufWritePre * Neoformat
+        autocmd BufWritePre *.elm Neoformat
       augroup END
 
       " Keybinds
