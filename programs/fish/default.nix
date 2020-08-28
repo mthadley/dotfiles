@@ -43,6 +43,9 @@
           set -l autojump_path ${pkgs.autojump}/share/autojump/autojump.fish
           [ -f $autojump_path ]; and source $autojump_path
       end
+
+      # Ruby junk
+      rvm default
     '';
 
     interactiveShellInit = ''
