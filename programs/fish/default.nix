@@ -45,7 +45,9 @@
       end
 
       # Ruby junk
-      rvm default
+      if command -v rvm > /dev/null
+        rvm default
+      end
     '';
 
     interactiveShellInit = ''
