@@ -116,6 +116,7 @@ in
       let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
       let g:ale_linters = {'haskell': ['hlint', 'hdevtools', 'hfmt']}
       let g:ale_linters_ignore = {'ruby': ['brakeman']}
+      set omnifunc=ale#completion#OmniFunc
       hi ALEError cterm=underline
 
       "" chriskempson/base16-vim
