@@ -124,11 +124,6 @@ in
       "" chriskempson/base16-vim
       let g:base16colorspace=256
 
-      "" ElmCast/elm-vim
-      let g:elm_setup_keybindings = 0
-      let g:elm_format_autosave = 1
-      let g:elm_detailed_complete = 1
-
       "" mhinz/vim-mix-format
       let g:mix_format_on_save = 1
 
