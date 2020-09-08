@@ -79,7 +79,6 @@ in
       vim-rails
       vim-repeat
       vim-sensible
-      vim-sleuth
       vim-sort-motion
       vim-surround
       vim-test
