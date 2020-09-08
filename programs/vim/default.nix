@@ -98,7 +98,7 @@ in
       set relativenumber
       set scrolloff=10
       set shiftround
-      set shiftwidth=2
+      set shiftwidth=4
       set splitbelow
       set splitright
       set undofile
