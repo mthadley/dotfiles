@@ -1,8 +1,13 @@
-use strsim::{levenshtein};
-use std::{env, io::{self, BufRead}};
+use std::{
+    env,
+    io::{self, BufRead},
+};
+use strsim::levenshtein;
 
 fn main() {
-    let compare_to = env::args().nth(1).expect("Expected string to compare against.");
+    let compare_to = env::args()
+        .nth(1)
+        .expect("Expected string to compare against.");
 
     let mut lines = io::stdin()
         .lock()
