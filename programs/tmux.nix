@@ -7,6 +7,7 @@
     plugins = with pkgs.tmuxPlugins; [
       resurrect
       pain-control
+      yank
     ];
 
     historyLimit = 10000;
