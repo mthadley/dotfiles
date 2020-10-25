@@ -30,14 +30,15 @@
   };
 
   imports = [
+    ./programs/autojump.nix
     ./programs/bat.nix
     ./programs/direnv.nix
     ./programs/fish/default.nix
     ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/konsole.nix
     ./programs/tmux.nix
     ./programs/vim/default.nix
-    ./programs/konsole.nix
   ];
 
   nixpkgs.overlays = builtins.map
