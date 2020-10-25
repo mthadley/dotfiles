@@ -3,7 +3,6 @@
 {
   home = {
     packages = with pkgs; [
-      autojump
       entr
       exa
       htop
