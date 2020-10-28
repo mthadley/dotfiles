@@ -87,7 +87,7 @@ in
     ];
 
     extraConfig = ''
-      set clipboard=unnamed
+      set clipboard+=unnamedplus
       set cursorline
       set expandtab
       set ignorecase
