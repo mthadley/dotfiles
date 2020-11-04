@@ -124,6 +124,9 @@ in
       "" chriskempson/base16-vim
       let g:base16colorspace=256
 
+      "" fzf
+      let g:fzf_colors = { 'border': ['fg', 'Comment'] }
+
       "" mhinz/vim-mix-format
       let g:mix_format_on_save = 1
 
