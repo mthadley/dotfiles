@@ -28,16 +28,23 @@
     };
   };
 
-  imports = [
+  imports = let
+    # Trying to access stdenv here from the `pkgs` parameter
+    # results in infinite recursion, as the final `pkgs` itself
+    # actually depends on these imports. As a work-around, we can
+    # explicitly import our own stdenv for use just in this expression.
+    stdenv = (import <nixpkgs> {}).stdenv;
+  in [
     ./programs/autojump.nix
     ./programs/bat.nix
     ./programs/direnv.nix
     ./programs/fish/default.nix
     ./programs/fzf.nix
     ./programs/git.nix
-    ./programs/konsole.nix
     ./programs/tmux.nix
     ./programs/vim/default.nix
+  ] ++ stdenv.lib.optionals stdenv.isLinux [
+    ./programs/konsole.nix
   ];
 
   nixpkgs.overlays = builtins.map
