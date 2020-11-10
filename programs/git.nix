@@ -24,13 +24,8 @@
     };
 
     extraConfig = {
-      pull = {
-        ff = "only";
-      };
-
-      push = {
-        default = "current";
-      };
+      pull.ff = "only";
+      push.default = "current";
     };
   };
 }
