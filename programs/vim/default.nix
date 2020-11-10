@@ -126,6 +126,9 @@ in
 
       "" fzf
       let g:fzf_colors = { 'border': ['fg', 'Comment'] }
+      let g:fzf_action = {
+        \ 'ctrl-s': 'split',
+        \ 'ctrl-v': 'vsplit' }
 
       "" mhinz/vim-mix-format
       let g:mix_format_on_save = 1
@@ -192,7 +195,6 @@ in
       "" fzf
       noremap <silent> <C-P> :call fzf#run(fzf#wrap({
       \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${pkgs.similar-sort}/bin/similar-sort \"" . @% . "\"",
-      \ "sink": 'edit',
       \ "options": ['--tiebreak', 'index', '--preview', '${fzfVimPreview} {}'],
       \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
       \ }))<CR>
