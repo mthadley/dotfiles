@@ -183,7 +183,7 @@ in
       "" Format code on save
       augroup fmt
         autocmd!
-        autocmd BufWritePre *.elm,*.rs Neoformat
+        autocmd BufWritePre *.elm,*.rs,*.purs Neoformat
       augroup END
 
       " Keybinds
@@ -270,4 +270,18 @@ in
       endfunction
     '';
   };
+
+  home.file.".config/nvim/autoload/neoformat/formatters/purescript.vim".text = ''
+    function! neoformat#formatters#purescript#enabled() abort
+        return ['purty']
+    endfunction
+
+    function! neoformat#formatters#purescript#purty() abort
+        return {
+            \ 'exe': 'purty',
+            \ 'args': ['-'],
+            \ 'stdin': 1
+            \ }
+    endfunction
+  '';
 }
