@@ -111,8 +111,6 @@ in
       "" 'w0rp/ale'
       let g:ale_lint_delay = 1000
       let g:ale_lint_on_enter = 0
-      let g:ale_elm_ls_elm_analyse_trigger = 'never'
-      let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
       let g:ale_linters = {'haskell': ['hlint', 'hdevtools', 'hfmt']}
       let g:ale_linters_ignore = {'ruby': ['brakeman']}
       let g:ale_completion_enabled = 1
@@ -120,6 +118,10 @@ in
       let g:ale_close_preview_on_insert = 1
       set omnifunc=ale#completion#OmniFunc
       hi ALEError cterm=underline
+
+      let g:ale_elm_ls_elm_analyse_trigger = 'never'
+      let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
+      let g:ale_purescript_ls_config = {'purescript': {'pursExe': 'purs'}}
 
       "" chriskempson/base16-vim
       let g:base16colorspace=256
