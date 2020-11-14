@@ -121,7 +121,6 @@ in
 
       let g:ale_elm_ls_elm_analyse_trigger = 'never'
       let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
-      let g:ale_purescript_ls_config = {'purescript': {'pursExe': 'purs'}}
 
       "" chriskempson/base16-vim
       let g:base16colorspace=256
