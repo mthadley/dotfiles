@@ -240,6 +240,7 @@ in
       noremap tt :TestFile<CR>
       noremap tn :TestNearest<CR>
       noremap ta :TestSuite<CR>
+      noremap tl :execute "Tmux bundle exec rubocop " . expand("%:p")<CR>
 
       "" Misc
 
