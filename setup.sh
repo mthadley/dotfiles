@@ -10,6 +10,12 @@ if [ -n "${GITHUB_WORKFLOW:-}" ]; then
   set -x
 fi
 
+# Make sure curl is installed
+if ! is_installed curl; then
+  echo "Make sure curl is installed first!"
+  exit 1
+fi
+
 # Install nix
 if is_installed nix; then
   echo "Nix is installed!"
