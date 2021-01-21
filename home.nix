@@ -37,6 +37,7 @@
   in [
     ./programs/autojump.nix
     ./programs/bat.nix
+    ./programs/bundler.nix
     ./programs/direnv.nix
     ./programs/fish/default.nix
     ./programs/fzf.nix
