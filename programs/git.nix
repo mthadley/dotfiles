@@ -27,6 +27,7 @@
     extraConfig = {
       pull.ff = "only";
       push.default = "current";
+      init.defaultBranch = "main";
     };
   };
 }
