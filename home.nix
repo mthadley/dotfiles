@@ -18,7 +18,7 @@
       EDITOR = "vim";
       LESS = "-c -+F";
       fish_greeting = "";
-    } // pkgs.stdenv.lib.optionalAttrs pkgs.stdenv.isLinux {
+    } // pkgs.lib.optionalAttrs pkgs.hostPlatform.isLinux {
       # Fixes issues with locale in non-NixOS usage of nix
       #
       # See:
@@ -29,11 +29,11 @@
   };
 
   imports = let
-    # Trying to access stdenv here from the `pkgs` parameter
+    # Trying to access lib here from the `pkgs` parameter
     # results in infinite recursion, as the final `pkgs` itself
     # actually depends on these imports. As a work-around, we can
-    # explicitly import our own stdenv for use just in this expression.
-    stdenv = (import <nixpkgs> {}).stdenv;
+    # explicitly import our own lib for use just in this expression.
+    pkgs = (import <nixpkgs> {});
   in [
     ./programs/autojump.nix
     ./programs/bat.nix
@@ -44,7 +44,7 @@
     ./programs/git.nix
     ./programs/tmux.nix
     ./programs/vim/default.nix
-  ] ++ stdenv.lib.optionals stdenv.isLinux [
+  ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
     ./programs/konsole.nix
   ];
 

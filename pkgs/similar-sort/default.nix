@@ -10,7 +10,7 @@ pkgs.rustPlatform.buildRustPackage rec {
 
   verifyCargoDeps = true;
 
-  meta = with pkgs.stdenv.lib; {
+  meta = with pkgs.lib; {
     description = "Sorts stdin by how similar to the given string";
     platforms = platforms.all;
   };
