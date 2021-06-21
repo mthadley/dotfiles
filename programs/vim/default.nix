@@ -40,8 +40,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "tpope";
       repo = "vim-rails";
-      rev = "184d12e85a17c85c548aeecc5b5c8c3182bd22e9";
-      sha256 = "01z88hrqcqqp2cd5dwffiijhzfp0pr32dvmb5ai62y8zhfyn57m9";
+      rev = "3b3796352a6f1a68e54e5f7ae5e0c1b9103fab0e";
+      sha256 = "1f0xns0h55szamms17wi06k1ninvygsc4yw82hr29kfq94hvn57l";
     };
   };
 
