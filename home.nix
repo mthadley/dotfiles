@@ -12,6 +12,8 @@
 
       # Just used to verify home-manager setup
       hello
+    ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+      keyswitch
     ];
 
     sessionVariables = {
