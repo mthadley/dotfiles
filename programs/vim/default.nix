@@ -35,16 +35,6 @@ let
     };
   };
 
-  vim-rails = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-rails";
-    src = pkgs.fetchFromGitHub {
-      owner = "tpope";
-      repo = "vim-rails";
-      rev = "3b3796352a6f1a68e54e5f7ae5e0c1b9103fab0e";
-      sha256 = "1f0xns0h55szamms17wi06k1ninvygsc4yw82hr29kfq94hvn57l";
-    };
-  };
-
   vim-fzf-builtin = pkgs.vimUtils.buildVimPlugin {
     name = "vim-fzf-builtin";
     src = "${pkgs.fzf}/share/vim-plugins/fzf";
