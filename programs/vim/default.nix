@@ -181,6 +181,9 @@ in
         autocmd BufWritePre * Neoformat
       augroup END
 
+      "" Recognize go templates
+      au BufReadPost *.go.tmpl set syntax=gohtmltmpl
+
       " Keybinds
 
       let mapleader = ","
