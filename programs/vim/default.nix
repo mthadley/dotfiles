@@ -182,7 +182,7 @@ in
       augroup END
 
       "" Recognize go templates
-      au BufReadPost *.go.tmpl set syntax=gohtmltmpl
+      au BufReadPost *.go.tmpl set ft=gohtmltmpl
 
       " Keybinds
 
