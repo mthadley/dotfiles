@@ -13,7 +13,7 @@
     historyLimit = 10000;
     keyMode = "vi";
     shortcut = "a";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     escapeTime = 10;
 
     # This tries to set $TMUX_TMPDIR to /run/... which doesn't
