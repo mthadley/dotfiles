@@ -48,6 +48,7 @@
     ./programs/vim/default.nix
   ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
     ./programs/konsole.nix
+    ./programs/vim/vimwiki.nix
   ];
 
   nixpkgs.overlays = builtins.map
