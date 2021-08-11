@@ -36,7 +36,7 @@ in
         Persistent = true;
       };
 
-      Install.WantedBy = ["timers.target"];
+      Install.WantedBy = [ "timers.target" ];
     };
 
     services.mike-wiki = {

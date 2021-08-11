@@ -5,6 +5,6 @@
     enable = true;
 
     defaultCommand = "${pkgs.ripgrep}/bin/rg --files";
-    defaultOptions = ["--color=16"];
+    defaultOptions = [ "--color=16" ];
   };
 }

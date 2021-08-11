@@ -14,11 +14,11 @@
     keyMode = "vi";
     shortcut = "a";
     terminal =
+      # MacOS has an outdated version of ncurses, which means it
+      # doesn't recognize the `tmux-256color` terminfo. Most modern
+      # versions of linuxn don't have this problem. Stolen from:
+      # https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
       if pkgs.stdenv.isDarwin then
-        # MacOS has an outdated version of ncurses, which means it
-        # doesn't recognize the `tmux-256color` terminfo. Most modern
-        # versions of linuxn don't have this problem. Stolen from:
-        # https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
         "screen-256color"
       else
         "tmux-256color";
