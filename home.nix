@@ -9,6 +9,7 @@
       jq
       ripgrep
       shellcheck
+      nixpkgs-fmt
 
       # Just used to verify home-manager setup
       hello
