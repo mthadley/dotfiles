@@ -4,16 +4,16 @@ function fish_prompt
     if not set -q -g __mthadley_fish_prompt_defined
         set -g __mthadley_fish_prompt_defined
         function _git_branch_name
-            echo (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+            echo (git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
         end
 
         function _is_git_dirty
-            echo (git status -s --ignore-submodules=dirty ^/dev/null)
+            echo (git status -s --ignore-submodules=dirty 2>/dev/null)
         end
 
         function _is_git_repo
             type -q git; or return 1
-            git status -s >/dev/null ^/dev/null
+            git status -s >/dev/null 2>/dev/null
         end
     end
 
