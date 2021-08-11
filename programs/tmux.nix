@@ -13,7 +13,15 @@
     historyLimit = 10000;
     keyMode = "vi";
     shortcut = "a";
-    terminal = "tmux-256color";
+    terminal =
+      if pkgs.stdenv.isDarwin then
+        # MacOS has an outdated version of ncurses, which means it
+        # doesn't recognize the `tmux-256color` terminfo. Most modern
+        # versions of linuxn don't have this problem. Stolen from:
+        # https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
+        "screen-256color"
+      else
+        "tmux-256color";
     escapeTime = 10;
 
     # This tries to set $TMUX_TMPDIR to /run/... which doesn't
