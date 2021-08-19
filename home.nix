@@ -8,11 +8,12 @@
       htop
       jq
       ripgrep
-      shellcheck
       nixpkgs-fmt
 
       # Just used to verify home-manager setup
       hello
+    ] ++ pkgs.lib.optionals (!pkgs.stdenv.isAarch64) [
+      shellcheck
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       keyswitch
     ];
