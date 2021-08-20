@@ -9,6 +9,18 @@
   programs.fish = {
     enable = true;
 
+    plugins = [
+      {
+        name = "nvm.fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "nvm.fish";
+          rev = "8922519b432140e6eaafbb4dc397505c8da80139";
+          sha256 = "1h3yga2js5xzbj290m8jp2ncf1jygmbas2f2vs5hbzwv49nckfps";
+        };
+      }
+    ];
+
     shellAliases = {
       # git
       gco = "git checkout";
