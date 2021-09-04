@@ -30,8 +30,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "prettier";
       repo = "vim-prettier";
-      rev = "aa0607ca7a0f61e91365ecf25947312ff4796302";
-      sha256 = "063scgkcq42blzmkapvxvv5yf97a3aqbq0myy9zidhprp82s3mz6";
+      rev = "0e61e4a5b55d2740aa118db91a6671dcb11307e8";
+      sha256 = "0d83lx6kfpsi3d4q9wz8zwsgdn0vn16psqyngml6wspjyibh6pnf";
     };
   };
 
