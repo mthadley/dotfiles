@@ -103,7 +103,11 @@ in
       let g:ale_lint_delay = 1000
       let g:ale_lint_on_enter = 0
       let g:ale_linters = {'haskell': ['hlint', 'hdevtools', 'hfmt']}
-      let g:ale_linters_ignore = {'ruby': ['brakeman'], 'elm': ['elm_ls']}
+      let g:ale_linters_ignore = {
+      \  'ruby': ['brakeman'],
+      \  'elm': ['elm_ls'],
+      \  'graphql': ['eslint']
+      \}
       let g:ale_completion_enabled = 1
       let g:ale_completion_autoimport = 1
       let g:ale_close_preview_on_insert = 1
