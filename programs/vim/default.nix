@@ -181,9 +181,6 @@ in
       "" Wrap Lines when writing Markdown
       au BufRead,BufNewFile *.md setlocal textwidth=80
 
-      "" Typescript hints
-      au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
-
       "" Fix netrw mm and mc commands by updating lcd as you navigate
       "" Keep everything else working by updating lcd back to the global
       let g:netrw_keepdir = 0
