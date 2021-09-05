@@ -52,10 +52,6 @@
       # Use jk to leave insert mode
       bind -M insert -m default jk backward-char force-repaint
 
-      # fzf keybindings
-      source ${pkgs.fzf}/share/fish/vendor_functions.d/fzf_key_bindings.fish
-      source ${pkgs.fzf}/share/fish/vendor_conf.d/load-fzf-key-bindings.fish
-
       # Color scheme
       # NOTE: These don't work on KDE's Konsole
       if not set -q KONSOLE_PROFILE_NAME

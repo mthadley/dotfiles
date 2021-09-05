@@ -6,5 +6,7 @@
 
     defaultCommand = "${pkgs.ripgrep}/bin/rg --files";
     defaultOptions = [ "--color=16" ];
+
+    enableFishIntegration = true;
   };
 }
