@@ -48,16 +48,13 @@
       ./programs/fish/default.nix
       ./programs/fzf.nix
       ./programs/git.nix
+      ./programs/nixpkgs
       ./programs/tmux.nix
       ./programs/vim/default.nix
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       ./programs/konsole.nix
       ./programs/vim/vimwiki.nix
     ];
-
-  nixpkgs.overlays = builtins.map
-    (n: import (./overlays + "/${n}"))
-    (builtins.attrNames (builtins.readDir ./overlays));
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
