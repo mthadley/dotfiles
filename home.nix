@@ -7,8 +7,8 @@
       exa
       htop
       jq
-      ripgrep
       nixpkgs-fmt
+      ripgrep
 
       # Just used to verify home-manager setup
       hello
