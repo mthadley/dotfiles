@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   home.file.".bundle/config".text = ''
     ---
