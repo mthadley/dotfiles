@@ -4,7 +4,6 @@
   home = {
     packages = with pkgs; [
       entr
-      exa
       htop
       jq
       nixpkgs-fmt
@@ -45,6 +44,7 @@
       ./programs/bat.nix
       ./programs/bundler.nix
       ./programs/direnv.nix
+      ./programs/exa.nix
       ./programs/fish/default.nix
       ./programs/fzf.nix
       ./programs/git.nix

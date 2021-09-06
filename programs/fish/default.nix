@@ -18,7 +18,6 @@
       gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
 
       # misc
-      ls = "exa";
       be = "bundle exec";
       npr = "npm run";
       rspec = "rspec --format documentation";
