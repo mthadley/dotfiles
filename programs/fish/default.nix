@@ -31,10 +31,10 @@
 
       # nix
       begin
-          set -l source ~/.nix-profile/etc/profile.d/nix.sh
-          if [ -f $source ]
-              export (echo "source $source; env" | bash | grep NIX)
-          end
+        set -l source ~/.nix-profile/etc/profile.d/nix.sh
+        if [ -f $source ]
+            export (echo "source $source; env" | bash | grep NIX)
+        end
       end
 
       # Ruby junk
