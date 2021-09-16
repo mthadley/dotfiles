@@ -42,7 +42,6 @@
     [
       ./programs/autojump.nix
       ./programs/bat.nix
-      ./programs/bundler.nix
       ./programs/direnv.nix
       ./programs/exa.nix
       ./programs/fish/default.nix
