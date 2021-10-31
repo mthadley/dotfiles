@@ -40,7 +40,7 @@ let
     src = "${pkgs.fzf}/share/vim-plugins/fzf";
   };
 
-  fzfVimPreview = "${pkgs.vimPlugins.fzf-vim}/share/vim-plugins/fzf-vim/bin/preview.sh";
+  fzfVimPreview = "${pkgs.vimPlugins.fzf-vim}/bin/preview.sh";
 in
 {
   programs.neovim = {
