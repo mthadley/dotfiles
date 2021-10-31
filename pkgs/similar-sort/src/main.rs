@@ -13,7 +13,7 @@ fn main() {
         .lock()
         .lines()
         .map(|line| line.expect("Failed to read line from stdin."))
-        .filter(|line| line != &compare_to)
+        .filter(|line| *line != compare_to)
         .collect::<Vec<String>>();
 
     lines.sort_by_cached_key(|line| levenshtein(line, &compare_to));
