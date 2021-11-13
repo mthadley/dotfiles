@@ -3,6 +3,6 @@
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     cargo
-    rustfmt
+    hyperfine
   ];
 }
