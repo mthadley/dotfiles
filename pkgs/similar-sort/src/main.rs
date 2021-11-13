@@ -1,6 +1,6 @@
 use std::{
     env,
-    io::{self, BufRead, BufWriter, Write},
+    io::{self, BufRead},
 };
 use strsim::levenshtein;
 
@@ -17,13 +17,7 @@ fn main() {
 
     let sorted_lines = sorted_by_similiarity(lines, &compare_to);
 
-    let mut out = BufWriter::new(io::stdout());
-
-    for line in sorted_lines {
-        writeln!(out, "{}", line).expect("Failed to flush line to stdout.");
-    }
-
-    out.flush().expect("Failed to flush to stdout.");
+    println!("{}", sorted_lines.join("\n"));
 }
 
 fn sorted_by_similiarity(strs: impl Iterator<Item = String>, compare_to: &str) -> Vec<String> {
