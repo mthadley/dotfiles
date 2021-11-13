@@ -21,11 +21,14 @@ if is_installed nix; then
   echo "Nix is installed!"
 else
   echo "Installing nix..."
-  sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --no-daemon
+  sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 
   if [ "$(uname)" = "Darwin" ]; then
     echo "Disabling spotlight for /nix..."
     sudo mdutil -i off /nix
+
+    echo "Restart your shell, and run this script again!"
+    exit 0
   fi
 
   echo "Sourcing nix profile vars..."
