@@ -44,7 +44,7 @@ else
   nix-channel --update
 
   # Make sure nix picks up the new channel
-  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+  export NIX_PATH=$HOME/.nix-defexpr/channels
 
   echo "Setting up first home-manager generation..."
   nix-shell '<home-manager>' -A install
