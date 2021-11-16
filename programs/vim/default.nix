@@ -243,7 +243,7 @@ in
       "" Git
       noremap <C-G>s :Git<CR>
       noremap <C-G>l :Glog<CR>
-      noremap <C-G>b :Gblame<CR>
+      noremap <C-G>b :Git blame<CR>
       noremap <C-G>h :Gbrowse<CR>
       noremap <C-G>e :Gedit<CR>
 
