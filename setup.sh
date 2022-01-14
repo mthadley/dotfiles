@@ -29,7 +29,7 @@ else
   fi
 
   echo "Sourcing nix profile vars..."
-  # shellcheck disable=SC1091
+  # shellcheck disable=SC1090
   source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
