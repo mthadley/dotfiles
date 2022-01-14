@@ -23,7 +23,7 @@ else
   echo "Installing nix..."
   sh <(curl -L https://nixos.org/nix/install)
 
-  if [ "$(uname)" = "Darwin" ] && [ ! -z "$CI" ]; then
+  if [ "$(uname)" = "Darwin" ] && [ -z "$CI" ]; then
     echo "Disabling spotlight for /nix..."
     sudo mdutil -i off /nix
   fi
