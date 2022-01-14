@@ -21,7 +21,7 @@ if is_installed nix; then
   echo "Nix is installed!"
 else
   echo "Installing nix..."
-  sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+  sh <(curl -L https://nixos.org/nix/install)
 
   if [ "$(uname)" = "Darwin" ]; then
     echo "Disabling spotlight for /nix..."
@@ -33,7 +33,7 @@ else
 
   echo "Sourcing nix profile vars..."
   # shellcheck disable=SC1091
-  source "$HOME"/.nix-profile/etc/profile.d/nix.sh
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
 
 # Install Home Manager
