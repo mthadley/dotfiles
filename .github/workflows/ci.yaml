@@ -9,10 +9,7 @@ jobs:
     strategy:
       matrix:
         os:
-        # The MacOS installer now requires the "terminal" to be
-        # restarted. Disabling the build until I can rework the
-        # CI build to handle this.
-        # - macos-latest
+        - macos-latest
         - ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
