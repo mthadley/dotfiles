@@ -93,6 +93,7 @@ in
       set splitbelow
       set splitright
       set undofile
+      set updatetime=100
 
       "" Use rg as grepprg
       set grepprg=${pkgs.ripgrep}/bin/rg\ --vimgrep
@@ -223,7 +224,7 @@ in
       nnoremap <leader>e] :ALENextWrap<CR>
       nnoremap <leader>e[ :ALEPreviousWrap<CR>
       nnoremap <leader>ed :ALEDetail<CR>
-      nnoremap <leader>h :ALEHover<CR>
+      nnoremap <C-[> :ALEHover<CR>
       nnoremap <C-]> :call GoTo()<CR>
 
       """ Keep default behavior when browsing help files
@@ -242,7 +243,7 @@ in
       "" Git
       noremap <C-G>s :Git<CR>
       noremap <C-G>l :Glog<CR>
-      noremap <C-G>b :Gblame<CR>
+      noremap <C-G>b :Git blame<CR>
       noremap <C-G>h :Gbrowse<CR>
       noremap <C-G>e :Gedit<CR>
 
