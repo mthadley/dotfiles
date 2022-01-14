@@ -26,14 +26,11 @@ else
   if [ "$(uname)" = "Darwin" ]; then
     echo "Disabling spotlight for /nix..."
     sudo mdutil -i off /nix
-
-    echo "Restart your shell, and run this script again!"
-    exit 0
   fi
 
   echo "Sourcing nix profile vars..."
   # shellcheck disable=SC1091
-  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
 # Install Home Manager
