@@ -20,8 +20,11 @@ fn main() {
     println!("{}", sorted_lines.join("\n"));
 }
 
-fn sorted_by_similiarity(strs: impl Iterator<Item = String>, compare_to: &str) -> Vec<String> {
-    let mut sorted = strs.filter(|s| s != compare_to).collect::<Vec<String>>();
+fn sorted_by_similiarity(strs: impl IntoIterator<Item = String>, compare_to: &str) -> Vec<String> {
+    let mut sorted = strs
+        .into_iter()
+        .filter(|s| s != compare_to)
+        .collect::<Vec<_>>();
     sorted.sort_by_cached_key(|line| levenshtein(line, compare_to));
     sorted
 }
