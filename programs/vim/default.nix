@@ -77,23 +77,6 @@ in
     ];
 
     extraConfig = ''
-      set clipboard=unnamed,unnamedplus
-      set cursorline
-      set expandtab
-      set ignorecase
-      set mouse=a
-      set nobackup
-      set nowritebackup
-      set number
-      set relativenumber
-      set scrolloff=10
-      set shiftround
-      set shiftwidth=4
-      set splitbelow
-      set splitright
-      set undofile
-      set updatetime=100
-
       "" Use rg as grepprg
       set grepprg=${pkgs.ripgrep}/bin/rg\ --vimgrep
 
@@ -273,6 +256,10 @@ in
         endfor
         copen
       endfunction
+
+      lua << EOF
+      ${builtins.readFile ./init.lua}
+      EOF
     '';
   };
 
