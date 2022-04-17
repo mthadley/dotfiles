@@ -43,7 +43,7 @@
       ./programs/nix.nix
       ./programs/nixpkgs
       ./programs/tmux.nix
-      ./programs/vim/default.nix
+      ./programs/neovim/default.nix
       ./programs/konsole.nix
     ];
 
