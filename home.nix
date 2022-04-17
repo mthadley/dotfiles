@@ -47,6 +47,7 @@
       ./programs/fish/default.nix
       ./programs/fzf.nix
       ./programs/git.nix
+      ./programs/nix.nix
       ./programs/nixpkgs
       ./programs/tmux.nix
       ./programs/vim/default.nix
