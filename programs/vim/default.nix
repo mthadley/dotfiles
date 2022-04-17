@@ -74,7 +74,6 @@ in
       vim-test
       vim-unimpaired
       vim-vinegar
-      vimwiki
     ];
 
     extraConfig = ''
@@ -154,18 +153,6 @@ in
       let g:tslime_always_current_session = 1
       let g:tslime_always_current_window = 1
 
-      "" vimwiki
-      let g:vimwiki_dir_link = "index"
-      let g:vimwiki_key_mappings = { "global": 0 }
-      let g:vimwiki_global_ext = 0
-      let g:vimwiki_list =
-      \ [
-      \   {
-      \     'path': '~/mike-wiki',
-      \     'syntax': 'markdown', 'ext': '.md'
-      \   }
-      \ ]
-
       " au commands
 
       "" Only show cursorline in active window
@@ -198,9 +185,6 @@ in
 
       "" Recognize go templates
       au BufReadPost *.go.tmpl set ft=gohtmltmpl
-
-      "" Search vimwiki with FZF when open
-      au BufRead */mike-wiki/* lcd ~/mike-wiki
 
       " Keybinds
 
@@ -256,10 +240,6 @@ in
       noremap tn :TestNearest<CR>
       noremap ta :TestSuite<CR>
       noremap tl :execute "Tmux bundle exec rubocop " . expand("%:p")<CR>
-
-      "" vimwiki
-      noremap <leader>xx :VimwikiIndex<CR>
-      noremap <leader>xt :VimwikiTabIndex<CR>
 
       "" Saving
       noremap <leader>w :w<CR>
