@@ -51,7 +51,7 @@ ln -sf "$(pwd)/home.nix" ~/.config/nixpkgs/home.nix
 
 # Enable configuration
 echo "Switching to new configuration..."
-home-manager switch --flake "$FLAKE_URI"
+home-manager switch --flake "path:.#$HM_CONFIG"
 
 if ! echo "$SHELL" | grep fish > /dev/null; then
   echo "Setting fish as default shell..."
