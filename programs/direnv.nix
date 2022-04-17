@@ -4,7 +4,7 @@
     nix-direnv.enable = true;
 
     config = {
-      skip_dotenv = true;
+      load_dotenv = false;
     };
   };
 }
