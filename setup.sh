@@ -5,7 +5,7 @@ function is_installed {
   command -v "$1" > /dev/null
 }
 
-HM_CONFIG="${HOME_MANAGER_CONFIG:-workos-laptop}"
+HM_CONFIG="${HOME_MANAGER_CONFIG:-mthadley-workos}"
 FLAKE_URI="path:.#homeConfigurations.${HM_CONFIG}.activationPackage"
 
 # Enable debug mode on CI
