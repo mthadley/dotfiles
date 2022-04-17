@@ -32,13 +32,6 @@
   };
 
   imports =
-    let
-      # Trying to access lib here from the `pkgs` parameter
-      # results in infinite recursion, as the final `pkgs` itself
-      # actually depends on these imports. As a work-around, we can
-      # explicitly import our own lib for use just in this expression.
-      pkgs = (import <nixpkgs> { });
-    in
     [
       ./programs/autojump.nix
       ./programs/bat.nix
@@ -47,12 +40,11 @@
       ./programs/fish/default.nix
       ./programs/fzf.nix
       ./programs/git.nix
+      ./programs/nix.nix
       ./programs/nixpkgs
       ./programs/tmux.nix
       ./programs/vim/default.nix
-    ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       ./programs/konsole.nix
-      ./programs/vim/vimwiki.nix
     ];
 
   # Let Home Manager install and manage itself.

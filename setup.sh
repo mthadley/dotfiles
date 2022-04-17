@@ -5,6 +5,9 @@ function is_installed {
   command -v "$1" > /dev/null
 }
 
+HM_CONFIG="${HOME_MANAGER_CONFIG:-mthadley-workos}"
+FLAKE_URI="path:.#homeConfigurations.${HM_CONFIG}.activationPackage"
+
 # Enable debug mode on CI
 if [ -n "${GITHUB_WORKFLOW:-}" ]; then
   set -x
@@ -38,24 +41,13 @@ if is_installed home-manager; then
   echo "Home Manager is installed!"
 else
   echo "Installing Home Manager..."
-  echo "Assuming nixpkgs-unstable and using home-manager@master..."
 
-  nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-
-  # Make sure nix picks up the new channel
-  export NIX_PATH=$HOME/.nix-defexpr/channels
-
-  echo "Setting up first home-manager generation..."
-  nix-shell '<home-manager>' -A install
+  nix build --extra-experimental-features "nix-command flakes" --no-link "$FLAKE_URI"
+  "$(nix --extra-experimental-features "nix-command flakes" path-info "${FLAKE_URI}")"/activate
 fi
 
-# Link home manager configuration
-ln -sf "$(pwd)/home.nix" ~/.config/nixpkgs/home.nix
-
-# Enable configuration
 echo "Switching to new configuration..."
-home-manager switch
+home-manager switch --flake "path:.#$HM_CONFIG"
 
 if ! echo "$SHELL" | grep fish > /dev/null; then
   echo "Setting fish as default shell..."
