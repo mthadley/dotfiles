@@ -43,7 +43,7 @@ else
   echo "Installing Home Manager..."
 
   nix build --extra-experimental-features "nix-command flakes" --no-link "$FLAKE_URI"
-  "$(nix path-info "${FLAKE_URI}")"/activate
+  "$(nix --extra-experimental-features "nix-command flakes" path-info "${FLAKE_URI}")"/activate
 fi
 
 echo "Switching to new configuration..."
