@@ -22,12 +22,23 @@
       configuration = import ./home.nix;
     in
     {
-      homeConfigurations.mthadley-workos = home-manager.lib.homeManagerConfiguration rec {
-        inherit configuration stateVersion;
+      homeConfigurations = {
+        mthadley-workos = home-manager.lib.homeManagerConfiguration rec {
+          inherit configuration stateVersion;
 
-        username = "michael.hadley";
-        homeDirectory = "/home/${username}";
-        system = systems.aarch64-darwin;
+          username = "michael.hadley";
+          homeDirectory = "/home/${username}";
+          system = systems.aarch64-darwin;
+        };
+
+
+        ci = home-manager.lib.homeManagerConfiguration rec {
+          inherit configuration stateVersion;
+
+          username = "runner";
+          homeDirectory = "/home/runner";
+          system = systems.x86_64-linux;
+        };
       };
     };
 }
