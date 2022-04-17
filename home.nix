@@ -40,11 +40,11 @@
       ./programs/fish/default.nix
       ./programs/fzf.nix
       ./programs/git.nix
+      ./programs/konsole.nix
+      ./programs/neovim/default.nix
       ./programs/nix.nix
       ./programs/nixpkgs
       ./programs/tmux.nix
-      ./programs/neovim/default.nix
-      ./programs/konsole.nix
     ];
 
   # Let Home Manager install and manage itself.
