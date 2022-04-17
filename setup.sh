@@ -46,10 +46,6 @@ else
   "$(nix path-info "${FLAKE_URI}")"/activate
 fi
 
-# Link home manager configuration
-ln -sf "$(pwd)/home.nix" ~/.config/nixpkgs/home.nix
-
-# Enable configuration
 echo "Switching to new configuration..."
 home-manager switch --flake "path:.#$HM_CONFIG"
 
