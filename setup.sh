@@ -42,7 +42,7 @@ if is_installed home-manager; then
 else
   echo "Installing Home Manager..."
 
-  nix build --no-link "$FLAKE_URI"
+  nix build --extra-experimental-features "nix-command flakes" --no-link "$FLAKE_URI"
   "$(nix path-info "${FLAKE_URI}")"/activate
 fi
 
