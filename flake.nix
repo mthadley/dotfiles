@@ -27,7 +27,7 @@
           inherit configuration stateVersion;
 
           username = "michael.hadley";
-          homeDirectory = "/home/${username}";
+          homeDirectory = "/Users/${username}";
           system = systems.aarch64-darwin;
         };
 
