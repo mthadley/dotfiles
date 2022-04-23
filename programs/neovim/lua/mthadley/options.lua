@@ -1,4 +1,3 @@
--- Options
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.o.cursorline = true

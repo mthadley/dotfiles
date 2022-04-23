@@ -50,10 +50,10 @@ in
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      ale
       auto-pairs
       base16-vim
       neoformat
+      nvim-lspconfig
       tslime
       vim-abolish
       vim-commentary
@@ -81,24 +81,6 @@ in
       set grepprg=${pkgs.ripgrep}/bin/rg\ --vimgrep
 
       " Plugin Settings
-
-      "" 'w0rp/ale'
-      let g:ale_lint_delay = 1000
-      let g:ale_lint_on_enter = 0
-      let g:ale_linters = {'haskell': ['hlint', 'hdevtools', 'hfmt']}
-      let g:ale_linters_ignore = {
-      \  'ruby': ['brakeman'],
-      \  'elm': ['elm_ls'],
-      \  'graphql': ['eslint']
-      \}
-      let g:ale_completion_enabled = 1
-      let g:ale_completion_autoimport = 1
-      let g:ale_close_preview_on_insert = 1
-      set omnifunc=ale#completion#OmniFunc
-      hi ALEError cterm=underline
-
-      let g:ale_elm_ls_elm_analyse_trigger = 'never'
-      let g:ale_elm_ls_executable = '${pkgs.elmPackages.elm-language-server}/bin/elm-language-server'
 
       "" chriskempson/base16-vim
       let g:base16colorspace=256
@@ -187,22 +169,6 @@ in
       noremap <C-E>s :Hexplore<CR>
       noremap <C-E>v :Vexplore<CR>
 
-      "" Ale
-      nnoremap <leader>e] :ALENextWrap<CR>
-      nnoremap <leader>e[ :ALEPreviousWrap<CR>
-      nnoremap <leader>ed :ALEDetail<CR>
-      nnoremap <C-[> :ALEHover<CR>
-      nnoremap <C-]> :call GoTo()<CR>
-
-      """ Keep default behavior when browsing help files
-      function! GoTo()
-        if &ft == 'help'
-          execute "tag " . expand("<cword>")
-        else
-          execute "ALEGoToDefinition"
-        endif
-      endfunction
-
       "" Session management
       noremap <leader>ss :mks! ~/.vimsession<CR>
       noremap <leader>os :so ~/.vimsession<CR>
@@ -257,10 +223,13 @@ in
         copen
       endfunction
 
-      lua << EOF
-      ${builtins.readFile ./init.lua}
-      EOF
+      lua require 'mthadley.init'
     '';
+  };
+
+  home.file.".config/nvim/lua" = {
+    recursive = true;
+    source = ./lua;
   };
 
   home.file.".config/nvim/autoload/neoformat/formatters/purescript.vim".text = ''
