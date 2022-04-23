@@ -11,16 +11,16 @@ local function on_attach(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local mappings = {
+    { 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>' },
+    { 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>' },
+    { 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>' },
+    { 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>' },
+    { 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>' },
     { 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>' },
     { 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>' },
-    { 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>' },
     { 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>' },
-    { 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>' },
-    { 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>' },
-    { 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>' },
-    { 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>' },
     { 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>' },
-    { 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>' },
+    { 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>' },
   }
 
   for _, key_mapping in pairs(mappings) do
