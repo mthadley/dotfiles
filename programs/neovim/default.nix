@@ -1,16 +1,6 @@
 { pkgs, ... }:
 
 let
-  vim-mix-format = pkgs.vimUtils.buildVimPlugin {
-    name = "mix-format";
-    src = pkgs.fetchFromGitHub {
-      owner = "mhinz";
-      repo = "vim-mix-format";
-      rev = "cbb63e65a423ea63444a5d1b41e51d1fcec5f962";
-      sha256 = "037fbmcj9dfj89jd2xa1xv55baqvws85xpjmypgr3kx7y183l0b7";
-    };
-  };
-
   vim-ormolu = pkgs.vimUtils.buildVimPlugin {
     name = "vim-ormolu";
     src = pkgs.fetchFromGitHub {
@@ -62,7 +52,6 @@ in
       vim-fzf-builtin
       vim-indent-object
       vim-indexed-search
-      vim-mix-format
       vim-ormolu
       vim-polyglot
       vim-prettier
@@ -90,9 +79,6 @@ in
       let g:fzf_action = {
         \ 'ctrl-s': 'split',
         \ 'ctrl-v': 'vsplit' }
-
-      "" mhinz/vim-mix-format
-      let g:mix_format_on_save = 1
 
       "" christoomey/vim-sort-motion
       let g:sort_motion_flags = 'i'
