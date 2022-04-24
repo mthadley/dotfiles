@@ -52,6 +52,7 @@ in
     plugins = with pkgs.vimPlugins; [
       auto-pairs
       base16-vim
+      gitsigns-nvim
       neoformat
       nvim-lspconfig
       tslime
@@ -59,7 +60,6 @@ in
       vim-commentary
       vim-fugitive
       vim-fzf-builtin
-      vim-gitgutter
       vim-indent-object
       vim-indexed-search
       vim-mix-format
