@@ -1,5 +1,6 @@
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
+vim.o.completeopt = "menu"
 vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.ignorecase = true
