@@ -36,7 +36,7 @@
           inherit configuration stateVersion;
 
           username = "runner";
-          homeDirectory = "/home/runner";
+          homeDirectory = "/home/${username}";
           system = systems.x86_64-linux;
         };
       };
