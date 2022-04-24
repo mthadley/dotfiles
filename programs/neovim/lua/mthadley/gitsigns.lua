@@ -10,7 +10,7 @@ require('gitsigns').setup {
 
     for _, mapping in ipairs(mappings) do
       local mode, keys, fn = unpack(mapping)
-      vim.keymap.set(mode, keys, fn)
+      vim.keymap.set(mode, keys, fn, { buffer = bufnr })
     end
   end
 }
