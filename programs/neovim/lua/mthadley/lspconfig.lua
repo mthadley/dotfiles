@@ -1,30 +1,28 @@
-local key_opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', key_opts)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', key_opts)
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local function on_attach(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local mappings = {
-    { 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>' },
-    { 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>' },
-    { 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>' },
-    { 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>' },
-    { 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>' },
-    { 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>' },
-    { 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>' },
-    { 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>' },
-    { 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>' },
-    { 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>' },
+    { 'n', '<C-]>', vim.lsp.buf.definition },
+    { 'n', '<C-k>', vim.lsp.buf.signature_help },
+    { 'n', '<leader>ca', vim.lsp.buf.code_action },
+    { 'n', '<leader>D', vim.lsp.buf.type_definition },
+    { 'n', '<leader>e', vim.diagnostic.open_float },
+    { 'n', '<leader>f', vim.lsp.buf.formatting },
+    { 'n', '<leader>rn', vim.lsp.buf.rename },
+    { 'n', '[d', vim.diagnostic.goto_prev },
+    { 'n', ']d', vim.diagnostic.goto_next },
+    { 'n', 'gD', vim.lsp.buf.declaration },
+    { 'n', 'gd', vim.lsp.buf.definition },
+    { 'n', 'gi', vim.lsp.buf.implementation },
+    { 'n', 'gr', vim.lsp.buf.references },
+    { 'n', 'K', vim.lsp.buf.hover },
   }
 
   for _, key_mapping in pairs(mappings) do
-    local mode, keys, cmd = unpack(key_mapping)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, keys, cmd, key_opts)
+    local mode, keys, fn = unpack(key_mapping)
+    vim.keymap.set(mode, keys, fn, { buffer = bufnr })
   end
 end
 
