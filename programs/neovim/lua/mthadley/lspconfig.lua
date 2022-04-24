@@ -36,7 +36,12 @@ vim.cmd "highlight! link DiagnosticError ErrorMsg"
 vim.cmd "highlight! link DiagnosticWarn WarningMsg"
 vim.cmd "highlight! link DiagnosticInfo MoreMsg"
 
-local error_color = '#' .. vim.g.base16_gui08
-local gutter_bg_color = '#' .. vim.g.base16_gui01
+local diagnostic_sign_colors = {
+  DiagnosticSignError = vim.g.base16_gui08,
+  DiagnosticSignHint = vim.g.base16_gui05,
+  DiagnosticSignWarning = vim.g.base16_gui09,
+}
 
-vim.api.nvim_set_hl(0, 'DiagnosticSignError', { fg = error_color, bg = gutter_bg_color })
+for group, fg in pairs(diagnostic_sign_colors) do
+  vim.api.nvim_set_hl(0,group, { fg = '#'..fg, bg = '#'..vim.g.base16_gui01 })
+end
