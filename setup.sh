@@ -20,9 +20,7 @@ if ! is_installed curl; then
 fi
 
 # Install nix
-if is_installed nix; then
-  echo "Nix is installed!"
-else
+if ! is_installed nix; then
   echo "Installing nix..."
   sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 
@@ -37,9 +35,7 @@ else
 fi
 
 # Install Home Manager
-if is_installed home-manager; then
-  echo "Home Manager is installed!"
-else
+if ! is_installed home-manager; then
   echo "Installing Home Manager..."
 
   nix build --extra-experimental-features "nix-command flakes" --no-link "$FLAKE_URI"
