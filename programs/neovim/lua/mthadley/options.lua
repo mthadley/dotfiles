@@ -1,17 +1,19 @@
-vim.o.backup = false
-vim.o.clipboard = "unnamedplus"
-vim.o.completeopt = "menu"
-vim.o.cursorline = true
-vim.o.expandtab = true
-vim.o.ignorecase = true
-vim.o.mouse = "a"
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.scrolloff = 10
-vim.o.shiftround = true
-vim.o.shiftwidth = 4
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.undofile = true
-vim.o.updatetime = 100
-vim.o.writebackup = false
+local opt = vim.opt
+
+opt.backup = false
+opt.clipboard = "unnamedplus"
+opt.completeopt:remove { "preview" }
+opt.cursorline = true
+opt.expandtab = true
+opt.ignorecase = true
+opt.mouse = "a"
+opt.number = true
+opt.relativenumber = true
+opt.scrolloff = 10
+opt.shiftround = true
+opt.shiftwidth = 4
+opt.splitbelow = true
+opt.splitright = true
+opt.undofile = true
+opt.updatetime = 100
+opt.writebackup = false
