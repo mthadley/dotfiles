@@ -42,7 +42,6 @@ in
       vim-polyglot
       vim-rails
       vim-repeat
-      vim-sensible
       vim-sort-motion
       vim-surround
       vim-test
