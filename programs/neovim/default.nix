@@ -27,7 +27,6 @@ in
       vim-fugitive
       vim-fzf-builtin
       vim-indent-object
-      vim-indexed-search
       vim-polyglot
       vim-rails
       vim-repeat
