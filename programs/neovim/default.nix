@@ -1,16 +1,6 @@
 { pkgs, ... }:
 
 let
-  vim-ormolu = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-ormolu";
-    src = pkgs.fetchFromGitHub {
-      owner = "sdiehl";
-      repo = "vim-ormolu";
-      rev = "4ae4fe11c558af33030abdeda6f2ee1f5b54da55";
-      sha256 = "13yn0arxcn8ngc91lvhcqs3nl17zcdmgsw522qvqgn732cpf0ddy";
-    };
-  };
-
   vim-fzf-builtin = pkgs.vimUtils.buildVimPlugin {
     name = "vim-fzf-builtin";
     src = "${pkgs.fzf}/share/vim-plugins/fzf";
@@ -38,7 +28,6 @@ in
       vim-fzf-builtin
       vim-indent-object
       vim-indexed-search
-      vim-ormolu
       vim-polyglot
       vim-rails
       vim-repeat
