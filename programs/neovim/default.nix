@@ -11,20 +11,6 @@ let
     };
   };
 
-  vim-prettier = pkgs.vimUtils.buildVimPlugin {
-    # The source contains a Makefile in the root which is only used for tests, so
-    # this stops nix from trying to run it.
-    dontBuild = true;
-
-    name = "vim-prettier";
-    src = pkgs.fetchFromGitHub {
-      owner = "prettier";
-      repo = "vim-prettier";
-      rev = "0e61e4a5b55d2740aa118db91a6671dcb11307e8";
-      sha256 = "0d83lx6kfpsi3d4q9wz8zwsgdn0vn16psqyngml6wspjyibh6pnf";
-    };
-  };
-
   vim-fzf-builtin = pkgs.vimUtils.buildVimPlugin {
     name = "vim-fzf-builtin";
     src = "${pkgs.fzf}/share/vim-plugins/fzf";
@@ -54,7 +40,6 @@ in
       vim-indexed-search
       vim-ormolu
       vim-polyglot
-      vim-prettier
       vim-rails
       vim-repeat
       vim-sensible
