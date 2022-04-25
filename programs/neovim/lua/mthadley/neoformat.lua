@@ -7,7 +7,7 @@ vim.g.neoformat_enabled_sql = {}
 vim.g.neoformat_enabled_yaml = {}
 vim.g.neoformat_enabled_json = {}
 
-local augroup = vim.api.nvim_create_augroup('fmt', { clear = true })
+local augroup = vim.api.nvim_create_augroup('neoformat', { clear = true })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'Neoformat',
