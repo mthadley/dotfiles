@@ -91,12 +91,6 @@ in
       let g:vim_markdown_folding_disabled = 1
       let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
 
-      "" Neoformat
-      let g:neoformat_enabled_ruby = []
-      let g:neoformat_enabled_sql = []
-      let g:neoformat_enabled_yaml = []
-      let g:neoformat_enabled_json = []
-
       "" vim-test
       let g:test#strategy = 'tslime'
 
@@ -127,12 +121,6 @@ in
 
       "" Turn on spell check for certain filetypes
       au FileType gitcommit setl spell
-
-      "" Format code on save
-      augroup fmt
-        autocmd!
-        autocmd BufWritePre * Neoformat
-      augroup END
 
       "" Recognize go templates
       au BufReadPost *.go.tmpl set ft=gohtmltmpl
