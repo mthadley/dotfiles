@@ -91,9 +91,6 @@ in
       let g:netrw_keepdir = 0
       au BufLeave * exe "lcd" getcwd(-1)
 
-      "" Turn on spell check for certain filetypes
-      au FileType gitcommit setl spell
-
       "" Recognize go templates
       au BufReadPost *.go.tmpl set ft=gohtmltmpl
 
@@ -118,13 +115,6 @@ in
       "" Session management
       noremap <leader>ss :mks! ~/.vimsession<CR>
       noremap <leader>os :so ~/.vimsession<CR>
-
-      "" Git
-      noremap <C-G>s :Git<CR>
-      noremap <C-G>l :Glog<CR>
-      noremap <C-G>b :Git blame<CR>
-      noremap <C-G>h :Gbrowse<CR>
-      noremap <C-G>e :Gedit<CR>
 
       "" Rails
       noremap <leader>ra :A<CR>
