@@ -134,7 +134,6 @@ in
       "" Misc
 
       noremap <leader>ct :!column -t<CR>
-      noremap <silent> <leader>cw :call ToggleCW()<CR>
       noremap <leader>n :noh<CR>
       noremap <leader>q :q<CR>
       noremap <leader>rs :syntax sync fromstart<CR>
@@ -145,19 +144,6 @@ in
       colorscheme base16-ocean
 
       hi CursorLineNr cterm=bold
-
-      " Functions
-
-      function! ToggleCW()
-        for i in range(1, winnr('$'))
-          let l:bnum = winbufnr(i)
-          if getbufvar(bnum, '&buftype') == 'quickfix'
-            cclose
-            return
-          endif
-        endfor
-        copen
-      endfunction
 
       lua require 'mthadley.init'
     '';
