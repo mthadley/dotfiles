@@ -1,3 +1,6 @@
+-- Misc. Mappings
+vim.keymap.set('n', '<leader>m', ':Man<CR>')
+
 -- Toggle the Quickfix window
 vim.keymap.set('n', '<leader>cw', function()
   for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
