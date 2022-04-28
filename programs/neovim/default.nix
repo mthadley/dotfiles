@@ -72,10 +72,6 @@ in
 
       " au commands
 
-      "" Only show cursorline in active window
-      au WinLeave * setl nocursorline
-      au WinEnter * setl cursorline
-
       "" Autoreload file on change
       set autoread
       au CursorHold * checktime

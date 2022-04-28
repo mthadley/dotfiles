@@ -3,7 +3,6 @@ local opt = vim.opt
 opt.backup = false
 opt.clipboard = "unnamedplus"
 opt.completeopt:remove { "preview" }
-opt.cursorline = true
 opt.expandtab = true
 opt.ignorecase = true
 opt.mouse = "a"
