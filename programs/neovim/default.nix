@@ -92,47 +92,12 @@ in
 
       " Keybinds
 
-      let mapleader = ","
-
-      inoremap jk <ESC>
-
       "" fzf
       noremap <silent> <C-P> :call fzf#run(fzf#wrap({
       \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${pkgs.similar-sort}/bin/similar-sort \"" . @% . "\"",
       \ "options": ['--tiebreak', 'index', '--preview', '${fzfVimPreview} {}'],
       \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
       \ }))<CR>
-
-      "" Open file explorer
-      noremap <C-E>e :Explore<CR>
-      noremap <C-E>s :Hexplore<CR>
-      noremap <C-E>v :Vexplore<CR>
-
-      "" Session management
-      noremap <leader>ss :mks! ~/.vimsession<CR>
-      noremap <leader>os :so ~/.vimsession<CR>
-
-      "" Rails
-      noremap <leader>ra :A<CR>
-      noremap <leader>re :R<CR>
-
-      "" vim-test
-      noremap tt :TestFile<CR>
-      noremap tn :TestNearest<CR>
-      noremap ta :TestSuite<CR>
-      noremap tl :execute "Tmux bundle exec rubocop " . expand("%:p")<CR>
-
-      "" Saving
-      noremap <leader>w :w<CR>
-      noremap <C-S> :w<CR>
-      inoremap <C-S> :w<CR>
-
-      "" Misc
-
-      noremap <leader>ct :!column -t<CR>
-      noremap <leader>n :noh<CR>
-      noremap <leader>q :q<CR>
-      noremap <leader>rs :syntax sync fromstart<CR>
 
       " Colors
 
