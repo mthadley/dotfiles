@@ -6,5 +6,12 @@ vim.api.nvim_create_autocmd('BufRead' , {
   callback = function() vim.opt_local.ft = 'jsonc' end,
   desc = 'JSON files that can have comments.',
   pattern = { 'rush.json' },
-  group = group
+  group = group,
+})
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  callback = function() vim.opt_local.textwidth = 80 end,
+  desc = 'Wrap lines when writing Markdown',
+  pattern = '*.md',
+  group = group,
 })
