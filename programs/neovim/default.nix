@@ -84,9 +84,6 @@ in
       let g:netrw_keepdir = 0
       au BufLeave * exe "lcd" getcwd(-1)
 
-      "" Recognize go templates
-      au BufReadPost *.go.tmpl set ft=gohtmltmpl
-
       " Keybinds
 
       "" fzf
