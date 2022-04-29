@@ -27,18 +27,3 @@ local language_servers = { 'tsserver' }
 for _, server in pairs(language_servers) do
   require('lspconfig')[server].setup { on_attach = on_attach }
 end
-
--- Colors
-vim.cmd "highlight! link DiagnosticError ErrorMsg"
-vim.cmd "highlight! link DiagnosticWarn WarningMsg"
-vim.cmd "highlight! link DiagnosticInfo MoreMsg"
-
-local diagnostic_sign_colors = {
-  DiagnosticSignError = vim.g.base16_gui08,
-  DiagnosticSignHint = vim.g.base16_gui05,
-  DiagnosticSignWarning = vim.g.base16_gui09,
-}
-
-for group, fg in pairs(diagnostic_sign_colors) do
-  vim.api.nvim_set_hl(0,group, { fg = '#'..fg, bg = '#'..vim.g.base16_gui01 })
-end

@@ -43,9 +43,6 @@ in
 
       " Plugin Settings
 
-      "" chriskempson/base16-vim
-      let g:base16colorspace=256
-
       "" fzf
       let g:fzf_colors = { 'border': ['fg', 'Comment'] }
       let g:fzf_action = {
@@ -92,13 +89,6 @@ in
       \ "options": ['--tiebreak', 'index', '--preview', '${fzfVimPreview} {}'],
       \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
       \ }))<CR>
-
-      " Colors
-
-      set termguicolors
-      colorscheme base16-ocean
-
-      hi CursorLineNr cterm=bold
 
       lua require 'mthadley.init'
     '';
