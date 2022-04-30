@@ -43,12 +43,6 @@ in
 
       " Plugin Settings
 
-      "" fzf
-      let g:fzf_colors = { 'border': ['fg', 'Comment'] }
-      let g:fzf_action = {
-        \ 'ctrl-s': 'split',
-        \ 'ctrl-v': 'vsplit' }
-
       "" christoomey/vim-sort-motion
       let g:sort_motion_flags = 'i'
 
@@ -73,17 +67,10 @@ in
       let g:netrw_keepdir = 0
       au BufLeave * exe "lcd" getcwd(-1)
 
-      " Keybinds
-
-      "" fzf
-      noremap <silent> <C-P> :call fzf#run(fzf#wrap({
-      \ "source": "${pkgs.ripgrep}/bin/rg --files \| ${pkgs.similar-sort}/bin/similar-sort \"" . @% . "\"",
-      \ "options": ['--tiebreak', 'index', '--preview', '${fzfVimPreview} {}'],
-      \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
-      \ }))<CR>
-
       lua <<LUA
+        FZF_VIM_PREVIEW_PATH = '${fzfVimPreview}'
         RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
+        SIMILAR_SORT_PATH = '${pkgs.similar-sort}/bin/similar-sort'
 
         require 'mthadley.init'
       LUA
