@@ -43,13 +43,6 @@ in
       "" christoomey/vim-sort-motion
       let g:sort_motion_flags = 'i'
 
-      "" vim-test
-      let g:test#strategy = 'tslime'
-
-      "" tslime
-      let g:tslime_always_current_session = 1
-      let g:tslime_always_current_window = 1
-
       " au commands
 
       "" Autoreload file on change
