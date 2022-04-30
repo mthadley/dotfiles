@@ -4,8 +4,6 @@ vim.g.base16colorspace = 256
 vim.opt.termguicolors = true
 vim.cmd 'colorscheme base16-ocean'
 
-vim.api.nvim_set_hl(0, 'CursorLineNr', { cterm = { bold = true } })
-
 -- LSP-related Colors
 vim.cmd "highlight! link DiagnosticError ErrorMsg"
 vim.cmd "highlight! link DiagnosticWarn WarningMsg"
