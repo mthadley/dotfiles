@@ -2,20 +2,9 @@ local keymap = vim.keymap
 
 keymap.set('i', 'jk', '<ESC>')
 
--- File Explorer
-keymap.set('n', '<C-E>e', ':Explore<CR>')
-keymap.set('n', '<C-E>s', ':Hexplore<CR>')
-keymap.set('n', '<C-E>v', ':Vexplore<CR>')
-
 -- Session Management
 keymap.set('n', '<leader>ss', ':mks! ~/.vimsession<CR>')
 keymap.set('n', '<leader>os', ':so ~/.vimsession<CR>')
-
--- `vim-test` Mappings
-keymap.set('n', 'tt', ':TestFile<CR>')
-keymap.set('n', 'tn', ':TestNearest<CR>')
-keymap.set('n', 'ta', ':TestSuite<CR>')
-keymap.set('n', 'tl', ':execute "Tmux bundle exec rubocop " . expand("%:p")<CR>')
 
 -- Saving
 keymap.set('n', '<leader>w', ':w<CR>')

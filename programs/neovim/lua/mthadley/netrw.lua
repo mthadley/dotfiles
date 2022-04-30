@@ -7,3 +7,7 @@ vim.api.nvim_create_autocmd('BufLeave', {
   desc = 'Fix netrw mm and mc commands.',
   group = vim.api.nvim_create_augroup('netrw', { clear = true }),
 })
+
+vim.keymap.set('n', '<C-E>e', ':Explore<CR>')
+vim.keymap.set('n', '<C-E>s', ':Hexplore<CR>')
+vim.keymap.set('n', '<C-E>v', ':Vexplore<CR>')
