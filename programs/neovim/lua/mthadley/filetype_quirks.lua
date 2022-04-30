@@ -1,3 +1,11 @@
+-- pangloss/vim-javascript
+vim.g.jsx_ext_required = false
+vim.g.javascript_plugin_jsdoc = true
+
+-- plasticboy/vim-markdown
+vim.g.vim_markdown_folding_disabled = true
+vim.g.vim_markdown_fenced_languages = { 'js=javascript', 'ini=dosini' }
+
 local group = vim.api.nvim_create_augroup('filetype-quirks', {
   clear = true
 })

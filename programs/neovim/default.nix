@@ -52,14 +52,6 @@ in
       "" christoomey/vim-sort-motion
       let g:sort_motion_flags = 'i'
 
-      "" pangloss/vim-javascript
-      let g:jsx_ext_required = 0
-      let g:javascript_plugin_jsdoc = 1
-
-      "" plasticboy/vim-markdown
-      let g:vim_markdown_folding_disabled = 1
-      let g:vim_markdown_fenced_languages = ['js=javascript', 'ini=dosini']
-
       "" vim-test
       let g:test#strategy = 'tslime'
 
