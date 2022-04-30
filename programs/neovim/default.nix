@@ -38,11 +38,6 @@ in
     ];
 
     extraConfig = ''
-      " Plugin Settings
-
-      "" christoomey/vim-sort-motion
-      let g:sort_motion_flags = 'i'
-
       " au commands
 
       "" Autoreload file on change
