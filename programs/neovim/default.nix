@@ -38,9 +38,6 @@ in
     ];
 
     extraConfig = ''
-      "" Use rg as grepprg
-      set grepprg=${pkgs.ripgrep}/bin/rg\ --vimgrep
-
       " Plugin Settings
 
       "" christoomey/vim-sort-motion
