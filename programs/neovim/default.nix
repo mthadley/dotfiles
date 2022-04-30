@@ -47,11 +47,6 @@ in
       "" Remove trailing whitespace
       au BufWritePre * :%s/\s\+$//e
 
-      "" Fix netrw mm and mc commands by updating lcd as you navigate
-      "" Keep everything else working by updating lcd back to the global
-      let g:netrw_keepdir = 0
-      au BufLeave * exe "lcd" getcwd(-1)
-
       lua <<LUA
         FZF_VIM_PREVIEW_PATH = '${fzfVimPreview}'
         RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
