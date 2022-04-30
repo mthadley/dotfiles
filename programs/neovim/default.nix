@@ -38,15 +38,6 @@ in
     ];
 
     extraConfig = ''
-      " au commands
-
-      "" Autoreload file on change
-      set autoread
-      au CursorHold * checktime
-
-      "" Remove trailing whitespace
-      au BufWritePre * :%s/\s\+$//e
-
       lua <<LUA
         FZF_VIM_PREVIEW_PATH = '${fzfVimPreview}'
         RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'

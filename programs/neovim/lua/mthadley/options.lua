@@ -17,3 +17,18 @@ opt.splitright = true
 opt.undofile = true
 opt.updatetime = 100
 opt.writebackup = false
+
+local group = vim.api.nvim_create_augroup('options', { clear = true })
+
+opt.autoread = true
+vim.api.nvim_create_autocmd('CursorHold', {
+  command = 'checktime',
+  desc = 'Autoreload files on change',
+  group = group,
+})
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  command = '%s/\\s\\+$//e',
+  desc = 'Remove trailing whitespace',
+  group = group,
+})
