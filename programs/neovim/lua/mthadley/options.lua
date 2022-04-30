@@ -16,3 +16,4 @@ opt.splitright = true
 opt.undofile = true
 opt.updatetime = 100
 opt.writebackup = false
+opt.grepprg = RIPGREP_PATH..' --vimgrep'

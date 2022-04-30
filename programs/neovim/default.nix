@@ -82,7 +82,11 @@ in
       \ "window": {'width': 1, 'height': 0.5, 'yoffset': 1},
       \ }))<CR>
 
-      lua require 'mthadley.init'
+      lua <<LUA
+        RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
+
+        require 'mthadley.init'
+      LUA
     '';
   };
 
