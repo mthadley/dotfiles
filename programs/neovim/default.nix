@@ -18,12 +18,12 @@ in
     plugins = with pkgs.vimPlugins; [
       auto-pairs
       base16-vim
+      comment-nvim
       gitsigns-nvim
       neoformat
       nvim-lspconfig
       tslime
       vim-abolish
-      vim-commentary
       vim-fugitive
       vim-fzf-builtin
       vim-indent-object
