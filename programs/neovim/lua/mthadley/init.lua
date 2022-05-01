@@ -1,17 +1,28 @@
 vim.g.mapleader = ','
 
-require 'mthadley.options'
-require 'mthadley.lspconfig'
-require 'mthadley.gitsigns'
-require 'mthadley.neoformat'
-require 'mthadley.fugitive'
-require 'mthadley.mappings'
-require 'mthadley.cursorline'
-require 'mthadley.filetype_quirks'
-require 'mthadley.colors'
-require 'mthadley.fzf'
-require 'mthadley.vim_test'
-require 'mthadley.vim_sort_motion'
-require 'mthadley.netrw'
-require 'mthadley.comment'
-require 'mthadley.autopairs'
+local user_modules = {
+  'mthadley.options',
+  'mthadley.lspconfig',
+  'mthadley.gitsigns',
+  'mthadley.neoformat',
+  'mthadley.fugitive',
+  'mthadley.mappings',
+  'mthadley.cursorline',
+  'mthadley.filetype_quirks',
+  'mthadley.colors',
+  'mthadley.fzf',
+  'mthadley.vim_test',
+  'mthadley.vim_sort_motion',
+  'mthadley.netrw',
+  'mthadley.comment',
+  'mthadley.autopairs',
+}
+
+for _, module_path in ipairs(user_modules) do
+  local success, err = pcall(require, module_path)
+
+  if not success then
+    print('Error while loading user module "' .. module_path .. '"')
+    print(err)
+  end
+end
