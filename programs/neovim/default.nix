@@ -16,11 +16,11 @@ in
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      auto-pairs
       base16-vim
       comment-nvim
       gitsigns-nvim
       neoformat
+      nvim-autopairs
       nvim-lspconfig
       tslime
       vim-abolish
