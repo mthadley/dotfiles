@@ -7,7 +7,6 @@
       htop
       jq
       nixpkgs-fmt
-      ripgrep
 
       # Just used to verify home-manager setup
       hello
@@ -44,6 +43,7 @@
       ./programs/neovim/default.nix
       ./programs/nix.nix
       ./programs/nixpkgs
+      ./programs/ripgrep.nix
       ./programs/tmux.nix
     ];
 
