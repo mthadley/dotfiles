@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home = {
@@ -10,9 +10,9 @@
 
       # Just used to verify home-manager setup
       hello
-    ] ++ pkgs.lib.optionals (!pkgs.stdenv.isAarch64) [
+    ] ++ lib.optionals (!pkgs.stdenv.isAarch64) [
       shellcheck
-    ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+    ] ++ lib.optionals pkgs.stdenv.isLinux [
       keyswitch
     ];
 
@@ -20,7 +20,7 @@
       EDITOR = "vim";
       LESS = "-c -+F";
       fish_greeting = "";
-    } // pkgs.lib.optionalAttrs pkgs.hostPlatform.isLinux {
+    } // lib.optionalAttrs pkgs.hostPlatform.isLinux {
       # Fixes issues with locale in non-NixOS usage of nix
       #
       # See:
