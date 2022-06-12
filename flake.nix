@@ -31,6 +31,13 @@
           system = systems.aarch64-darwin;
         };
 
+        mthadley-intel = home-manager.lib.homeManagerConfiguration rec {
+          inherit configuration stateVersion;
+
+          username = "mthadley";
+          homeDirectory = "/Users/${username}";
+          system = systems.x86_64-darwin;
+        };
 
         ci = home-manager.lib.homeManagerConfiguration rec {
           inherit configuration stateVersion;
