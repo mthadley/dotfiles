@@ -14,34 +14,39 @@
     let
       systems = flake-utils.lib.system;
 
-      # Update the state version as needed.
-      # See the changelog here:
-      # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
-      stateVersion = "21.11";
+      mkHomeConfig = { system, username, homeDirectory }:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [
+            ./home.nix
+            {
+              home = {
+                inherit username homeDirectory;
 
-      configuration = import ./home.nix;
+                # Update the state version as needed.
+                # See the changelog here:
+                # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
+                stateVersion = "21.11";
+              };
+            }
+          ];
+        };
     in
     {
       homeConfigurations = {
-        mthadley-workos = home-manager.lib.homeManagerConfiguration rec {
-          inherit configuration stateVersion;
-
+        mthadley-workos = mkHomeConfig rec {
+          system = systems.aarch64-darwin;
           username = "michael.hadley";
           homeDirectory = "/Users/${username}";
-          system = systems.aarch64-darwin;
         };
 
-        mthadley-intel = home-manager.lib.homeManagerConfiguration rec {
-          inherit configuration stateVersion;
-
+        mthadley-intel = mkHomeConfig rec {
           username = "mthadley";
           homeDirectory = "/Users/${username}";
           system = systems.x86_64-darwin;
         };
 
-        ci = home-manager.lib.homeManagerConfiguration rec {
-          inherit configuration stateVersion;
-
+        ci = mkHomeConfig rec {
           username = "runner";
           homeDirectory = "/home/${username}";
           system = systems.x86_64-linux;
