@@ -43,6 +43,7 @@
       ./programs/neovim/default.nix
       ./programs/nix.nix
       ./programs/nixpkgs
+      ./programs/psql.nix
       ./programs/ripgrep.nix
       ./programs/tmux.nix
     ];
