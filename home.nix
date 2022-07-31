@@ -44,6 +44,7 @@
       ./programs/nix.nix
       ./programs/nixpkgs
       ./programs/psql.nix
+      ./programs/readline.nix
       ./programs/ripgrep.nix
       ./programs/tmux.nix
     ];
