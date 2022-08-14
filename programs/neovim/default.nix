@@ -29,7 +29,6 @@ in
       vim-indent-object
       vim-polyglot
       vim-rails
-      vim-repeat
       vim-sort-motion
       vim-surround
       vim-test
