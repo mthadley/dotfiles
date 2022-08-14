@@ -23,7 +23,6 @@ in
       nvim-autopairs
       nvim-lspconfig
       tslime
-      vim-abolish
       vim-fugitive
       vim-fzf-builtin
       vim-indent-object
