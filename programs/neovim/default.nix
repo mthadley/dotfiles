@@ -51,18 +51,4 @@ in
     recursive = true;
     source = ./lua;
   };
-
-  home.file.".config/nvim/autoload/neoformat/formatters/purescript.vim".text = ''
-    function! neoformat#formatters#purescript#enabled() abort
-        return ['purty']
-    endfunction
-
-    function! neoformat#formatters#purescript#purty() abort
-        return {
-            \ 'exe': 'purty',
-            \ 'args': ['-'],
-            \ 'stdin': 1
-            \ }
-    endfunction
-  '';
 }
