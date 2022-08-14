@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
 
-    userEmail = "mikethadley@gmail.com";
+    userEmail = "m@mthadley.com";
     userName = "Michael Hadley";
 
     ignores = [
