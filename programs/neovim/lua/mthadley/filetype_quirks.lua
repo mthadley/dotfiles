@@ -18,7 +18,10 @@ vim.api.nvim_create_autocmd('BufRead' , {
 })
 
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-  callback = function() vim.opt_local.textwidth = 80 end,
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.textwidth = 80
+  end,
   desc = 'Wrap lines when writing Markdown',
   pattern = '*.md',
   group = group,
