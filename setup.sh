@@ -22,7 +22,7 @@ fi
 # Install nix
 if ! is_installed nix; then
   echo "Installing nix..."
-  sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+  sh <(curl -L https://nixos.org/nix/install) --daemon
 
   if [ "$(uname)" = "Darwin" ]; then
     echo "Disabling spotlight for /nix..."

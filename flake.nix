@@ -40,10 +40,10 @@
           homeDirectory = "/Users/${username}";
         };
 
-        mthadley-intel = mkHomeConfig rec {
+        mthadley-home = mkHomeConfig rec {
           username = "mthadley";
           homeDirectory = "/Users/${username}";
-          system = systems.x86_64-darwin;
+          system = systems.aarch64-darwin;
         };
 
         ci = mkHomeConfig rec {
