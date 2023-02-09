@@ -10,7 +10,7 @@ vim.keymap.set('n', '<C-P>', function()
       .. ' --files | '
       .. SIMILAR_SORT_PATH
       .. ' "'
-      .. vim.api.nvim_buf_get_name(0)
+      .. vim.api.nvim_eval('expand("%")')
       .. '"',
     options = { '--tiebreak', 'index', '--preview', FZF_VIM_PREVIEW_PATH..' {}' },
     window = {
