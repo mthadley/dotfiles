@@ -26,9 +26,6 @@
     };
 
     shellInit = ''
-      # Add nix and others to path
-      set -x PATH "$HOME/.cargo/bin" "$HOME/.nix-profile/bin" "$HOME/.local/bin" $PATH
-
       # nix
       begin
         set -l nix_default_profile /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
@@ -36,6 +33,9 @@
           source $nix_default_profile
         end
       end
+
+      # Add nix and others to path
+      fish_add_path "$HOME/.cargo/bin" "$HOME/.local/bin"
     '';
 
     interactiveShellInit = ''
