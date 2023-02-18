@@ -36,11 +36,6 @@
           source $nix_default_profile
         end
       end
-
-      # Ruby junk
-      if command -v rvm > /dev/null
-        rvm default
-      end
     '';
 
     interactiveShellInit = ''
