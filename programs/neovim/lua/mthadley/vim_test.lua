@@ -2,7 +2,7 @@
 vim.g['test#strategy'] = 'tslime'
 vim.g['test#javascript#jest#options'] = '--watch'
 
-if #vim.fs.find('rush.json', { upwards = true }) > 0 then
+if #vim.fs.find('rush.json', { upward = true }) > 0 then
   vim.g['test#javascript#jest#executable'] = 'rushx test'
 end
 
