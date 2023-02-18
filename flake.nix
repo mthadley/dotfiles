@@ -35,21 +35,21 @@
     {
       homeConfigurations = {
         mthadley-workos = mkHomeConfig rec {
+          homeDirectory = "/Users/${username}";
           system = systems.aarch64-darwin;
           username = "michael.hadley";
-          homeDirectory = "/Users/${username}";
         };
 
         mthadley-home = mkHomeConfig rec {
-          username = "mthadley";
           homeDirectory = "/Users/${username}";
           system = systems.aarch64-darwin;
+          username = "mthadley";
         };
 
         ci = mkHomeConfig rec {
-          username = "runner";
           homeDirectory = "/home/${username}";
           system = systems.x86_64-linux;
+          username = "runner";
         };
       };
     };
