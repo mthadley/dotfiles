@@ -3,7 +3,7 @@
 vim.g.netrw_keepdir = false
 
 vim.api.nvim_create_autocmd('BufLeave', {
-  command = 'exe "lcd" getcwd(-1)',
+  callback = function() vim.cmd.lcd(vim.fn.getcwd(-1)) end,
   desc = 'Fix netrw mm and mc commands.',
   group = vim.api.nvim_create_augroup('netrw', { clear = true }),
 })
