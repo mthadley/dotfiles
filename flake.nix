@@ -14,43 +14,53 @@
     let
       systems = flake-utils.lib.system;
 
-      mkHomeConfig = { system, username, homeDirectory }:
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = [
-            ./home.nix
-            {
-              home = {
-                inherit username homeDirectory;
+      mkHomeConfig = { system, username, homeDirectory, name }: {
+        ${name} = home-manager.lib.homeManagerConfiguration
+          {
+            pkgs = nixpkgs.legacyPackages.${system};
+            modules = [
+              ./home.nix
+              {
+                home = {
+                  inherit username homeDirectory;
 
-                # Update the state version as needed.
-                # See the changelog here:
-                # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
-                stateVersion = "21.11";
-              };
-            }
-          ];
-        };
+                  sessionVariables = {
+                    HOME_MANAGER_CONFIG = name;
+                  };
+
+                  # Update the state version as needed.
+                  # See the changelog here:
+                  # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
+                  stateVersion = "21.11";
+                };
+              }
+            ];
+          };
+      };
     in
     {
-      homeConfigurations = {
-        mthadley-workos = mkHomeConfig rec {
-          homeDirectory = "/Users/${username}";
-          system = systems.aarch64-darwin;
-          username = "michael.hadley";
-        };
+      homeConfigurations =
+        mkHomeConfig
+          rec {
+            homeDirectory = "/Users/${username}";
+            name = "mthadley-workos";
+            system = systems.aarch64-darwin;
+            username = "michael.hadley";
+          } //
 
-        mthadley-home = mkHomeConfig rec {
+        mkHomeConfig rec {
           homeDirectory = "/Users/${username}";
+          name = "mthadley-home";
           system = systems.aarch64-darwin;
           username = "mthadley";
-        };
+        } //
 
-        ci = mkHomeConfig rec {
+        mkHomeConfig rec {
           homeDirectory = "/home/${username}";
+          name = "ci";
           system = systems.x86_64-linux;
           username = "runner";
         };
-      };
+
     };
 }

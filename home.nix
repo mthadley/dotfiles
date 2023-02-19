@@ -19,7 +19,6 @@
     sessionVariables = {
       EDITOR = "vim";
       LESS = "-c -+F";
-      fish_greeting = "";
     } // lib.optionalAttrs pkgs.hostPlatform.isLinux {
       # Fixes issues with locale in non-NixOS usage of nix
       #

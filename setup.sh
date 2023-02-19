@@ -5,8 +5,12 @@ function is_installed {
   command -v "$1" > /dev/null
 }
 
-HM_CONFIG="${HOME_MANAGER_CONFIG:-mthadley-workos}"
-FLAKE_URI="path:.#homeConfigurations.${HM_CONFIG}.activationPackage"
+if [ -z "${HOME_MANAGER_CONFIG}" ]; then
+  echo "Error: HOME_MANAGER_CONFIG is not set."
+  exit 1
+fi
+
+FLAKE_URI="path:.#homeConfigurations.${HOME_MANAGER_CONFIG}.activationPackage"
 
 # Enable debug mode on CI
 if [ -n "${GITHUB_WORKFLOW:-}" ]; then
@@ -42,7 +46,7 @@ if ! is_installed home-manager; then
 fi
 
 echo "Switching to new configuration..."
-home-manager switch --flake "path:.#$HM_CONFIG"
+home-manager switch --flake "path:.#$HOME_MANAGER_CONFIG"
 
 if ! echo "$SHELL" | grep fish > /dev/null; then
   echo "Setting fish as default shell..."
