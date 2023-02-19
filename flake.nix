@@ -31,7 +31,7 @@
                   # Update the state version as needed.
                   # See the changelog here:
                   # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
-                  stateVersion = "21.11";
+                  stateVersion = "23.05";
                 };
               }
             ];
