@@ -36,14 +36,12 @@ in
       vim-vinegar
     ];
 
-    extraConfig = ''
-      lua <<LUA
-        FZF_VIM_PREVIEW_PATH = '${fzfVimPreview}'
-        RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
-        SIMILAR_SORT_PATH = '${pkgs.similar-sort}/bin/similar-sort'
+    extraLuaConfig = ''
+      FZF_VIM_PREVIEW_PATH = '${fzfVimPreview}'
+      RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
+      SIMILAR_SORT_PATH = '${pkgs.similar-sort}/bin/similar-sort'
 
-        require 'mthadley.init'
-      LUA
+      require 'mthadley.init'
     '';
   };
 
