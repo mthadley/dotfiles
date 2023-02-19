@@ -25,5 +25,5 @@ jobs:
     # _something_ got installed correctly.
     - name: check installation
       run: |
-        source ~/.nix-profile/etc/profile.d/nix.sh
+        source /nix/var/nix/profiles/default//etc/profile.d/nix-daemon.sh
         hello
