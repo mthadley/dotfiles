@@ -29,9 +29,8 @@ if ! is_installed nix; then
     sudo mdutil -i off /nix
   fi
 
-  echo "Sourcing nix profile vars..."
-  # shellcheck disable=SC1090
-  source ~/.nix-profile/etc/profile.d/nix.sh
+  echo "Sourcing nix vars..."
+  source /nix/var/nix/profiles/default//etc/profile.d/nix-daemon.sh
 fi
 
 # Install Home Manager
