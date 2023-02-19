@@ -6,6 +6,10 @@
     target = ".config/fish/functions";
   };
 
+  home.sessionVariables = {
+    fish_greeting = "";
+  };
+
   programs.fish = {
     enable = true;
 
