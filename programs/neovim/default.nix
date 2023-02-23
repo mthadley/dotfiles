@@ -23,6 +23,7 @@ in
       neoformat
       nvim-autopairs
       nvim-lspconfig
+      registers-nvim
       tslime
       vim-fugitive
       vim-fzf-builtin

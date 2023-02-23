@@ -16,6 +16,7 @@ local user_modules = {
   'mthadley.netrw',
   'mthadley.comment',
   'mthadley.autopairs',
+  'mthadley.registers',
 }
 
 for _, module_path in ipairs(user_modules) do
