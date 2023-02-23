@@ -4,10 +4,19 @@ vim.g.base16colorspace = 256
 vim.opt.termguicolors = true
 vim.cmd 'colorscheme base16-ocean'
 
--- LSP-related Colors
-vim.cmd "highlight! link DiagnosticError ErrorMsg"
-vim.cmd "highlight! link DiagnosticWarn WarningMsg"
-vim.cmd "highlight! link DiagnosticInfo MoreMsg"
+local color_links = {
+  FloatBorder = "Comment",
+  FzfLuaBorder = "FloatBorder",
+
+  -- LSP-related Colors
+  DiagnosticError = "ErrorMsg",
+  DiagnosticWarn = "WarningMsg",
+  DiagnosticInfo = "MoreMsg"
+}
+
+for source, target in pairs(color_links) do
+  vim.api.nvim_set_hl(0, source, { link = target})
+end
 
 local diagnostic_sign_colors = {
   DiagnosticSignError = vim.g.base16_gui08,

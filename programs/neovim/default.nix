@@ -1,13 +1,5 @@
 { pkgs, ... }:
 
-let
-  vim-fzf-builtin = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-fzf-builtin";
-    src = "${pkgs.fzf}/share/vim-plugins/fzf";
-  };
-
-  fzfVimPreview = "${pkgs.vimPlugins.fzf-vim}/bin/preview.sh";
-in
 {
   programs.neovim = {
     enable = true;
@@ -26,7 +18,7 @@ in
       registers-nvim
       tslime
       vim-fugitive
-      vim-fzf-builtin
+      fzf-lua
       vim-indent-object
       vim-polyglot
       vim-rails
@@ -38,7 +30,6 @@ in
     ];
 
     extraLuaConfig = ''
-      FZF_VIM_PREVIEW_PATH = '${fzfVimPreview}'
       RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
       SIMILAR_SORT_PATH = '${pkgs.similar-sort}/bin/similar-sort'
 
