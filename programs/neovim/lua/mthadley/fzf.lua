@@ -9,6 +9,9 @@ fzf.setup {
     preview = {
       horizontal = "right:50%",
       layout = 'horizontal',
+      winopts = {
+        cursorline = false,
+      }
     }
   },
 
