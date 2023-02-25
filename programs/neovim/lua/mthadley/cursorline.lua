@@ -1,6 +1,6 @@
 vim.opt.cursorline = true
 
-local group = vim.api.nvim_create_augroup('cursorline', {
+local group = vim.api.nvim_create_augroup('mthadley:cursorline', {
   clear = true
 })
 

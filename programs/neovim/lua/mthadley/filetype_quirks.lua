@@ -6,7 +6,7 @@ vim.g.javascript_plugin_jsdoc = true
 vim.g.vim_markdown_folding_disabled = true
 vim.g.vim_markdown_fenced_languages = { 'js=javascript', 'ini=dosini' }
 
-local group = vim.api.nvim_create_augroup('filetype-quirks', { clear = true })
+local group = vim.api.nvim_create_augroup('mthadley:filetype-quirks', { clear = true })
 
 vim.api.nvim_create_autocmd('BufRead', {
   callback = function() vim.opt.ft = 'jsonc' end,

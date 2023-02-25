@@ -8,7 +8,7 @@ for keys, cmd in pairs({
   vim.keymap.set("n", keys, cmd)
 end
 
-local group = vim.api.nvim_create_augroup('mthadley_fugitive', { clear = true })
+local group = vim.api.nvim_create_augroup('mthadley:fugitive', { clear = true })
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(opt) vim.opt_local.spell = true end,

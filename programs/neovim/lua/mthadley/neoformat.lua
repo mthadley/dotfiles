@@ -8,7 +8,7 @@ vim.g.neoformat_enabled_ruby = {}
 vim.g.neoformat_enabled_sql = {}
 vim.g.neoformat_enabled_yaml = { 'prettier' }
 
-local augroup = vim.api.nvim_create_augroup('neoformat', { clear = true })
+local augroup = vim.api.nvim_create_augroup('mthadley:neoformat', { clear = true })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'Neoformat',
