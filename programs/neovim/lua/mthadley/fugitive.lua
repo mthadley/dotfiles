@@ -8,11 +8,11 @@ for keys, cmd in pairs({
   vim.keymap.set("n", keys, cmd)
 end
 
-local group = vim.api.nvim_create_augroup('fugitive', { clear = true })
+local group = vim.api.nvim_create_augroup('mthadley_fugitive', { clear = true })
 
 vim.api.nvim_create_autocmd('FileType', {
+  callback = function(opt) vim.opt_local.spell = true end,
   desc = 'Check spelling for Git commits.',
   pattern = 'gitcommit',
   group = group,
-  callback = function(opt) vim.opt_local.spell = true end,
 })
