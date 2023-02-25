@@ -2,7 +2,7 @@ for _, mapping in ipairs({
   { "<C-G>s", ":Git<CR>" },
   { "<C-G>l", ":Glog<CR>" },
   { "<C-G>b", ":Git blame<CR>" },
-  { "<C-G>h", ":Gbrowse<CR>" },
+  { "<C-G>h", ":GBrowse<CR>" },
   { "<C-G>e", ":Gedit<CR>" },
 }) do
   local keys, cmd = unpack(mapping)
