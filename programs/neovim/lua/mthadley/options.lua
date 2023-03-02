@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
     local previous_search_register = vim.fn.getreg('/')
-    vim.cmd('%s/\\s\\+$//e')
+    vim.cmd('silent! %s/\\s\\+$//e')
     vim.fn.setreg('/', previous_search_register)
   end,
   desc = 'Remove trailing whitespace',
