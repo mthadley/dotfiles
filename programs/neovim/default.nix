@@ -31,7 +31,7 @@
 
     extraLuaConfig = ''
       RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
-      SIMILAR_SORT_PATH = '${pkgs.similar-sort}/bin/similar-sort'
+      ZIMILAR_ZORT_PATH = '${pkgs.zimilar-zort}/bin/zimilar-zort'
 
       require 'mthadley.init'
     '';

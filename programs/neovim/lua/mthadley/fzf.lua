@@ -24,7 +24,7 @@ vim.keymap.set('n', '<C-P>', function()
   fzf.files({
     cmd = RIPGREP_PATH
       .. ' --files | '
-      .. SIMILAR_SORT_PATH
+      .. ZIMILAR_ZORT_PATH
       .. ' "'
       .. vim.api.nvim_eval('expand("%")')
       .. '"',

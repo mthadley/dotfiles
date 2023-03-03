@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zimilar-zort = {
+      url = "github:mthadley/zimilar-zort";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, ... }:
     let
       systems = flake-utils.lib.system;
 
@@ -33,6 +38,8 @@
                   # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
                   stateVersion = "23.05";
                 };
+
+                nixpkgs.overlays = [ zimilar-zort.overlays.${system}.default ];
               }
             ];
           };
@@ -61,6 +68,5 @@
           system = systems.x86_64-linux;
           username = "runner";
         };
-
     };
 }
