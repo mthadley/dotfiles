@@ -23,7 +23,7 @@ local function on_attach(client, bufnr)
   end
 end
 
-local language_servers = { 'tsserver' }
+local language_servers = { 'tsserver', 'zls' }
 for _, server in pairs(language_servers) do
   require('lspconfig')[server].setup { on_attach = on_attach }
 end
