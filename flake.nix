@@ -9,10 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zimilar-zort = {
-      url = "github:mthadley/zimilar-zort";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    zimilar-zort.url = "github:mthadley/zimilar-zort";
   };
 
   outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, ... }:

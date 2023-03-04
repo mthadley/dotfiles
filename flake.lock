@@ -65,6 +65,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1677879050,
+        "narHash": "sha256-uUjjgwyQESvaystJqfkPHl+EjJ6SFaXB4a2ZCziHtX0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9c951e688231c47a51034e2aa66c1951f9bb80d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -91,9 +107,7 @@
     "zimilar-zort": {
       "inputs": {
         "flake-utils": "flake-utils_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1677885951,
