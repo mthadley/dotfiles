@@ -1,7 +1,7 @@
-local language_servers = { 'tsserver', 'zls' }
-for _, server in pairs(language_servers) do
-  require('lspconfig')[server].setup { on_attach = on_attach }
-end
+local lspconfig = require 'lspconfig'
+
+lspconfig.zls.setup {}
+lspconfig.tsserver.setup {}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('mthadley:lspconfig', {}),
