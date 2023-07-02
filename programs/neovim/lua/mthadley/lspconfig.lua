@@ -6,7 +6,7 @@ end
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('mthadley:lspconfig', {}),
   callback = function(event)
-    vim.api.nvim_buf_set_option(event.buf, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.bo[event.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     for keys, fn in pairs({
       ['<C-]>'] = vim.lsp.buf.definition,
