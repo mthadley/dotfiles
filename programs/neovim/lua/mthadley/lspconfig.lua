@@ -1,7 +1,18 @@
 local lspconfig = require 'lspconfig'
+local util = require 'lspconfig.util'
 
+lspconfig.tsserver.setup {
+  -- Override default and only start the server if a `tsconfig.json`
+  -- is found.
+  root_dir = function(filename)
+    return util.root_pattern('tsconfig.json')(filename)
+  end,
+
+  -- Override default and only start if a root directory with a
+  -- `tsconfig.json` is found.
+  single_file_support = false,
+}
 lspconfig.zls.setup {}
-lspconfig.tsserver.setup {}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('mthadley:lspconfig', {}),
