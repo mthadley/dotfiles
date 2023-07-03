@@ -37,5 +37,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     }) do
       vim.keymap.set('n', keys, fn, { buffer = event.buf })
     end
+
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+    -- Disabling sicne this causes a lot of syntax flashing, and I also
+    -- find the "enhanced" highlighting to be too noisy.
+    client.server_capabilities.semanticTokensProvider = nil
   end
 })
