@@ -5,13 +5,13 @@ vim.opt.termguicolors = true
 vim.cmd 'colorscheme base16-ocean'
 
 local color_links = {
-  FloatBorder = "Comment",
-  FzfLuaBorder = "FloatBorder",
+  FloatBorder = 'Comment',
+  FzfLuaBorder = 'FloatBorder',
 
   -- LSP-related Colors
-  DiagnosticError = "ErrorMsg",
-  DiagnosticWarn = "WarningMsg",
-  DiagnosticInfo = "MoreMsg"
+  DiagnosticError = 'ErrorMsg',
+  DiagnosticWarn = 'WarningMsg',
+  DiagnosticInfo = 'MoreMsg'
 }
 
 for source, target in pairs(color_links) do

@@ -1,8 +1,8 @@
-local registers = require "registers"
+local registers = require 'registers'
 
 registers.setup {
   window = {
-    border = "shadow",
+    border = 'shadow',
     transparency = 0,
   },
 

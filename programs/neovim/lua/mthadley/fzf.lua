@@ -7,7 +7,7 @@ fzf.setup {
     width = 1,
 
     preview = {
-      horizontal = "right:50%",
+      horizontal = 'right:50%',
       layout = 'horizontal',
       winopts = {
         cursorline = false,
@@ -36,4 +36,4 @@ end, { silent = true })
 
 fzf.register_ui_select()
 
-vim.api.nvim_set_hl(0, "FloatBorder", { link = "Comment" })
+vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Comment' })

@@ -1,12 +1,12 @@
 local opt = vim.opt
 
 opt.backup = false
-opt.clipboard = "unnamedplus"
-opt.completeopt:remove { "preview" }
+opt.clipboard = 'unnamedplus'
+opt.completeopt:remove { 'preview' }
 opt.expandtab = true
 opt.grepprg = RIPGREP_PATH..' --vimgrep'
 opt.ignorecase = true
-opt.mouse = "a"
+opt.mouse = 'a'
 opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 10

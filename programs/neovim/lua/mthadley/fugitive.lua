@@ -5,7 +5,7 @@ for keys, cmd in pairs({
   ['<C-G>h'] = ':GBrowse<CR>',
   ['<C-G>e'] = ':Gedit<CR>',
 }) do
-  vim.keymap.set("n", keys, cmd)
+  vim.keymap.set('n', keys, cmd)
 end
 
 local group = vim.api.nvim_create_augroup('mthadley:fugitive', { clear = true })
