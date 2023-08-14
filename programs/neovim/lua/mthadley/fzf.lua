@@ -20,6 +20,7 @@ fzf.setup {
   },
 }
 
+vim.keymap.set('n', '<C-T>', ':FzfLua<CR>')
 vim.keymap.set('n', '<C-P>', function()
   fzf.files({
     cmd = RIPGREP_PATH
