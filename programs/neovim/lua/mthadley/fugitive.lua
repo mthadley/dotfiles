@@ -1,9 +1,9 @@
 for keys, cmd in pairs({
-  ['<C-G>s'] = ':Git<CR>',
-  ['<C-G>l'] = ':Glog<CR>' ,
-  ['<C-G>b'] = ':Git blame<CR>',
-  ['<C-G>h'] = ':GBrowse<CR>',
-  ['<C-G>e'] = ':Gedit<CR>',
+  ['<C-G>s'] = vim.cmd.Git,
+  ['<C-G>l'] = vim.cmd.Gclog,
+  ['<C-G>b'] = function() vim.cmd.Git('blame') end,
+  ['<C-G>h'] = vim.cmd.GBrowse,
+  ['<C-G>e'] = vim.cmd.Gedit,
 }) do
   vim.keymap.set('n', keys, cmd)
 end

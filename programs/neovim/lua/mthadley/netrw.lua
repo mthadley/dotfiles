@@ -8,6 +8,6 @@ vim.api.nvim_create_autocmd('BufLeave', {
   group = vim.api.nvim_create_augroup('mthadley:netrw', { clear = true }),
 })
 
-vim.keymap.set('n', '<C-E>e', ':Explore<CR>')
-vim.keymap.set('n', '<C-E>s', ':Hexplore<CR>')
-vim.keymap.set('n', '<C-E>v', ':Vexplore<CR>')
+vim.keymap.set('n', '<C-E>e', vim.cmd.Explore)
+vim.keymap.set('n', '<C-E>s', vim.cmd.Hexplore)
+vim.keymap.set('n', '<C-E>v', vim.cmd.Vexplore)
