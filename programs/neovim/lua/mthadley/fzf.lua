@@ -16,6 +16,9 @@ fzf.setup {
   },
 
   fzf_opts = {
+    -- Defaults to `'reverse'`, which puts the prompt at the
+    -- top, but setting thise `false` removes the flag and displays
+    -- it at the bottom.
     ['--layout'] = false
   },
 }
