@@ -11,7 +11,7 @@ end
 local group = vim.api.nvim_create_augroup('mthadley:fugitive', { clear = true })
 
 vim.api.nvim_create_autocmd('FileType', {
-  callback = function(opt) vim.opt_local.spell = true end,
+  callback = function() vim.opt_local.spell = true end,
   desc = 'Check spelling for Git commits.',
   pattern = 'gitcommit',
   group = group,
