@@ -44,6 +44,7 @@
       ./programs/psql.nix
       ./programs/readline.nix
       ./programs/ripgrep.nix
+      ./programs/sqlite.nix
       ./programs/tmux.nix
     ];
 
