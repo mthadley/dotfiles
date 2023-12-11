@@ -1,4 +1,4 @@
-require("conform").setup({
+require("conform").setup {
 	formatters_by_ft = {
 		fish = { "fish_indent" },
 		go = { "goimports", "gofmt" },
@@ -14,4 +14,4 @@ require("conform").setup({
 		timeout_ms = 500,
 	},
 	notify_on_error = false,
-})
+}

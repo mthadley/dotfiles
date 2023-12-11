@@ -46,6 +46,7 @@
       ./programs/readline.nix
       ./programs/ripgrep.nix
       ./programs/sqlite.nix
+      ./programs/stylua.nix
       ./programs/tmux.nix
     ];
 
