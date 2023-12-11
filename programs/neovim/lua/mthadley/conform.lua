@@ -5,6 +5,7 @@ require("conform").setup({
 		javascript = { "prettier" },
 		lua = { "stylua" },
 		mdx = { "prettier" },
+		nix = { "nixpkgs_fmt" },
 		typescript = { "prettier" },
 		zig = { "zigfmt" },
 	},
