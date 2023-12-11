@@ -1,2 +1,2 @@
 -- christoomey/vim-sort-motion
-vim.g.sort_motion_flags = 'i'
+vim.g.sort_motion_flags = "i"
