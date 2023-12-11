@@ -11,14 +11,14 @@
     plugins = with pkgs.vimPlugins; [
       base16-vim
       comment-nvim
+      conform-nvim
+      fzf-lua
       gitsigns-nvim
-      neoformat
       nvim-autopairs
       nvim-lspconfig
       registers-nvim
       tslime
       vim-fugitive
-      fzf-lua
       vim-indent-object
       vim-polyglot
       vim-rails

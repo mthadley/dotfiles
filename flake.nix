@@ -2,10 +2,10 @@
   description = "mthadley's dotfiles";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -36,7 +36,7 @@
                   # Update the state version as needed.
                   # See the changelog here:
                   # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
-                  stateVersion = "23.05";
+                  stateVersion = "23.11";
                 };
 
                 nixpkgs.overlays = [ zimilar-zort.overlays.${system}.default ];
