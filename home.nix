@@ -7,6 +7,7 @@
       htop
       jq
       nixpkgs-fmt
+      stylua
 
       # Just used to verify home-manager setup
       hello
