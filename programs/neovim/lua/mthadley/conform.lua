@@ -7,6 +7,7 @@ require("conform").setup {
 		mdx = { "prettier" },
 		nix = { "nixpkgs_fmt" },
 		typescript = { "prettier" },
+		typescriptreact = { "prettier" },
 		zig = { "zigfmt" },
 	},
 	format_on_save = {
