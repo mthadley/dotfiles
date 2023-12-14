@@ -8,9 +8,6 @@
       jq
       nixpkgs-fmt
       stylua
-
-      # Just used to verify home-manager setup
-      hello
     ] ++ lib.optionals (!pkgs.stdenv.isAarch64) [
       shellcheck
     ] ++ lib.optionals pkgs.stdenv.isLinux [

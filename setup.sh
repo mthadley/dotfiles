@@ -12,11 +12,6 @@ fi
 
 FLAKE_URI="path:.#homeConfigurations.${HOME_MANAGER_CONFIG}.activationPackage"
 
-# Enable debug mode on CI
-if [ -n "${GITHUB_WORKFLOW:-}" ]; then
-  set -x
-fi
-
 # Make sure curl is installed
 if ! is_installed curl; then
   echo "Make sure curl is installed first!"

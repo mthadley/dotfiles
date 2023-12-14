@@ -60,13 +60,6 @@
           name = "mthadley-home";
           system = systems.aarch64-darwin;
           username = "mthadley";
-        } //
-
-        mkHomeConfig rec {
-          homeDirectory = "/home/${username}";
-          name = "ci";
-          system = systems.x86_64-linux;
-          username = "runner";
         };
     };
 }
