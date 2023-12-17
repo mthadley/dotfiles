@@ -31,7 +31,7 @@
       ./programs/autojump.nix
       ./programs/bat.nix
       ./programs/direnv.nix
-      ./programs/exa.nix
+      ./programs/eza.nix
       ./programs/fish/default.nix
       ./programs/fzf.nix
       ./programs/git.nix

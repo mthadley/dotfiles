@@ -26,7 +26,7 @@
       npr = "npm run";
       rspec = "rspec --format documentation";
       tm = "tmux -2";
-      tree = "exa --tree";
+      tree = "eza --tree";
     };
 
     shellInit = ''
