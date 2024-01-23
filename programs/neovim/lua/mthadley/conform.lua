@@ -3,6 +3,8 @@ require("conform").setup {
 		fish = { "fish_indent" },
 		go = { "goimports", "gofmt" },
 		javascript = { "prettier" },
+		json = { "prettier" },
+		jsonc = { "prettier" },
 		lua = { "stylua" },
 		mdx = { "prettier" },
 		nix = { "nixpkgs_fmt" },
