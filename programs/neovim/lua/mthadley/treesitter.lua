@@ -20,6 +20,8 @@ require("nvim-treesitter.configs").setup {
 		"query",
 
 		-- Languages I often work with.
+		"json",
+		"yaml",
 		"bash",
 		"nix",
 		"fish",
