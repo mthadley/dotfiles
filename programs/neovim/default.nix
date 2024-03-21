@@ -16,12 +16,13 @@
       gitsigns-nvim
       nvim-autopairs
       nvim-lspconfig
+      nvim-treesitter
       registers-nvim
       tslime
       vim-fugitive
       vim-indent-object
-      vim-polyglot
       vim-rails
+      vim-sleuth
       vim-sort-motion
       vim-surround
       vim-test
