@@ -7,7 +7,7 @@ local parser_install_dir = vim.fn.expand("~/.local/share/nvim/treesitter/parsers
 -- parsers which seem to be out of date and throw errors.
 vim.opt.runtimepath:prepend(parser_install_dir)
 
--- TODO: Why is this needed? I get compilation errors when using the chosen
+-- TODO: Why is this needed? I get compilation errors when using the plugin
 -- default of `clang`.
 require("nvim-treesitter.install").compilers = { "gcc" }
 
