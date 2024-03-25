@@ -6,6 +6,8 @@ function swatch --description "Watch files and run a command"
             set _flag_cmd make
         else if test -f Shakefile.hs
             set _flag_cmd shake
+        else if test -f rush.json
+            set _flag_cmd rush build
         end
 
         if not set -q _flag_cmd
