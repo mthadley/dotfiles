@@ -4,9 +4,7 @@ local util = require "lspconfig.util"
 lspconfig.tsserver.setup {
 	-- Override default and only start the server if a `tsconfig.json`
 	-- is found.
-	root_dir = function(filename)
-		return util.root_pattern("tsconfig.json")(filename)
-	end,
+	root_dir = util.root_pattern("tsconfig.json"),
 
 	-- Override default and only start if a root directory with a
 	-- `tsconfig.json` is found.
