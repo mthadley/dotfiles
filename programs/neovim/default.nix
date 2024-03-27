@@ -16,6 +16,7 @@
       gitsigns-nvim
       nvim-autopairs
       nvim-lspconfig
+      nvim-surround
       nvim-treesitter
       registers-nvim
       tslime
@@ -24,7 +25,6 @@
       vim-rails
       vim-sleuth
       vim-sort-motion
-      vim-surround
       vim-test
       vim-unimpaired
       vim-vinegar
