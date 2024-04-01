@@ -22,7 +22,6 @@
       tslime
       vim-fugitive
       vim-indent-object
-      vim-rails
       vim-sleuth
       vim-sort-motion
       vim-test
