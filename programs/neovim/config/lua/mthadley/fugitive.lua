@@ -11,12 +11,3 @@ for keys, cmd in pairs({
 end
 
 local group = vim.api.nvim_create_augroup("mthadley:fugitive", { clear = true })
-
-vim.api.nvim_create_autocmd("FileType", {
-	callback = function()
-		vim.opt_local.spell = true
-	end,
-	desc = "Check spelling for Git commits.",
-	pattern = "gitcommit",
-	group = group,
-})

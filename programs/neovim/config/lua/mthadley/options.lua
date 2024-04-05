@@ -1,27 +1,27 @@
-local opt = vim.opt
+local set = vim.opt
 
-opt.backup = false
-opt.clipboard = "unnamedplus"
-opt.completeopt:remove { "preview" }
-opt.expandtab = true
-opt.grepprg = RIPGREP_PATH .. " --vimgrep"
-opt.ignorecase = true
-opt.mouse = "a"
-opt.number = true
-opt.relativenumber = true
-opt.scrolloff = 10
-opt.shiftround = true
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.splitbelow = true
-opt.splitright = true
-opt.undofile = true
-opt.updatetime = 100
-opt.writebackup = false
+set.backup = false
+set.clipboard = "unnamedplus"
+set.completeopt:remove { "preview" }
+set.expandtab = true
+set.grepprg = RIPGREP_PATH .. " --vimgrep"
+set.ignorecase = true
+set.mouse = "a"
+set.number = true
+set.relativenumber = true
+set.scrolloff = 10
+set.shiftround = true
+set.shiftwidth = 2
+set.tabstop = 2
+set.splitbelow = true
+set.splitright = true
+set.undofile = true
+set.updatetime = 100
+set.writebackup = false
 
 local group = vim.api.nvim_create_augroup("mthadley:options", { clear = true })
 
-opt.autoread = true
+set.autoread = true
 vim.api.nvim_create_autocmd("CursorHold", {
 	command = "checktime",
 	desc = "Autoreload files on change",
