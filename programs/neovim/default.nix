@@ -37,8 +37,8 @@
     '';
   };
 
-  home.file.".config/nvim/lua" = {
+  home.file.".config/nvim" = {
     recursive = true;
-    source = ./lua;
+    source = ./config;
   };
 }
