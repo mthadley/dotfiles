@@ -23,6 +23,9 @@ local white_fg = colors.base05
 local red_fg = colors.base08
 local yellow_fg = colors.base09
 
+-- Split separators
+hi("VertSplit", { fg = gray_bg })
+
 -- Line number and gutter customizations
 hi("CursorLineNr", { fg = white_fg })
 hi("LineNr", { fg = gray_fg, bg = gray_bg })
