@@ -12,6 +12,17 @@ lspconfig.tsserver.setup {
 }
 lspconfig.zls.setup {}
 
+-- Customized following the `lspconfig` wiki instructions:
+--
+--   https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#borders
+--
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or "rounded"
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("mthadley:lspconfig", {}),
 	callback = function(event)
