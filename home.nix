@@ -7,9 +7,8 @@
       htop
       jq
       nixpkgs-fmt
-      stylua
-    ] ++ lib.optionals (!pkgs.stdenv.isAarch64) [
       shellcheck
+      stylua
     ] ++ lib.optionals pkgs.stdenv.isLinux [
       keyswitch
     ];
