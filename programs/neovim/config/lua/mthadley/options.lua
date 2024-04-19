@@ -19,7 +19,7 @@ set.undofile = true
 set.updatetime = 100
 set.writebackup = false
 
-local group = vim.api.nvim_create_augroup("mthadley:options", { clear = true })
+local group = vim.api.nvim_create_augroup("mthadley:options", {})
 
 set.autoread = true
 vim.api.nvim_create_autocmd("CursorHold", {

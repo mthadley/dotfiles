@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("BufLeave", {
 		vim.cmd.lcd(vim.fn.getcwd(-1))
 	end,
 	desc = "Fix netrw mm and mc commands.",
-	group = vim.api.nvim_create_augroup("mthadley:netrw", { clear = true }),
+	group = vim.api.nvim_create_augroup("mthadley:netrw", {}),
 })
 
 vim.keymap.set("n", "<C-E>e", vim.cmd.Explore)

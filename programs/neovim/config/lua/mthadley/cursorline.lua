@@ -1,8 +1,6 @@
 vim.opt.cursorline = true
 
-local group = vim.api.nvim_create_augroup("mthadley:cursorline", {
-	clear = true,
-})
+local group = vim.api.nvim_create_augroup("mthadley:cursorline", {})
 
 vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufEnter", "BufLeave" }, {
 	callback = function(opts)
