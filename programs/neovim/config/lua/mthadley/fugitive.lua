@@ -9,5 +9,3 @@ for keys, cmd in pairs({
 }) do
 	vim.keymap.set("n", keys, cmd)
 end
-
-local group = vim.api.nvim_create_augroup("mthadley:fugitive", { clear = true })
