@@ -34,5 +34,3 @@ vim.keymap.set("n", "<C-P>", function()
 end, { silent = true })
 
 fzf.register_ui_select()
-
-vim.api.nvim_set_hl(0, "FloatBorder", { link = "Comment" })
