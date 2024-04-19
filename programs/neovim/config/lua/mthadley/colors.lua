@@ -1,4 +1,4 @@
-vim.cmd "colorscheme base16-ocean"
+vim.cmd.colorscheme "base16-ocean"
 
 local function hi(group, options)
 	local ns_id = 0
@@ -10,6 +10,11 @@ local function hi(group, options)
 	end
 
 	vim.api.nvim_set_hl(ns_id, group, options)
+end
+
+local function clear(group, ns_id)
+	ns_id = ns_id or 0
+	vim.api.nvim_set_hl(ns_id, group, {})
 end
 
 hi("FloatBorder", { link = "Comment" })
@@ -36,3 +41,8 @@ hi("GitGutterChange", { bg = gray_bg })
 hi("GitGutterDelete", { bg = gray_bg })
 hi("LineNr", { fg = gray_fg, bg = gray_bg })
 hi("SignColumn", { bg = gray_bg })
+
+local preview_ns = vim.api.nvim_create_namespace("mthadley:lsp_floating_preview")
+
+-- Don't highlight pairs via standard `pi_paren` plugin in LSP floating previews.
+clear("MatchParen", preview_ns)

@@ -20,7 +20,15 @@ local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	opts = opts or {}
 	opts.border = opts.border or "rounded"
-	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+
+	local bufnr, winnr = orig_util_open_floating_preview(contents, syntax, opts, ...)
+
+	local preview_ns = vim.api.nvim_get_namespaces()["mthadley:lsp_floating_preview"]
+	if preview_ns then
+		vim.api.nvim_win_set_hl_ns(winnr, preview_ns)
+	end
+
+	return bufnr, winnr
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
