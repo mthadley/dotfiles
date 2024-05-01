@@ -27,8 +27,11 @@
       be = "bundle exec";
       npr = "npm run";
       rspec = "rspec --format documentation";
-      tm = "tmux -2";
       tree = "eza --tree";
+
+      # tmux
+      tm = "tmux -2";
+      tmrw = "tmux rename-window (basename (pwd))";
     };
 
     shellInit = ''
