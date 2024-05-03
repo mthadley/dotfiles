@@ -10,6 +10,9 @@ vim.filetype.add({
 
 		-- Treat Prettier ignore files as a .gitignore
 		[".prettierignore"] = "gitignore",
+
+		-- Direnv configruation files are the current shell.
+		[".envrc"] = "fish",
 	},
 	pattern = {
 		-- Recognize go templates
