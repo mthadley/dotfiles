@@ -1,4 +1,4 @@
-vim.filetype.add({
+vim.filetype.add {
 	extension = {
 		-- Treat MDX files as markdown until there's a first-class Treesitter
 		-- parser.
@@ -17,5 +17,8 @@ vim.filetype.add({
 	pattern = {
 		-- Recognize go templates
 		["*.go.tmpl"] = "gohtmltmpl",
+
+		-- Some projects use the `.env.local` pattern.
+		[".env.*"] = "sh",
 	},
-})
+}
