@@ -10,6 +10,12 @@ lspconfig.tsserver.setup {
 	-- `tsconfig.json` is found.
 	single_file_support = false,
 }
+
+lspconfig.denols.setup {
+	-- Not all TypeScript projects use `deno`...
+	root_dir = util.root_pattern("deno.json"),
+}
+
 lspconfig.zls.setup {}
 
 -- Customized following the `lspconfig` wiki instructions:
