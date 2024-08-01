@@ -9,12 +9,12 @@
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
+      base16-nvim
       comment-nvim
       conform-nvim
       fzf-lua
       gitsigns-nvim
       nvim-autopairs
-      nvim-base16
       nvim-lspconfig
       nvim-surround
       nvim-treesitter

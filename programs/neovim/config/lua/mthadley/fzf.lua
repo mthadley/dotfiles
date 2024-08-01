@@ -30,6 +30,10 @@ vim.keymap.set("n", "<C-P>", function()
 		fzf_opts = {
 			["--tiebreak"] = "index",
 		},
+		actions = {
+			-- Disable the default "git ignore" toggle action
+			["ctrl-g"] = false,
+		},
 	})
 end, { silent = true })
 
