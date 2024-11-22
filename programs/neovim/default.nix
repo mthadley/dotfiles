@@ -20,13 +20,16 @@
       nvim-treesitter
       registers-nvim
       tslime
-      vim-fugitive
       vim-indent-object
       vim-sleuth
       vim-sort-motion
       vim-test
       vim-unimpaired
       vim-vinegar
+
+      # Fugitive + related plugins
+      vim-fugitive
+      vim-rhubarb
     ];
 
     extraLuaConfig = ''

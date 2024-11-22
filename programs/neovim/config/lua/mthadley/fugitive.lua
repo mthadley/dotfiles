@@ -1,11 +1,12 @@
-for keys, cmd in pairs({
-	["<C-G>s"] = vim.cmd.Git,
-	["<C-G>l"] = vim.cmd.Gclog,
-	["<C-G>b"] = function()
-		vim.cmd.Git("blame")
-	end,
-	["<C-G>h"] = vim.cmd.GBrowse,
-	["<C-G>e"] = vim.cmd.Gedit,
-}) do
-	vim.keymap.set("n", keys, cmd)
-end
+local map = vim.keymap.set
+local prefix = "<C-G>"
+
+map("n", prefix .. "s", vim.cmd.Git)
+map("n", prefix .. "l", vim.cmd.Gclog)
+map("n", prefix .. "b", function()
+	vim.cmd.Git("blame")
+end)
+map("n", prefix .. "e", vim.cmd.Gedit)
+
+map("n", prefix .. "h", vim.cmd.GBrowse)
+map("v", prefix .. "h", ":GBrowse<CR>")
