@@ -1,4 +1,3 @@
-vim.opt.termguicolors = true
 vim.cmd.colorscheme "base16-ocean"
 
 local function hi(group, options)
