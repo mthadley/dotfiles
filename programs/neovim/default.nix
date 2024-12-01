@@ -10,7 +10,6 @@
 
     plugins = with pkgs.vimPlugins; [
       base16-nvim
-      comment-nvim
       conform-nvim
       fzf-lua
       gitsigns-nvim
