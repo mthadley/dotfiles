@@ -4,7 +4,6 @@ set.backup = false
 set.clipboard = "unnamedplus"
 set.completeopt:remove { "preview" }
 set.expandtab = true
-set.grepprg = RIPGREP_PATH .. " --vimgrep"
 set.ignorecase = true
 set.mouse = "a"
 set.number = true
