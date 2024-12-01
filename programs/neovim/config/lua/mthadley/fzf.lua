@@ -2,6 +2,7 @@ local fzf = require("fzf-lua")
 
 fzf.setup {
 	winopts = {
+		backdrop = 100,
 		height = 0.4,
 		row = 1,
 		width = 1,
