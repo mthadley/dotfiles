@@ -1,7 +1,7 @@
 local lspconfig = require "lspconfig"
 local util = require "lspconfig.util"
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
 	-- Override default and only start the server if a `tsconfig.json`
 	-- is found.
 	root_dir = util.root_pattern("tsconfig.json"),
