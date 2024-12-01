@@ -8,13 +8,9 @@ end
 
 local function with_project_root(command)
 	return function()
-		local markers = vim.fs.find({ "package.json", ".git" }, {
-			path = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
-			upward = true,
-		})
-
-		if #markers > 0 then
-			vim.g["test#project_root"] = vim.fs.dirname(markers[1])
+		local root = vim.fs.root(0, { "package.json", ".git" })
+		if root then
+			vim.g["test#project_root"] = root
 		end
 
 		vim.cmd(command)
