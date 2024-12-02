@@ -28,6 +28,14 @@
     # seem to work on MacOS.
     secureSocket = !pkgs.stdenv.isDarwin;
 
+    # This is the new default, at least as of this commit:
+    #
+    #   https://github.com/gen740/home-manager/commit/210b05db9779798d7ec3e5cf6a4eebc7de22dfea
+    #
+    # And I care because without this, tmux will default to using `sh` as the
+    # shell. This can potentially be removed on later releases of `home-manager`.
+    sensibleOnTop = false;
+
     extraConfig = ''
       # general options
       set -g mouse on
