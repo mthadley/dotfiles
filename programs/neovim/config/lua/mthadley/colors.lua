@@ -29,7 +29,8 @@ local red_fg = colors.base08
 local yellow_fg = colors.base09
 
 -- Split separators
-hi("VertSplit", { fg = gray_bg })
+hi("WinSeparator", { fg = gray_bg })
+vim.opt.fillchars = { vert = "█" }
 
 -- Line number and gutter customizations
 hi("CursorLineNr", { fg = white_fg })
