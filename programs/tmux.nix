@@ -53,8 +53,8 @@
       # Fixes colors in vim
       set -sa terminal-overrides ',xterm-256color:RGB'
 
-      bind-key v split-window -h
-      bind-key s split-window -v
+      bind-key v split-window -c "#{pane_current_path}" -h
+      bind-key s split-window -c "#{pane_current_path}" -v
       bind-key a last-window
     '';
   };
