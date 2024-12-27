@@ -8,8 +8,6 @@ keymap.set("n", "<leader>os", ":so ~/.vimsession<CR>")
 
 -- Saving
 keymap.set("n", "<leader>w", ":w<CR>")
-keymap.set("n", "<C-S>", ":w<CR>")
-keymap.set("i", "<C-S>", ":w<CR>")
 
 -- Misc. Mappings
 keymap.set("n", "<leader>m", ":Man<CR>")
