@@ -3,6 +3,7 @@ require("conform").setup {
 		css = { "prettier" },
 		fish = { "fish_indent" },
 		go = { "goimports", "gofmt" },
+		graphql = { "prettier" },
 		javascript = { "prettier" },
 		json = { "prettier" },
 		jsonc = { "prettier" },
