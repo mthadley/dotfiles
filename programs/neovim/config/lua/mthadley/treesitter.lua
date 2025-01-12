@@ -42,5 +42,11 @@ require("nvim-treesitter.configs").setup {
 
 	indent = {
 		enable = true,
+		disable = {
+			-- The indentation is weird on Ruby right now, so falling
+			-- back to the non-treesitter default, but maybe can be removed
+			-- in the future.
+			"ruby",
+		},
 	},
 }
