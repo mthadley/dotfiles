@@ -37,3 +37,13 @@ set fish_color_selection white --bold --background=brblack
 set fish_color_status red
 set fish_color_user brgreen
 set fish_color_valid_path --underline
+
+# Settings for `fish_git_prompt` used by `fish_prompt.fish`
+set -g __fish_git_prompt_showdirtystate yes
+set -g __fish_git_prompt_showuntrackedfiles yes
+set -g __fish_git_prompt_shorten_branch_len 40
+set -g __fish_git_prompt_showcolorhints yes
+set -g __fish_git_prompt_color_flags --bold yellow
+set -g __fish_git_prompt_color_branch --bold blue
+set -g __fish_git_prompt_color_prefix --dim grey
+set -g __fish_git_prompt_color_suffix --dim grey
