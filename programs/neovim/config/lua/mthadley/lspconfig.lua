@@ -19,7 +19,7 @@ lspconfig.ts_ls.setup {
 
 lspconfig.denols.setup {
 	-- Not all TypeScript projects use `deno`...
-	root_dir = util.root_pattern("deno.json"),
+	root_dir = util.root_pattern("deno.json", "deno.jsonc"),
 }
 
 lspconfig.zls.setup {}
