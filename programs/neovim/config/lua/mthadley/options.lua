@@ -23,7 +23,11 @@ local group = vim.api.nvim_create_augroup("mthadley:options", {})
 
 set.autoread = true
 vim.api.nvim_create_autocmd("CursorHold", {
-	command = "checktime",
+	callback = function(event)
+		if vim.api.nvim_buf_get_option(event.buf, "buftype") ~= "nofile" then
+			vim.cmd "checktime"
+		end
+	end,
 	desc = "Autoreload files on change",
 	group = group,
 })
@@ -31,7 +35,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function()
 		local previous_search_register = vim.fn.getreg("/")
-		vim.cmd("silent! %s/\\s\\+$//e")
+		vim.cmd "silent! %s/\\s\\+$//e"
 		vim.fn.setreg("/", previous_search_register)
 	end,
 	desc = "Remove trailing whitespace",
