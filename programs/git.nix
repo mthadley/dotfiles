@@ -29,5 +29,12 @@
       push.default = "current";
       init.defaultBranch = "main";
     };
+
+    includes = [
+      {
+        condition = "gitdir:~/projects/workos/**";
+        path = "~/projects/workos/.gitconfig";
+      }
+    ];
   };
 }
