@@ -32,10 +32,10 @@
     ];
 
     extraLuaConfig = ''
-      RIPGREP_PATH = '${pkgs.ripgrep}/bin/rg'
-      ZIMILAR_ZORT_PATH = '${pkgs.zimilar-zort}/bin/zimilar-zort'
+      RIPGREP_PATH = "${pkgs.ripgrep}/bin/rg"
+      ZIMILAR_ZORT_PATH = "${pkgs.zimilar-zort}/bin/zimilar-zort"
 
-      require 'mthadley'
+      require "mthadley"
     '';
   };
 
