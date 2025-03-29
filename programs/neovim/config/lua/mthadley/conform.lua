@@ -13,6 +13,7 @@ require("conform").setup {
 		nix = { "nixpkgs_fmt" },
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
+		xml = { "xmllint" },
 		yaml = { "prettier" },
 		zig = { "zigfmt" },
 	},
