@@ -25,26 +25,25 @@
     };
   };
 
-  imports =
-    [
-      ./programs/autojump.nix
-      ./programs/bat.nix
-      ./programs/direnv.nix
-      ./programs/eza.nix
-      ./programs/fish/default.nix
-      ./programs/fzf.nix
-      ./programs/git.nix
-      ./programs/konsole.nix
-      ./programs/neovim/default.nix
-      ./programs/nix.nix
-      ./programs/nixpkgs
-      ./programs/psql.nix
-      ./programs/readline.nix
-      ./programs/ripgrep.nix
-      ./programs/sqlite.nix
-      ./programs/stylua.nix
-      ./programs/tmux.nix
-    ];
+  imports = [
+    ./programs/autojump.nix
+    ./programs/bat.nix
+    ./programs/direnv.nix
+    ./programs/eza.nix
+    ./programs/fish/default.nix
+    ./programs/fzf.nix
+    ./programs/git.nix
+    ./programs/konsole.nix
+    ./programs/neovim/default.nix
+    ./programs/nix.nix
+    ./programs/nixpkgs
+    ./programs/psql.nix
+    ./programs/readline.nix
+    ./programs/ripgrep.nix
+    ./programs/sqlite.nix
+    ./programs/stylua.nix
+    ./programs/tmux.nix
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
