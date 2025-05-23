@@ -1,6 +1,3 @@
-# Disable vi cursor shapes for different modes
-function fish_vi_cursor
-end
 fish_vi_key_bindings
 
 # Use jk to leave insert mode
