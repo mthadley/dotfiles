@@ -18,7 +18,10 @@ set.splitright = true
 set.undofile = true
 set.updatetime = 100
 set.writebackup = false
-set.guicursor = ""
+
+-- Same as the default minus the `t:` options, which seem to do weird
+-- things to the terminal cursor outside of Neovim like turn it black.
+set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 local group = vim.api.nvim_create_augroup("mthadley:options", {})
 
