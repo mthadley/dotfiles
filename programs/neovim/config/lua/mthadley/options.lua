@@ -18,6 +18,7 @@ set.splitright = true
 set.undofile = true
 set.updatetime = 100
 set.writebackup = false
+set.guicursor = "" -- Restore plain white cursor that I'm used to
 
 local group = vim.api.nvim_create_augroup("mthadley:options", {})
 
