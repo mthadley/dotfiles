@@ -1,10 +1,11 @@
-local lspconfig = require "lspconfig"
-local util = require "lspconfig.util"
-
-lspconfig.ts_ls.setup {
+vim.lsp.config("denols", {
+	-- Not all TypeScript projects use `deno`...
+	root_markers = { "deno.json", "deno.jsonc" },
+})
+vim.lsp.config("ts_ls", {
 	-- Override default and only start the server if a `tsconfig.json`
 	-- is found.
-	root_dir = util.root_pattern("tsconfig.json"),
+	root_markers = { "tsconfig.json" },
 
 	-- Override default and only start if a root directory with a
 	-- `tsconfig.json` is found.
@@ -15,14 +16,13 @@ lspconfig.ts_ls.setup {
 		-- https://github.com/typescript-language-server/typescript-language-server/issues/711
 		completionDisableFilterText = true,
 	},
-}
+})
 
-lspconfig.denols.setup {
-	-- Not all TypeScript projects use `deno`...
-	root_dir = util.root_pattern("deno.json", "deno.jsonc"),
-}
-
-lspconfig.zls.setup {}
+vim.lsp.enable({
+	"denols",
+	"ts_ls",
+	"zls",
+})
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("mthadley:lspconfig", {}),
