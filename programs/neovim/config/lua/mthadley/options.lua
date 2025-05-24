@@ -12,11 +12,12 @@ set.relativenumber = true
 set.scrolloff = 10
 set.shiftround = true
 set.shiftwidth = 2
-set.tabstop = 2
 set.splitbelow = true
 set.splitright = true
+set.tabstop = 2
 set.undofile = true
 set.updatetime = 100
+set.winborder = "rounded"
 set.writebackup = false
 
 -- Same as the default minus the `t:` options, which seem to do weird
