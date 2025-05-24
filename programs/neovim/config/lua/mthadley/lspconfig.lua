@@ -52,3 +52,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		client.server_capabilities.semanticTokensProvider = nil
 	end,
 })
+
+vim.diagnostic.config({ virtual_text = true })
