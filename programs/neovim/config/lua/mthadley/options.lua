@@ -17,6 +17,7 @@ set.splitright = true
 set.tabstop = 2
 set.undofile = true
 set.updatetime = 100
+set.winborder = "rounded"
 set.writebackup = false
 
 -- Same as the default minus the `t:` options, which seem to do weird
