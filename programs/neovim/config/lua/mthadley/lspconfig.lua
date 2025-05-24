@@ -31,14 +31,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		for keys, fn in pairs({
 			["<C-]>"] = vim.lsp.buf.definition,
-			["<C-k>"] = vim.lsp.buf.signature_help,
 			["<leader>ca"] = vim.lsp.buf.code_action,
 			["<leader>D"] = vim.lsp.buf.type_definition,
-			["<leader>rn"] = vim.lsp.buf.rename,
 			["gD"] = vim.lsp.buf.declaration,
 			["gd"] = vim.lsp.buf.definition,
-			["gi"] = vim.lsp.buf.implementation,
-			["gr"] = vim.lsp.buf.references,
 		}) do
 			vim.keymap.set("n", keys, fn, { buffer = event.buf })
 		end
