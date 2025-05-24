@@ -34,8 +34,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			["<C-k>"] = vim.lsp.buf.signature_help,
 			["<leader>ca"] = vim.lsp.buf.code_action,
 			["<leader>D"] = vim.lsp.buf.type_definition,
-			["<leader>e"] = vim.diagnostic.open_float,
-			["<leader>f"] = vim.lsp.buf.formatting,
 			["<leader>rn"] = vim.lsp.buf.rename,
 			["gD"] = vim.lsp.buf.declaration,
 			["gd"] = vim.lsp.buf.definition,
