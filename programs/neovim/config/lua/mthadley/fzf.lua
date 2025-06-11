@@ -27,9 +27,14 @@ fzf.setup {
 vim.keymap.set("n", "<C-T>", vim.cmd.FzfLua)
 vim.keymap.set("n", "<C-P>", function()
 	fzf.files({
-		cmd = RIPGREP_PATH .. " --files | " .. ZIMILAR_ZORT_PATH .. ' "' .. vim.api.nvim_eval('expand("%")') .. '"',
+		cmd = RIPGREP_PATH
+			.. " --files --hidden --glob=!.git --ignore-file=.gitignore | "
+			.. ZIMILAR_ZORT_PATH
+			.. ' "'
+			.. vim.api.nvim_eval('expand("%")')
+			.. '"',
 		fzf_opts = {
-			["--tiebreak"] = "index",
+			["--scheme"] = "history",
 		},
 		git_icons = false,
 		actions = {

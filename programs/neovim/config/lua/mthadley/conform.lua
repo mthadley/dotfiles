@@ -11,6 +11,7 @@ require("conform").setup {
 		markdown = { "prettier" },
 		mdx = { "prettier" },
 		nix = { "nixpkgs_fmt" },
+		python = { "black" },
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		xml = { "xmllint" },
