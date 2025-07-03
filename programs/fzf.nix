@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  defaultFilesCommand = "${pkgs.ripgrep}/bin/rg --files";
+  defaultFilesCommand = "${pkgs.fd}/bin/fd";
 in
 {
   programs.fzf = {

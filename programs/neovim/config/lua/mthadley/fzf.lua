@@ -27,8 +27,8 @@ fzf.setup {
 vim.keymap.set("n", "<C-T>", vim.cmd.FzfLua)
 vim.keymap.set("n", "<C-P>", function()
 	fzf.files({
-		cmd = RIPGREP_PATH
-			.. " --files --hidden --glob=!.git --ignore-file=.gitignore | "
+		cmd = FD_PATH
+			.. " --color=never --hidden --type f --type l --exclude .git | "
 			.. ZIMILAR_ZORT_PATH
 			.. ' "'
 			.. vim.api.nvim_eval('expand("%")')
