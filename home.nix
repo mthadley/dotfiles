@@ -30,6 +30,7 @@
     ./programs/bat.nix
     ./programs/direnv.nix
     ./programs/eza.nix
+    ./programs/fd.nix
     ./programs/fish/default.nix
     ./programs/fzf.nix
     ./programs/git.nix

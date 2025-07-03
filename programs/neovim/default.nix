@@ -38,6 +38,7 @@
     ];
 
     extraLuaConfig = ''
+      FD_PATH = "${pkgs.fd}/bin/fd"
       RIPGREP_PATH = "${pkgs.ripgrep}/bin/rg"
       ZIMILAR_ZORT_PATH = "${pkgs.zimilar-zort}/bin/zimilar-zort"
 
