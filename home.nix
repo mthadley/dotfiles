@@ -28,6 +28,7 @@
   imports = [
     ./programs/autojump.nix
     ./programs/bat.nix
+    ./programs/dircolors.nix
     ./programs/direnv.nix
     ./programs/eza.nix
     ./programs/fd.nix
