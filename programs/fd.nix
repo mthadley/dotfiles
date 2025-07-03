@@ -3,5 +3,6 @@
     enable = true;
 
     hidden = true;
+    ignores = [ ".git" ];
   };
 }
