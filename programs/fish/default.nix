@@ -28,11 +28,14 @@
       tm = "tmux -2";
       tmrw = "tmux rename-window (basename (pwd))";
 
+      # Fancy replacements for standard tools
+      top = "btop";
+      tree = "eza --tree";
+
       # misc
       be = "bundle exec";
       npr = "npm run";
       rspec = "rspec --format documentation";
-      tree = "eza --tree";
     };
 
     shellInit = builtins.readFile ./init.fish;
