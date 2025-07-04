@@ -24,15 +24,15 @@
       gst = "git status";
       gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
 
+      # tmux
+      tm = "tmux -2";
+      tmrw = "tmux rename-window (basename (pwd))";
+
       # misc
       be = "bundle exec";
       npr = "npm run";
       rspec = "rspec --format documentation";
       tree = "eza --tree";
-
-      # tmux
-      tm = "tmux -2";
-      tmrw = "tmux rename-window (basename (pwd))";
     };
 
     shellInit = builtins.readFile ./init.fish;
