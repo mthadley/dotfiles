@@ -32,10 +32,12 @@
       top = "btop";
       tree = "eza --tree";
 
-      # misc
+      # Ruby
       be = "bundle exec";
-      npr = "npm run";
       rspec = "rspec --format documentation";
+
+      # Node
+      npr = "npm run";
     };
 
     shellInit = builtins.readFile ./init.fish;
