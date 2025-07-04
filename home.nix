@@ -4,7 +4,6 @@
   home = {
     packages = with pkgs; [
       entr
-      htop
       jq
       nixpkgs-fmt
       shellcheck
@@ -28,6 +27,7 @@
   imports = [
     ./programs/autojump.nix
     ./programs/bat.nix
+    ./programs/btop.nix
     ./programs/dircolors.nix
     ./programs/direnv.nix
     ./programs/eza.nix
