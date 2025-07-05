@@ -53,12 +53,12 @@
         {
           homeConfigurations =
             mkHomeConfig
-              rec {
+              {
                 name = "mthadley-workos";
                 username = "michael.hadley";
               } //
 
-            mkHomeConfig rec {
+            mkHomeConfig {
               name = "mthadley-home";
               username = "mthadley";
             };
