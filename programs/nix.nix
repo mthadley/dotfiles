@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   home.file.nixConfig = {
     text = ''

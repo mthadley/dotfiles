@@ -24,15 +24,20 @@
       gst = "git status";
       gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
 
-      # misc
-      be = "bundle exec";
-      npr = "npm run";
-      rspec = "rspec --format documentation";
-      tree = "eza --tree";
-
       # tmux
       tm = "tmux -2";
       tmrw = "tmux rename-window (basename (pwd))";
+
+      # Fancy replacements for standard tools
+      top = "btop";
+      tree = "eza --tree";
+
+      # Ruby
+      be = "bundle exec";
+      rspec = "rspec --format documentation";
+
+      # Node
+      npr = "npm run";
     };
 
     shellInit = builtins.readFile ./init.fish;

@@ -19,15 +19,20 @@
     {
       packages = flake-utils.lib.eachDefaultSystemMap (system:
         let
-          mkHomeConfig = { username, homeDirectory, name }: {
+          mkHomeConfig = { username, name }: {
             ${name} = home-manager.lib.homeManagerConfiguration
-              {
+              rec {
                 pkgs = nixpkgs.legacyPackages.${system};
                 modules = [
                   ./home.nix
                   {
                     home = {
-                      inherit username homeDirectory;
+                      inherit username;
+
+                      homeDirectory =
+                        if pkgs.stdenv.isDarwin
+                        then "/Users/${username}"
+                        else "/home/${username}";
 
                       sessionVariables = {
                         HOME_MANAGER_CONFIG = name;
@@ -48,14 +53,12 @@
         {
           homeConfigurations =
             mkHomeConfig
-              rec {
-                homeDirectory = "/Users/${username}";
+              {
                 name = "mthadley-workos";
                 username = "michael.hadley";
               } //
 
-            mkHomeConfig rec {
-              homeDirectory = "/Users/${username}";
+            mkHomeConfig {
               name = "mthadley-home";
               username = "mthadley";
             };

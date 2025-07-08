@@ -1,10 +1,9 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home = {
     packages = with pkgs; [
       entr
-      htop
       jq
       nixpkgs-fmt
       shellcheck
@@ -22,12 +21,16 @@
       # https://github.com/NixOS/nixpkgs/issues/6878
       # https://github.com/rycee/home-manager/issues/354
       LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+    } // lib.optionalAttrs pkgs.hostPlatform.isDarwin {
+      # Override the default agent on MacOS
+      SSH_AUTH_SOCK = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
     };
   };
 
   imports = [
     ./programs/autojump.nix
     ./programs/bat.nix
+    ./programs/btop.nix
     ./programs/dircolors.nix
     ./programs/direnv.nix
     ./programs/eza.nix
