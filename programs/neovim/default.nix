@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    # Apparently needed to compile some Treesitter grammars (like Markdown)
-    # and no GCC was being found on MacOS.
-    gcc
-  ];
-
   programs.neovim = {
     enable = true;
 
