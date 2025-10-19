@@ -19,19 +19,19 @@ require("nvim-treesitter.configs").setup {
 		-- relate to general usage of Neovim.
 		"c",
 		"lua",
+		"query",
 		"vim",
 		"vimdoc",
-		"query",
 
 		-- Languages I often work with.
-		"json",
-		"yaml",
 		"bash",
-		"nix",
 		"fish",
-		"ruby",
 		"javascript",
+		"json",
+		"nix",
+		"ruby",
 		"typescript",
+		"yaml",
 	},
 
 	auto_install = true,
