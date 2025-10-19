@@ -28,6 +28,8 @@ require("nvim-treesitter.configs").setup {
 		"fish",
 		"javascript",
 		"json",
+		"markdown",
+		"markdown_inline",
 		"nix",
 		"ruby",
 		"typescript",
