@@ -12,6 +12,7 @@ require("conform").setup {
 		mdx = { "prettier" },
 		nix = { "nixpkgs_fmt" },
 		python = { "ruff_format", "black" },
+		terraform = { "terraform_fmt" },
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		xml = { "xmllint" },
