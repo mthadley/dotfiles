@@ -25,7 +25,9 @@ require("nvim-treesitter.configs").setup {
 
 		-- Languages I often work with.
 		"bash",
+		"embedded_template",
 		"fish",
+		"html",
 		"javascript",
 		"json",
 		"markdown",
