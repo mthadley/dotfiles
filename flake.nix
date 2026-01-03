@@ -15,6 +15,8 @@
     };
 
     llm-agents.url = "github:numtide/llm-agents.nix";
+
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, llm-agents, ... }:
