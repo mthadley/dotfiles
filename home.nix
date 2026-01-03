@@ -6,7 +6,6 @@
       entr
       jq
       nixpkgs-fmt
-      llmPkgs.opencode
       shellcheck
       stylua
     ] ++ lib.optionals pkgs.stdenv.isLinux [
@@ -43,6 +42,7 @@
     ./programs/neovim/default.nix
     ./programs/nix.nix
     ./programs/nixpkgs
+    ./programs/opencode.nix
     ./programs/psql.nix
     ./programs/readline.nix
     ./programs/ripgrep.nix
