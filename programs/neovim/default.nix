@@ -46,7 +46,7 @@
     '';
   };
 
-  home.file.".config/nvim" = {
+  xdg.configFile."nvim" = {
     recursive = true;
     source = ./config;
   };

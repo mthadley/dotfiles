@@ -1,9 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.file.fishFunctions = {
+  xdg.configFile."fish/functions" = {
     source = ./functions;
-    target = ".config/fish/functions";
   };
 
   home.sessionVariables = {
