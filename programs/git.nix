@@ -4,8 +4,15 @@
   programs.git = {
     enable = true;
 
-    userEmail = "m@mthadley.com";
-    userName = "Michael Hadley";
+    settings = {
+      user = {
+        name = "Michael Hadley";
+        email = "m@mthadley.com";
+      };
+      pull.ff = "only";
+      push.default = "current";
+      init.defaultBranch = "main";
+    };
 
     ignores = [
       ".DS_Store"
@@ -14,20 +21,14 @@
     ];
 
     lfs.enable = true;
+  };
 
-    delta = {
-      enable = true;
+  programs.delta = {
+    enable = true;
 
-      options = {
-        line-numbers = true;
-        paging = "always";
-      };
-    };
-
-    extraConfig = {
-      pull.ff = "only";
-      push.default = "current";
-      init.defaultBranch = "main";
+    options = {
+      line-numbers = true;
+      paging = "always";
     };
   };
 }
