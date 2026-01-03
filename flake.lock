@@ -117,11 +117,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749870453,
-        "narHash": "sha256-j9KSL/3lzudW7Z1Hyu8GUw8AN7NTnMPwdmiWkPsE4Dw=",
+        "lastModified": 1767423767,
+        "narHash": "sha256-fUMPg5ACfAGTu5AMcyZ+DNpoGXljJRdHdCvzBs/EpOo=",
         "owner": "mthadley",
         "repo": "zimilar-zort",
-        "rev": "a7622b96f13d06df9912b68cee25f498567e8978",
+        "rev": "adbba2512ba6b1647a9b3f374e84780b4ef9a0f9",
         "type": "github"
       },
       "original": {
