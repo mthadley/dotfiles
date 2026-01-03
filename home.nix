@@ -12,16 +12,16 @@
       keyswitch
     ];
 
-    sessionVariables = {
+    sessionVariables = with pkgs.stdenv.hostPlatform; {
       LESS = "-c -+F";
-    } // lib.optionalAttrs pkgs.hostPlatform.isLinux {
+    } // lib.optionalAttrs isLinux {
       # Fixes issues with locale in non-NixOS usage of nix
       #
       # See:
       # https://github.com/NixOS/nixpkgs/issues/6878
       # https://github.com/rycee/home-manager/issues/354
       LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
-    } // lib.optionalAttrs pkgs.hostPlatform.isDarwin {
+    } // lib.optionalAttrs isDarwin {
       # Override the default agent on MacOS
       SSH_AUTH_SOCK = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
     };
