@@ -13,9 +13,11 @@
       url = "github:mthadley/zimilar-zort";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
-  outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, ... }:
+  outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, llm-agents, ... }:
     {
       packages = flake-utils.lib.eachDefaultSystemMap (system:
         let
@@ -23,6 +25,11 @@
             ${name} = home-manager.lib.homeManagerConfiguration
               rec {
                 pkgs = nixpkgs.legacyPackages.${system};
+
+                extraSpecialArgs = {
+                  llmPkgs = llm-agents.packages.${system};
+                };
+
                 modules = [
                   ./home.nix
                   {

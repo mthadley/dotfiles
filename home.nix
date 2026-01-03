@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, llmPkgs, ... }:
 
 {
   home = {
@@ -6,6 +6,7 @@
       entr
       jq
       nixpkgs-fmt
+      llmPkgs.opencode
       shellcheck
       stylua
     ] ++ lib.optionals pkgs.stdenv.isLinux [
