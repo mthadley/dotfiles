@@ -9,7 +9,7 @@
 ;;
 (binding
   attrpath: (attrpath
-    attr: (identifier ) @key.file
+    attr: (identifier) @key.file
     attr: (string_expression
       (string_fragment) @injection.filename)
     attr: (identifier) @key.text)
