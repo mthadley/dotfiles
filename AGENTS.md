@@ -34,6 +34,12 @@ When you want the fastest possible confidence check:
 - Sanity-check a specific option evaluates: `nix eval .#homeConfigurations.mthadley-home.config.programs.neovim.enable`
 - Validate Nix parses/formatting on one file: `nixpkgs-fmt --check home.nix`
 
+### Neovim Lua checks
+
+Use headless Neovim to sanity-check individual Lua modules without rebuilding the entire Home Manager config.
+
+- Run a single file directly: `nvim --headless -l programs/neovim/config/lua/mthadley/<file>.lua`. The file executes inside your current Neovim configuration, so modules should stay idempotent.
+
 ### Apply (unsafe / user-confirm)
 
 **Only** run these when the user explicitly asks to apply changes:
