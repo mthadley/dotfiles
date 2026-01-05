@@ -1,8 +1,5 @@
 {
-  home.file.nixConfig = {
-    text = ''
-      experimental-features = nix-command flakes
-    '';
-    target = ".config/nix/nix.conf";
-  };
+  xdg.configFile."nix/nix.conf".text = ''
+    experimental-features = nix-command flakes
+  '';
 }

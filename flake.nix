@@ -2,10 +2,10 @@
   description = "mthadley's dotfiles";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -13,9 +13,13 @@
       url = "github:mthadley/zimilar-zort";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
+
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, ... }:
+  outputs = { nixpkgs, home-manager, flake-utils, zimilar-zort, llm-agents, ... }:
     {
       packages = flake-utils.lib.eachDefaultSystemMap (system:
         let
@@ -23,6 +27,11 @@
             ${name} = home-manager.lib.homeManagerConfiguration
               rec {
                 pkgs = nixpkgs.legacyPackages.${system};
+
+                extraSpecialArgs = {
+                  llmPkgs = llm-agents.packages.${system};
+                };
+
                 modules = [
                   ./home.nix
                   {

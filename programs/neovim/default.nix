@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; lib.optionals pkgs.hostPlatform.isDarwin [
+  home.packages = with pkgs; lib.optionals stdenv.hostPlatform.isDarwin [
     # Apparently needed to compile some Treesitter grammars (like Markdown)
     # and no GCC was being found on MacOS.
     gcc
@@ -50,7 +50,7 @@
     '';
   };
 
-  home.file.".config/nvim" = {
+  xdg.configFile."nvim" = {
     recursive = true;
     source = ./config;
   };
