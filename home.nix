@@ -13,7 +13,7 @@
     ];
 
     sessionVariables = with pkgs.stdenv.hostPlatform; {
-      LESS = "-c -+F";
+      LESS = "-Rc -+F";
     } // lib.optionalAttrs isLinux {
       # Fixes issues with locale in non-NixOS usage of nix
       #
