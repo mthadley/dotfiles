@@ -21,6 +21,13 @@
     ];
 
     lfs.enable = true;
+
+    includes = [
+      {
+        condition = "gitdir:~/projects/workos/**";
+        path = "~/projects/workos/.gitconfig";
+      }
+    ];
   };
 
   programs.delta = {
@@ -30,12 +37,5 @@
       line-numbers = true;
       paging = "always";
     };
-
-    includes = [
-      {
-        condition = "gitdir:~/projects/workos/**";
-        path = "~/projects/workos/.gitconfig";
-      }
-    ];
   };
 }
