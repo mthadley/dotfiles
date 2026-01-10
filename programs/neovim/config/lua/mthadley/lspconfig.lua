@@ -27,10 +27,7 @@ vim.lsp.enable({
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("mthadley:lspconfig", {}),
 	callback = function(event)
-		vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
 		for keys, fn in pairs({
-			["<C-]>"] = vim.lsp.buf.definition,
 			["<leader>ca"] = vim.lsp.buf.code_action,
 			["<leader>D"] = vim.lsp.buf.type_definition,
 			["gD"] = vim.lsp.buf.declaration,
