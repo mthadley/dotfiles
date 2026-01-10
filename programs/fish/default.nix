@@ -21,7 +21,7 @@
       gd = "git diff";
       gplog = "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset\" --abbrev-commit --date=relative";
       gst = "git status";
-      gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
+      gwch = "git log -p --abbrev-commit --pretty=medium";
 
       # tmux
       tm = "tmux -2";
