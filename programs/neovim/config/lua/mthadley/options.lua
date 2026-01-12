@@ -20,9 +20,9 @@ set.updatetime = 100
 set.winborder = "rounded"
 set.writebackup = false
 
--- Same as the default minus the `t:` options, which seem to do weird
+-- Same as the default minus moving the `t:` option, which seem to do weird
 -- things to the terminal cursor outside of Neovim like turn it black.
-set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+set.guicursor = "n-v-c-sm:block,t-i-ci-ve:ver25,r-cr-o:hor20"
 
 local group = vim.api.nvim_create_augroup("mthadley:options", {})
 
