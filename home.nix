@@ -35,11 +35,11 @@
     ./programs/direnv.nix
     ./programs/eza.nix
     ./programs/fd.nix
-    ./programs/fish/default.nix
+    ./programs/fish
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/konsole.nix
-    ./programs/neovim/default.nix
+    ./programs/neovim
     ./programs/nix.nix
     ./programs/nixpkgs
     ./programs/opencode.nix
