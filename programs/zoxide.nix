@@ -1,5 +1,5 @@
 {
-  programs.autojump = {
+  programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
   };

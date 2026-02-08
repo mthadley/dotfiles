@@ -50,11 +50,13 @@
 
       # Node
       npr = "npm run";
+
+      # zoxide
+      j = "z";
     };
   };
 
   imports = [
-    ./programs/autojump.nix
     ./programs/bat.nix
     ./programs/btop.nix
     ./programs/dircolors.nix
@@ -76,6 +78,7 @@
     ./programs/sqlite.nix
     ./programs/stylua.nix
     ./programs/tmux.nix
+    ./programs/zoxide.nix
   ];
 
   # Let Home Manager install and manage itself.
