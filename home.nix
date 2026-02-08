@@ -25,6 +25,32 @@
       # Override the default agent on MacOS
       SSH_AUTH_SOCK = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
     };
+
+    shellAliases = {
+      # git
+      gco = "git checkout";
+      gsw = "git switch";
+      gre = "git restore";
+      gd = "git diff";
+      gplog = "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset\" --abbrev-commit --date=relative";
+      gst = "git status";
+      gwch = "git log -p --abbrev-commit --pretty=medium";
+
+      # tmux
+      tm = "tmux -2";
+      tmrw = "tmux rename-window (basename (pwd))";
+
+      # Fancy replacements for standard tools
+      top = "btop";
+      tree = "eza --tree";
+
+      # Ruby
+      be = "bundle exec";
+      rspec = "rspec --format documentation";
+
+      # Node
+      npr = "npm run";
+    };
   };
 
   imports = [
@@ -42,6 +68,7 @@
     ./programs/neovim
     ./programs/nix.nix
     ./programs/nixpkgs
+    ./programs/nushell
     ./programs/opencode.nix
     ./programs/psql.nix
     ./programs/readline.nix
