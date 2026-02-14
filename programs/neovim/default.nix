@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; lib.optionals stdenv.hostPlatform.isDarwin [
+  home.packages = with pkgs; [
+    nodePackages.vscode-langservers-extracted
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isDarwin [
     # Apparently needed to compile some Treesitter grammars (like Markdown)
     # and no GCC was being found on MacOS.
     gcc
