@@ -4,6 +4,7 @@
   home = {
     packages = with pkgs; [
       entr
+      gh
       jq
       nixpkgs-fmt
       shellcheck
