@@ -68,6 +68,7 @@
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/konsole.nix
+    ./programs/mise.nix
     ./programs/neovim
     ./programs/nix.nix
     ./programs/nixpkgs
