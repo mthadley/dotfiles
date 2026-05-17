@@ -1,5 +1,6 @@
 vim.lsp.enable({
 	"denols",
+	"gopls",
 	"jsonls",
 	"ts_ls",
 	"zls",
