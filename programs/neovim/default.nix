@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    luaPackages.tree-sitter-cli
     vscode-langservers-extracted
   ]
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
