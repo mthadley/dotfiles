@@ -3,7 +3,7 @@
 require("nvim-treesitter.install").compilers = { "gcc" }
 
 require("nvim-treesitter").install {
-	-- These are reccomended to always be installed, since they
+	-- These are recommended to always be installed, since they
 	-- relate to general usage of Neovim.
 	"c",
 	"lua",
