@@ -46,6 +46,15 @@
 
       require "mthadley"
     '';
+
+    # In `home.stateVersion` < 26.05 (at time of writing I still have
+    # 23.11), these defaulted to `true`. In order to silence a home-manager
+    # warning I need to explicitly set this, and seems fine to use the
+    # new default of `false`.
+    #
+    # Remove if I ever update that `stateVersion`.
+    withPython3 = false;
+    withRuby = false;
   };
 
   xdg.configFile."nvim" = {
