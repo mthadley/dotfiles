@@ -13,8 +13,12 @@ require("nvim-treesitter").install {
 
 	-- Languages I often work with.
 	"bash",
+	"css",
+	"diff",
 	"embedded_template",
 	"fish",
+	"gitcommit",
+	"gitignore",
 	"html",
 	"javascript",
 	"json",
@@ -22,6 +26,7 @@ require("nvim-treesitter").install {
 	"markdown_inline",
 	"nix",
 	"ruby",
+	"sql",
 	"typescript",
 	"yaml",
 }
@@ -30,8 +35,20 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("mthadley:treesitter", { clear = true }),
 	callback = function(args)
 		local lang = vim.treesitter.language.get_lang(args.match)
-		if not lang or not vim.treesitter.language.add(lang) then
+		if not lang then
 			return
+		end
+
+		if not vim.treesitter.language.add(lang) then
+			local available = require("nvim-treesitter").get_available(
+				2 -- Tier 2: "unstable"
+			)
+			if not vim.tbl_contains(available, lang) then
+				return
+			end
+
+			vim.notify("Attempting to install Treesitter grammar: " .. lang)
+			require("nvim-treesitter").install(lang):wait(30000)
 		end
 
 		if vim.treesitter.query.get(lang, "highlights") then
