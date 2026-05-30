@@ -11,7 +11,7 @@ vim.opt.runtimepath:prepend(parser_install_dir)
 -- default of `clang`.
 require("nvim-treesitter.install").compilers = { "gcc" }
 
-require("nvim-treesitter.configs").setup {
+require("nvim-treesitter").setup {
 	parser_install_dir = parser_install_dir,
 
 	ensure_installed = {
