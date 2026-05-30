@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    nodePackages.vscode-langservers-extracted
+    vscode-langservers-extracted
   ]
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
     # Apparently needed to compile some Treesitter grammars (like Markdown)
@@ -26,7 +26,6 @@
       nvim-lspconfig
       nvim-surround
       nvim-treesitter
-      registers-nvim
       tslime
       vim-indent-object
       vim-sleuth
