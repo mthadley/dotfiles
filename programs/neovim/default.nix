@@ -26,7 +26,7 @@
       nvim-lspconfig
       nvim-surround
       nvim-treesitter
-      tslime
+      tslime-vim
       vim-indent-object
       vim-sleuth
       vim-sort-motion
