@@ -4,8 +4,7 @@
   home.packages = with pkgs; [
     luaPackages.tree-sitter-cli
     vscode-langservers-extracted
-  ]
-  ++ lib.optionals stdenv.hostPlatform.isDarwin [
+  ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
     # Apparently needed to compile some Treesitter grammars (like Markdown)
     # and no GCC was being found on MacOS.
     gcc
