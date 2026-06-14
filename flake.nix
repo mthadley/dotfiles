@@ -63,8 +63,8 @@
           homeConfigurations =
             mkHomeConfig
               {
-                name = "mthadley-workos";
-                username = "michael.hadley";
+                name = "mthadley-paper";
+                username = "mthadley";
               } //
 
             mkHomeConfig {
