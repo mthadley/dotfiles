@@ -21,7 +21,7 @@ fi
 # Install nix
 if ! is_installed nix; then
   echo "Installing nix..."
-  sh <(curl -L https://nixos.org/nix/install) --daemon
+  curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
 
   if [ "$(uname)" = "Darwin" ]; then
     echo "Disabling spotlight for /nix..."
