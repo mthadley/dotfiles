@@ -23,11 +23,6 @@ if ! is_installed nix; then
   echo "Installing nix..."
   curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
 
-  if [ "$(uname)" = "Darwin" ]; then
-    echo "Disabling spotlight for /nix..."
-    sudo mdutil -i off /nix
-  fi
-
   echo "Sourcing nix vars..."
   source /nix/var/nix/profiles/default//etc/profile.d/nix-daemon.sh
 fi
