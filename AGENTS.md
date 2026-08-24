@@ -18,8 +18,8 @@ Agentic coding assistants should optimize for **safe, reviewable changes** (avoi
 There is no conventional unit-test suite in this repo. Treat **building/evaluating** the flake as the primary "test".
 
 - Build a single Home Manager activation package (fastest targeted check):
+  - `nix build .#homeConfigurations.mthadley-paper.activationPackage`
   - `nix build .#homeConfigurations.mthadley-home.activationPackage`
-  - `nix build .#homeConfigurations.mthadley-workos.activationPackage`
 - Build via Home Manager (also safe, does not apply):
   - `home-manager build --flake "path:.#mthadley-home"`
 - Evaluate / sanity-check the flake (may fetch inputs if missing):
