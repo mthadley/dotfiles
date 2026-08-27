@@ -3,9 +3,9 @@
 {
   home.packages = with llmPkgs; [ opencode ];
 
-  xdg.configFile."opencode/opencode.jsonc".text = ''
+  xdg.configFile."opencode/tui.jsonc".text = ''
     {
-      "$schema": "https://opencode.ai/config.json",
+      "$schema": "https://opencode.ai/tui.json",
       "theme": "nord",
     }
   '';
