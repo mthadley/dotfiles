@@ -26,6 +26,7 @@ local gray_bg = colors.base01
 local gray_fg = colors.base03
 local white_fg = colors.base05
 local red_fg = colors.base08
+local green_fg = colors.base0B
 local yellow_fg = colors.base09
 
 -- Split separators
@@ -44,6 +45,12 @@ hi("GitGutterChange", { bg = gray_bg })
 hi("GitGutterDelete", { bg = gray_bg })
 hi("LineNr", { fg = gray_fg, bg = gray_bg })
 hi("SignColumn", { bg = gray_bg })
+
+-- Fugitive diff counts. Unlike `diffAdded`/`diffRemoved` these have no
+-- background, so they don't cover `CursorLine`. See `fugitive.lua` where
+-- these are introduced.
+hi("FugitiveNumstatAdded", { fg = green_fg })
+hi("FugitiveNumstatRemoved", { fg = red_fg })
 
 local preview_ns = vim.api.nvim_create_namespace("mthadley:lsp_floating_preview")
 
